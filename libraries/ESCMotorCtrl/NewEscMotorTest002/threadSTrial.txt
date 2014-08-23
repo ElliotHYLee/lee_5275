@@ -1,0 +1,3 @@
+I have tried thread and also fialed
+
+digitalWrite doesn't work well with analog read

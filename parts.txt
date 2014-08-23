@@ -1,0 +1,22 @@
+Frame
+
+Motors:
+1 ESC motors: checked
+1 ESC (4 I/O) - Auto Pilot: checked
+1 3S Lipo Battery: checked
+
+Board:
+Arduino
+Data Logger
+Arducopter - Flight Controller
+
+Sensors:
+
+Motion-
+Accelerometer
+Gyrometer
+Altimeter
+
+Analysis- 
+numbering propeller
+
