@@ -28,7 +28,7 @@ void loop()
   m1.write(0);
   delay(2000);
   
-  int angle=70;
+  int angle=63;
   for (int i=0; i< 5; i++)
   {
     m1.write(angle);

@@ -10,7 +10,7 @@ int rpmSensor = A0;
 int motor[] = {2,3,4,5};
 int STOP = 1000;
 int pulse=0;
-int last = 1250;
+int last = 1185;
 double k=0;
 
 Thread myThread = Thread();
