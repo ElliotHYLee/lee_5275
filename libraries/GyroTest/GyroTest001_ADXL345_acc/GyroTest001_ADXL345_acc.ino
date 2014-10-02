@@ -19,7 +19,9 @@ void setup()
 void loop()
 {
 	double pitch, roll, Xg, Yg, Zg;
+	
 	acc.read(&Xg, &Yg, &Zg);
+	//acc.setZeroG(Xg, Yg, Zg);
 
 	//Low Pass Filter to smooth out data
 	fXg = Xg * alpha + (fXg * (1.0 - alpha));
@@ -30,9 +32,16 @@ void loop()
 	roll  = (atan2(-fYg, fZg)*180.0)/M_PI;
 	pitch = (atan2(fXg, sqrt(fYg*fYg + fZg*fZg))*180.0)/M_PI;
 
-	Serial.print(pitch);
-	Serial.print("   ");
-	Serial.println(roll);
+	//Serial.print(pitch);
+	//Serial.print("   ");
+	//Serial.println(roll);
+	
+	Serial.print("x:");
+	Serial.print(fXg); 
+	Serial.print(",  y:");
+	Serial.print(fYg); 
+	Serial.print(",  z:");
+	Serial.println(fZg);
 
 	delay(50);
 }
