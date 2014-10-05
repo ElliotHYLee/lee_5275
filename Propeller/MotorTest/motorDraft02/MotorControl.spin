@@ -9,10 +9,10 @@ VAR     'object variables
   long pulse          'the pulse of this motor
   byte motorPin       'the pin number for this motor
   byte isCW           '1(true) if this motor is counter clock wise, or 0(false)
+  
 OBJ     ' import below objects
 
   pst : "Parallax Serial Terminal"
-
 
 PUB newMotor(pin, direction) {{ constructor }}    
   pst.Start(115200)
@@ -23,6 +23,9 @@ PUB newMotor(pin, direction) {{ constructor }}
   dira[motorPin] := 1   'set pin direction for this motor   
   initMotor  'physical initialization for this motor
   waitcnt(cnt + clkfreq)
+  startMotor
+
+PUB startMotor 
   stopMotor
   cogIndex := cognew(runMotor, @Stack) + 1  'start running motor
 
@@ -32,7 +35,7 @@ PUB getDirection {{ return direction of this motor}}
 PUB updatePWM(newPulse) {{update the pulse of this so "runMotor" method can use the new value}}
   pulse := newPulse
 
-PUB stopMotor {{kind of destructor}}
+PUB stopMotor {{stop cog}}
   if cogIndex
     cogstop(cogIndex ~ - 1)
   

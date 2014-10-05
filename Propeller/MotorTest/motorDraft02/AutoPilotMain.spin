@@ -19,7 +19,6 @@ VAR
 PUB main
   setPins
   motor1.newMotor(pin0, 1) 'set pin numbre 0 for the fist motor
-  
 
 PUB setPins
   pin0 := 0
