@@ -7,7 +7,7 @@ OBJ
   ' motor[1] = pin 1, ccw
   ' motor[2] = pin 2, cw
   ' motor[3] = pin 3, ccw
-  motor1 : "Motor"
+  motor1 : "MotorControl"
   pst : "Parallax Serial Terminal"
 
 VAR
@@ -17,9 +17,7 @@ VAR
   byte pin3  
   
 PUB main
-  pst.Start(115200)
   setPins
-  pst.Str(String("running motor number 1"))   
   motor1.newMotor(pin0, 1) 'set pin numbre 0 for the fist motor
   
 

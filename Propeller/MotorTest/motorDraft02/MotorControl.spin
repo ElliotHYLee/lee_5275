@@ -23,8 +23,8 @@ PUB newMotor(pin, direction) {{ constructor }}
   dira[motorPin] := 1   'set pin direction for this motor   
   initMotor  'physical initialization for this motor
   waitcnt(cnt + clkfreq)
-  runMotor
-  'cogIndex := cognew(runMotor, @Stack) + 1  'start running motor
+  stopMotor
+  cogIndex := cognew(runMotor, @Stack) + 1  'start running motor
 
 PUB getDirection {{ return direction of this motor}}
   return isCW
