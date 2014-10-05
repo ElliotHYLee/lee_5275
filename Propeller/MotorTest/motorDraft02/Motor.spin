@@ -15,11 +15,16 @@ OBJ     ' import below objects
 
 
 PUB newMotor(pin, direction) {{ constructor }}    
+  pst.Start(115200)
   motorPin := pin  'set pin number for this motor
+  pst.Dec(motorPin)
+  pst.Str(String(" ", pst#NL)) 
   isCW := direction 'whether the rotation is cw(true, 1) or ccw(flase, 0)      
   dira[motorPin] := 1   'set pin direction for this motor   
-  initMotor  'physical initialization for this motor   
-  cogIndex := cognew(runMotor, @Stack) + 1  'start running motor
+  initMotor  'physical initialization for this motor
+  waitcnt(cnt + clkfreq)
+  runMotor
+  'cogIndex := cognew(runMotor, @Stack) + 1  'start running motor
 
 PUB getDirection {{ return direction of this motor}}
   return isCW
@@ -31,23 +36,30 @@ PUB stopMotor {{kind of destructor}}
   if cogIndex
     cogstop(cogIndex ~ - 1)
   
-PRI runMotor {{generating pwm for the motor connected to this pin}}              
+PUB runMotor {{generating pwm for the motor connected to this pin}}              
+  pulse := 1185
   repeat  
     outa[motorPin]:=1
     waitcnt(cnt + clkfreq / 1000000 * pulse )
     outa[motorPin]:=0
     waitcnt(cnt + clkfreq / 1000*20)
     pulse ++
-    pulse --
     pst.Dec(pulse)
     pst.Str(String(" ", pst#NL))    
-
-PRI initMotor {{initializing the motor connected to this pin}}    
-  pulse :=0
+    if pulse == 1200
+     pulse:=1185 
+PUB initMotor {{initializing the motor connected to this pin}}    
+    
+  pulse :=45
   repeat while pulse < 75
+    pulse++
     outa[motorPin]:=1
-    waitcnt(cnt + clkfreq / 1000000 * pulse )
+    waitcnt(cnt + (clkfreq / 1000 ) )
     outa[motorPin]:=0
-    waitcnt(cnt + clkfreq / 1000*20)
-  pulse := 1200  'set default pulse 
+    waitcnt(cnt + clkfreq / 1000*20)    
+    pst.Dec(pulse)
+    pst.Str(String(" ", pst#NL))
+
+
+  
   

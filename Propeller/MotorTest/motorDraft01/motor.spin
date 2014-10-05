@@ -20,15 +20,20 @@ PUB main
   pin:=0
   pst.Start(115200)
   setMotors(0)
-  
 
-  pulse :=0
+  pulse :=45
   repeat while pulse < 75
-    pulse ++
+    pst.Str(String(" asdf", pst#NL)) 
+    pulse++
+    outa[motor[0]]:=1
+    waitcnt(cnt + (clkfreq / 1000 ) )
+    outa[motor[0]]:=0
+    waitcnt(cnt + clkfreq / 1000*20)    
     pst.Dec(pulse)
     pst.Str(String(" ", pst#NL))
-
-  pulse := 1190
+  waitcnt(cnt + clkfreq)
+  
+  pulse := 1185
   repeat  
     outa[motor[0]]:=1
     waitcnt(cnt + clkfreq / 1000000 * pulse )
@@ -38,9 +43,9 @@ PUB main
     pst.Dec(pulse)
     pst.Str(String(" ", pst#NL))    
     if pulse == 1200
-     pulse:=1150 
+     pulse:=1185 
 
-Pub setMotors(void)
+PUB setMotors(void)
   motor[0] := 0
   motor[1] := 1
   motor[2] := 2
