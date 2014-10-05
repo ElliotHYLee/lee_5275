@@ -13,6 +13,7 @@ void setup()
 {
 	acc.begin();
 	Serial.begin(9600);
+	acc.setRange(acc.RANGE_2G);
 	delay(100);
 }
 
@@ -36,12 +37,12 @@ void loop()
 	//Serial.print("   ");
 	//Serial.println(roll);
 	
-	Serial.print("x:");
-	Serial.print(fXg); 
-	Serial.print(",  y:");
-	Serial.print(fYg); 
-	Serial.print(",  z:");
-	Serial.println(fZg);
+	//Serial.print("x:");
+	//Serial.print(fXg); 
+	//Serial.print(",  y:");
+	Serial.println(fYg); 
+	//Serial.print(",  z:");
+	//Serial.println(fZg);
 
 	delay(50);
 }

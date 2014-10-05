@@ -15,13 +15,13 @@ void speedESC(int motor, int pulse);
 
 void setup()
 {
-	motor[0] = 6;
-	Serial.begin(9600);
-    pinMode(motor[0], OUTPUT);
-    pinMode(motor[1], OUTPUT);
-    pinMode(motor[2], OUTPUT);
-    pinMode(motor[3], OUTPUT);
-	pinMode(analogPin, INPUT);
+   motor[0] = 6;
+   Serial.begin(9600);
+   pinMode(motor[0], OUTPUT);
+   pinMode(motor[1], OUTPUT);
+   pinMode(motor[2], OUTPUT);
+   pinMode(motor[3], OUTPUT);
+   pinMode(analogPin, INPUT);
     setESC(motor[0]);
 }
 
