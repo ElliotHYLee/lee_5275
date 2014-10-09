@@ -13,16 +13,15 @@ OBJ     ' import below objects
 
   pst : "Parallax Serial Terminal"
 
-
-PUB newMotor(pin, direction) {{ constructor }}    
+PUB newMotor(pin, direction) {{ constructor }}
   pst.Start(115200)
   motorPin := pin  'set pin number for this motor
-  pst.Dec(motorPin)
-  pst.Str(String(" ", pst#NL)) 
   isCW := direction 'whether the rotation is cw(true, 1) or ccw(flase, 0)      
-  dira[motorPin] := 1   'set pin direction for this motor   
   initMotor  'physical initialization for this motor
   waitcnt(cnt + clkfreq)
+  startMotor
+  
+PUB startMotor
   stopMotor
   cogIndex := cognew(runMotor, @Stack) + 1  'start running motor
 
@@ -37,21 +36,24 @@ PUB stopMotor {{kind of destructor}}
     cogstop(cogIndex ~ - 1)
   
 PUB runMotor {{generating pwm for the motor connected to this pin}}              
-  pulse := 1185
+  dira[motorPin] := 1
+  pulse := 1190
   repeat  
-    outa[motorPin]:=1
+    outa[motorPin]:= 1
     waitcnt(cnt + clkfreq / 1000000 * pulse )
-    outa[motorPin]:=0
+    outa[motorPin]:= 0
     waitcnt(cnt + clkfreq / 1000*20)
-    pulse ++
+    pst.Dec(cogIndex)
+    pst.Str(String(", "))
+    pst.Dec(motorPin)
+    pst.Str(String(", ")) 
     pst.Dec(pulse)
     pst.Str(String(" ", pst#NL))    
-    if pulse == 1200
-     pulse:=1185 
+
 PUB initMotor {{initializing the motor connected to this pin}}    
-    
+  dira[motorPin] := 1   'set pin direction for this motor   
   pulse :=45
-  repeat while pulse < 75
+  repeat while pulse < 150
     pulse++
     outa[motorPin]:=1
     waitcnt(cnt + (clkfreq / 1000 ) )

@@ -7,7 +7,7 @@ OBJ
   ' motor[1] = pin 1, ccw
   ' motor[2] = pin 2, cw
   ' motor[3] = pin 3, ccw
-  motor1 : "MotorControl"
+  motor[4] : "MotorControl"
   pst : "Parallax Serial Terminal"
 
 VAR
@@ -18,7 +18,7 @@ VAR
   
 PUB main
   setPins
-  motor1.newMotor(pin0, 1) 'set pin numbre 0 for the fist motor
+  motor[0].newMotor(pin0, 1) 'set pin numbre 0 for the fist motor
   
 
 PUB setPins

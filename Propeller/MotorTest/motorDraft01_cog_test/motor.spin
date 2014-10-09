@@ -8,11 +8,11 @@ VAR
   ' motor [2] = pin 2
   ' motor [3] = pin 3
   byte motor[4]
-  
+  long cogIndex       'this motor's cog index (1-8) 
   long StackA[128]
   long pulse
   byte pin
-
+  long Stack[128]     'stack for this motor 
 OBJ
   pst : "Parallax Serial Terminal"
     
@@ -20,9 +20,8 @@ PUB main
   pin:=0
   pst.Start(115200)
   setMotors(0)
-
   pulse :=45
-  repeat while pulse < 75
+  repeat while pulse < 120
     pst.Str(String(" asdf", pst#NL)) 
     pulse++
     outa[motor[0]]:=1
@@ -32,18 +31,30 @@ PUB main
     pst.Dec(pulse)
     pst.Str(String(" ", pst#NL))
   waitcnt(cnt + clkfreq)
+
+  start
+PUB start
+  stopMotor
+  cogIndex := cognew(runMotor, @Stack) + 1  'start running motor  
   
-  pulse := 1185
+PUB stopMotor {{kind of destructor}}
+  if cogIndex
+    cogstop(cogIndex ~ - 1)  
+  
+PUB runMotor
+  
+  dira[motor[0]] := 1 
+  pulse := 1200
   repeat  
     outa[motor[0]]:=1
     waitcnt(cnt + clkfreq / 1000000 * pulse )
     outa[motor[0]]:=0
     waitcnt(cnt + clkfreq / 1000*20)
-    pulse ++
+    'pulse ++
     pst.Dec(pulse)
     pst.Str(String(" ", pst#NL))    
-    if pulse == 1200
-     pulse:=1185 
+    'if pulse == 1200
+    ' pulse:=1185 
 
 PUB setMotors(void)
   motor[0] := 0

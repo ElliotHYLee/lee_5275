@@ -8,14 +8,15 @@ VAR
   long value
 OBJ
   pst : "Parallax Serial Terminal"
-  sRec : "serialReceiver"
-  model : "model"
     
-PUB main
+PUB newModel
   value :=0
-  model.newModel
-  sRec.newSerialReceiver(model.getValue) 
+  pst.Start(115200)
+  repeat
+    pst.Dec(value)
+    pst.NewLine
 
-  
+PUB getValue
+  return value
   
   

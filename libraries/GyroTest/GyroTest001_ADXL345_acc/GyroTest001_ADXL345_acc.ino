@@ -22,7 +22,7 @@ void loop()
 	double pitch, roll, Xg, Yg, Zg;
 	
 	acc.read(&Xg, &Yg, &Zg);
-	//acc.setZeroG(Xg, Yg, Zg);
+	acc.setZeroG(Xg, Yg, Zg);
 
 	//Low Pass Filter to smooth out data
 	fXg = Xg * alpha + (fXg * (1.0 - alpha));
@@ -37,12 +37,12 @@ void loop()
 	//Serial.print("   ");
 	//Serial.println(roll);
 	
-	//Serial.print("x:");
-	//Serial.print(fXg); 
-	//Serial.print(",  y:");
-	Serial.println(fYg); 
-	//Serial.print(",  z:");
-	//Serial.println(fZg);
+	Serial.print("x:");
+	Serial.print(fXg); 
+	Serial.print(",  y:");
+	Serial.print(fYg); 
+	Serial.print(",  z:");
+	Serial.println(fZg);
 
 	delay(50);
 }
