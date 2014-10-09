@@ -11,18 +11,29 @@ OBJ
   pst : "Parallax Serial Terminal"
 
 VAR
-  byte pin0
-  byte pin1
-  byte pin2
-  byte pin3  
+  long pin[4]
+  long value
   
 PUB main
+  pst.Start(115200)
+  pst.Str(String("setting pins..."))
+  pst.NewLine
   setPins
-  motor[0].newMotor(pin0, 1) 'set pin numbre 0 for the fist motor
-  
+  pst.Str(String("setting motor 1..."))
+  pst.NewLine
+  motor[0].newMotor(pin[0], 1) 'set pin numbre 0 for the fist motor
+  repeat
+   if pst.RxCount > 0  
+    value := pst.DecIn
+    motor[0].setPWM(value)
+   else
+    value:=motor[0].getPWM
+    pst.Dec(value)
+    pst.NewLine
+
 
 PUB setPins
-  pin0 := 0
-  pin1 := 1
-  pin2 := 2
-  pin3 := 3
+  pin[0] := 0
+  pin[1] := 1
+  pin[2] := 2
+  pin[3] := 3
