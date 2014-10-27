@@ -1,3 +1,8 @@
+' motor1 = ccw
+' motor2 = cw
+' motor3 = ccw
+' motor4 = cw
+
 CON
   _clkmode = xtal1 + pll16x
   _xinfreq = 5_000_000
@@ -6,18 +11,20 @@ VAR     'object variables
 
   long cogIndex       'this motor's cog index (1-8)
   long Stack[128]     'stack for this motor
-  long pulse          'the pulse of this motor
-  byte motorPin       'the pin number for this motor
-  byte isCW           '1(true) if this motor is counter clock wise, or 0(false)
+  long pulse[4]          'the pulse of this motor
+  byte motorPin[4]    'the pin number for this motor
+  
 OBJ     ' import below objects
 
-  'pst : "Parallax Serial Terminal"
+  pst : "Parallax Serial Terminal"
 
-PUB newMotor(pin, direction) {{ constructor }}
-  'pst.Start(115200)
-  motorPin := pin  'set pin number for this motor
-  isCW := direction 'whether the rotation is cw(true, 1) or ccw(flase, 0)      
+PUB newMotor(pin0, pin1, pin2, pin3)  {{ constructor }}
+  motorPin[0] := pin0  'set pin number for this motor
+  motorPin[1] := pin1
+  motorPin[2] := pin2
+  motorPin[3] := pin3
   waitcnt(cnt + clkfreq)
+  
   start
   
 PRI start
@@ -27,7 +34,9 @@ PRI start
 PUB stop {{kind of destructor}}
   if cogIndex
     cogstop(cogIndex ~ - 1)
+
     
+<<<<<<< HEAD
 PUB getDirection {{ return direction of this motor}}
   return isCW
          
@@ -50,12 +59,75 @@ PRI initMotor {{initializing the motor connected to this pin}}
     'pst.Str(String(" ", pst#NL))
 
 PRI runMotor | baseTime {{generating pwm for the motor connected to this pin}}              
+=======
+PUB motor1_setPWM(newPulse)                                    {{update the pulse of this so "runMotor" method can use the new value}}
+  pulse[0] := newPulse
+
+PUB motor2_setPWM(newPulse)                                    {{update the pulse of this so "runMotor" method can use the new value}}
+  pulse[1] := newPulse
+
+PUB motor3_setPWM(newPulse)                                    {{update the pulse of this so "runMotor" method can use the new value}}
+  pulse[2] := newPulse
+
+PUB motor4_setPWM(newPulse)                                    {{update the pulse of this so "runMotor" method can use the new value}}
+  pulse[3] := newPulse
+
+PUB motor1_getPWM
+  return pulse[0]
+  
+PUB motor2_getPWM
+  return pulse[1]
+  
+PUB motor3_getPWM
+  return pulse[2]
+  
+PUB motor4_getPWM
+  return pulse[3]
+
+
+  
+PUB initMotor | i                                             {{initializing the motor connected to this pin}}
+  i:=0                       'set pin directions               
+  repeat while i<=4
+    dira[motorPin[i]] := 1
+    pulse[i] :=45     
+  
+  repeat while pulse[0] < 150
+    i:=0  
+    repeat while i<=4
+      outa[motorPin[i]]:=1
+      waitcnt(cnt + (clkfreq / 1000 ) )
+      outa[motorPin[i]]:=0
+      pulse[i] ++
+      pst.Dec(pulse[i])
+      i++
+    waitcnt(cnt + clkfreq / 1000*20)
+       
+
+PUB runMotor | baseTime, i, totalElapse                 {{generating pwm for the motor connected to this pin}}              
+>>>>>>> origin/master
   initMotor  'physical initialization for this motor 
-  dira[motorPin] := 1
-  pulse := 1190
+  i:=0
+  repeat while i<4
+    dira[motorPin[i]] := 1   'set pin direction for this motor 
+    pulse[i] := 1200         'set default pwm
+
+  
   repeat
     baseTime := cnt
+<<<<<<< HEAD
     outa[motorPin]:= 1
     waitcnt(baseTime + clkfreq/1000000*pulse)
     outa[motorPin]:= 0
     waitcnt(baseTime + (clkfreq/1000*20 - clkfreq/1000000*pulse))
+=======
+    i:=0
+    totalElapse:=0
+    repeat while i<4
+      outa[motorPin[i]]:= 1
+      waitcnt(baseTime + clkfreq/1000000*pulse[i])
+      outa[motorPin[i]]:= 0
+      totalElapse := totalElapse + pulse[i]
+      i++
+    waitcnt(baseTime + (clkfreq/1000*20 - clkfreq/1000000*totalElapse))
+>>>>>>> origin/master
