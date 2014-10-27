@@ -20,7 +20,7 @@ PUB newMotor(pin, direction) {{ constructor }}
   waitcnt(cnt + clkfreq)
   start
   
-PUB start
+PRI start
   stop
   cogIndex := cognew(runMotor, @Stack) + 1  'start running motor
 
@@ -37,7 +37,7 @@ PUB setPWM(newPulse) {{update the pulse of this so "runMotor" method can use the
 PUB getPWM
   return pulse
   
-PUB initMotor {{initializing the motor connected to this pin}}    
+PRI initMotor {{initializing the motor connected to this pin}}    
   dira[motorPin] := 1   'set pin direction for this motor   
   pulse :=45
   repeat while pulse < 150
@@ -49,7 +49,7 @@ PUB initMotor {{initializing the motor connected to this pin}}
     'pst.Dec(pulse)
     'pst.Str(String(" ", pst#NL))
 
-PUB runMotor | baseTime {{generating pwm for the motor connected to this pin}}              
+PRI runMotor | baseTime {{generating pwm for the motor connected to this pin}}              
   initMotor  'physical initialization for this motor 
   dira[motorPin] := 1
   pulse := 1190

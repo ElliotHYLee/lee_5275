@@ -21,7 +21,7 @@ PUB main
   setPins
   pst.Str(String("setting motor 1..."))
   pst.NewLine
-  motor[0].newMotor(pin[0], 1) 'set pin numbre 0 for the fist motor
+  motor[0].newMotor(pin[0], 1) 'set pin numbre 0 for the fist motor and 1 for CW direction
   repeat
    if pst.RxCount > 0  
     value := pst.DecIn
