@@ -20,7 +20,7 @@ PUB main | i, motorNumber
   pst.Start(115200)
   setPins
 
-  motors.newMotor(pin[0], pin[1], pin[2], pin[3]) 'set pin numbre 0 for the fist motor
+  motors.newMotor(pin[0], pin[1], pin[2], pin[3]) 'set pin numbers for the four motors
   repeat
     if pst.RxCount > 0  
       value := pst.DecIn
