@@ -1,0 +1,16 @@
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\bin\Debug\SerialCommunicationPC.exe.manifest
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\bin\Debug\SerialCommunicationPC.application
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\bin\Debug\SerialCommunicationPC.exe
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\bin\Debug\SerialCommunicationPC.pdb
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\bin\Debug\SerialCommunicationPC.xml
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\obj\x86\Debug\SerialComPC.Form1.resources
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\obj\x86\Debug\SerialComPC.Resources.resources
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\obj\x86\Debug\SerialCommunicationPC.vbproj.GenerateResource.Cache
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\obj\x86\Debug\SerialCommunicationPC.exe.manifest
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\obj\x86\Debug\SerialCommunicationPC.application
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\obj\x86\Debug\SerialCommunicationPC.exe
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\obj\x86\Debug\SerialCommunicationPC.xml
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\obj\x86\Debug\SerialCommunicationPC.pdb
+C:\Users\Elliot\Documents\GitHub\lee_5275\SerialMonitor\obj\x86\Debug\SerialCommunicationPC.exe
+C:\Users\Elliot\Documents\GitHub\lee_5275\SerialMonitor\obj\x86\Debug\SerialCommunicationPC.xml
+C:\Users\Elliot\Documents\GitHub\lee_5275\SerialMonitor\obj\x86\Debug\SerialCommunicationPC.pdb

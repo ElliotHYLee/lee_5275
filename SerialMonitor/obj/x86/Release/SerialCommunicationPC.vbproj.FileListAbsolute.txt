@@ -1,0 +1,13 @@
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\bin\Release\SerialCommunicationPC.exe.manifest
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\bin\Release\SerialCommunicationPC.application
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\bin\Release\SerialCommunicationPC.exe
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\bin\Release\SerialCommunicationPC.pdb
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\bin\Release\SerialCommunicationPC.xml
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\obj\x86\Release\SerialComPC.Form1.resources
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\obj\x86\Release\SerialComPC.Resources.resources
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\obj\x86\Release\SerialCommunicationPC.vbproj.GenerateResource.Cache
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\obj\x86\Release\SerialCommunicationPC.exe.manifest
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\obj\x86\Release\SerialCommunicationPC.application
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\obj\x86\Release\SerialCommunicationPC.exe
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\obj\x86\Release\SerialCommunicationPC.xml
+C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationPC\SerialCommunicationPC\obj\x86\Release\SerialCommunicationPC.pdb
