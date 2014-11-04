@@ -39,7 +39,7 @@ VAR
 OBJ
   debug : "FullDuplexSerial"  
 
-PUB TestMPU  | MPUcog
+PUB TestMPU  | MPUcog ,normAcc
  '-----------------------------------------------
   ' Start serial i/o cog
   ' Start cog to pull gyro/accel data from chip
@@ -61,7 +61,7 @@ PUB TestMPU  | MPUcog
 
   'Output gyro data, then accel data, once per second
   repeat
-     debug.str(string("GX  GY  GZ    AX  AY  AZ"))
+     'debug.str(string("GX  GY  GZ    AX  AY  AZ"))
      debug.tx(13)      
      debug.dec(GetRX)
      debug.str(string(", "))
@@ -74,6 +74,9 @@ PUB TestMPU  | MPUcog
      debug.dec(GetAY)
      debug.str(string(", "))
      debug.dec(GetAZ)
+     debug.str(string(", "))
+     normAcc :=  GetAX^2 + GetAY^2 + GetAZ^2
+     debug.dec(^^normAcc)  
      debug.tx(13)
      waitcnt((clkfreq / 10) + cnt)
 
