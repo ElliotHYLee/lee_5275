@@ -1,0 +1,15 @@
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\Kinect002\Kinect002\bin\Release\Kinect002.exe.config
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\Kinect002\Kinect002\bin\Release\Kinect002.exe
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\Kinect002\Kinect002\bin\Release\Kinect002.pdb
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\Kinect002\Kinect002\obj\Release\MainWindow.baml
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\Kinect002\Kinect002\obj\Release\MainWindow.g.cs
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\Kinect002\Kinect002\obj\Release\App.g.cs
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\Kinect002\Kinect002\obj\Release\Kinect002_MarkupCompile.cache
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\Kinect002\Kinect002\obj\Release\Kinect002.g.resources
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\Kinect002\Kinect002\obj\Release\Kinect002.Properties.Resources.resources
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\Kinect002\Kinect002\obj\Release\Kinect002.csproj.GenerateResource.Cache
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\Kinect002\Kinect002\obj\Release\Kinect002.exe
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\Kinect002\Kinect002\obj\Release\Kinect002.pdb
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\Kinect002\bin\Release\Kinect002.exe.config
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\Kinect002\obj\Release\Kinect002.exe
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\Kinect002\obj\Release\Kinect002.pdb

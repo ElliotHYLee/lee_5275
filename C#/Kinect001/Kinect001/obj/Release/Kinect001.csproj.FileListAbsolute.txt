@@ -1,0 +1,13 @@
+c:\users\elliot\documents\visual studio 2012\Projects\Kinect001\Kinect001\bin\Release\Kinect001.exe.config
+c:\users\elliot\documents\visual studio 2012\Projects\Kinect001\Kinect001\bin\Release\Kinect001.exe
+c:\users\elliot\documents\visual studio 2012\Projects\Kinect001\Kinect001\bin\Release\Kinect001.pdb
+c:\users\elliot\documents\visual studio 2012\Projects\Kinect001\Kinect001\obj\Release\Kinect001.csprojResolveAssemblyReference.cache
+c:\users\elliot\documents\visual studio 2012\Projects\Kinect001\Kinect001\obj\Release\MainWindow.baml
+c:\users\elliot\documents\visual studio 2012\Projects\Kinect001\Kinect001\obj\Release\MainWindow.g.cs
+c:\users\elliot\documents\visual studio 2012\Projects\Kinect001\Kinect001\obj\Release\App.g.cs
+c:\users\elliot\documents\visual studio 2012\Projects\Kinect001\Kinect001\obj\Release\Kinect001_MarkupCompile.cache
+c:\users\elliot\documents\visual studio 2012\Projects\Kinect001\Kinect001\obj\Release\Kinect001.g.resources
+c:\users\elliot\documents\visual studio 2012\Projects\Kinect001\Kinect001\obj\Release\Kinect001.Properties.Resources.resources
+c:\users\elliot\documents\visual studio 2012\Projects\Kinect001\Kinect001\obj\Release\Kinect001.csproj.GenerateResource.Cache
+c:\users\elliot\documents\visual studio 2012\Projects\Kinect001\Kinect001\obj\Release\Kinect001.exe
+c:\users\elliot\documents\visual studio 2012\Projects\Kinect001\Kinect001\obj\Release\Kinect001.pdb

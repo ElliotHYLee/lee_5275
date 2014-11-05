@@ -1,0 +1,13 @@
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\SerialPort01\SerialPort01\bin\Debug\SerialPort01.exe.config
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\SerialPort01\SerialPort01\bin\Debug\SerialPort01.exe
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\SerialPort01\SerialPort01\bin\Debug\SerialPort01.pdb
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\SerialPort01\SerialPort01\obj\Debug\SerialPort01.csprojResolveAssemblyReference.cache
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\SerialPort01\SerialPort01\obj\Debug\MainWindow.baml
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\SerialPort01\SerialPort01\obj\Debug\MainWindow.g.cs
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\SerialPort01\SerialPort01\obj\Debug\App.g.cs
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\SerialPort01\SerialPort01\obj\Debug\SerialPort01_MarkupCompile.cache
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\SerialPort01\SerialPort01\obj\Debug\SerialPort01.g.resources
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\SerialPort01\SerialPort01\obj\Debug\SerialPort01.Properties.Resources.resources
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\SerialPort01\SerialPort01\obj\Debug\SerialPort01.csproj.GenerateResource.Cache
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\SerialPort01\SerialPort01\obj\Debug\SerialPort01.exe
+C:\Users\Elliot\Documents\Visual Studio 2012\Projects\Kinect002\SerialPort01\SerialPort01\obj\Debug\SerialPort01.pdb
