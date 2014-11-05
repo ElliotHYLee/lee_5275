@@ -14,3 +14,6 @@ C:\Users\Elliot\Documents\GitHub\qgroundcontrol\subProjects\SerialCommunicationP
 C:\Users\Elliot\Documents\GitHub\lee_5275\SerialMonitor\obj\x86\Debug\SerialCommunicationPC.exe
 C:\Users\Elliot\Documents\GitHub\lee_5275\SerialMonitor\obj\x86\Debug\SerialCommunicationPC.xml
 C:\Users\Elliot\Documents\GitHub\lee_5275\SerialMonitor\obj\x86\Debug\SerialCommunicationPC.pdb
+C:\Users\Hongyun\Documents\GitHub\lee_5275\SerialMonitor\obj\x86\Debug\SerialCommunicationPC.exe
+C:\Users\Hongyun\Documents\GitHub\lee_5275\SerialMonitor\obj\x86\Debug\SerialCommunicationPC.xml
+C:\Users\Hongyun\Documents\GitHub\lee_5275\SerialMonitor\obj\x86\Debug\SerialCommunicationPC.pdb
