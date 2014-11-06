@@ -10,3 +10,16 @@ C:\Users\Hongyun\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorT
 C:\Users\Hongyun\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\obj\Release\SerialMonitorTest01.csproj.GenerateResource.Cache
 C:\Users\Hongyun\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\obj\Release\SerialMonitorTest01.exe
 C:\Users\Hongyun\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\obj\Release\SerialMonitorTest01.pdb
+C:\Users\Elliot\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\bin\Release\SerialMonitorTest01.exe.config
+C:\Users\Elliot\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\obj\Release\SerialMonitorTest01.exe
+C:\Users\Elliot\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\obj\Release\SerialMonitorTest01.pdb
+C:\Users\Elliot\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\bin\Release\SerialMonitorTest01.exe
+C:\Users\Elliot\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\bin\Release\SerialMonitorTest01.pdb
+C:\Users\Elliot\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\obj\Release\SerialMonitorTest01.csprojResolveAssemblyReference.cache
+C:\Users\Elliot\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\obj\Release\MainWindow.baml
+C:\Users\Elliot\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\obj\Release\MainWindow.g.cs
+C:\Users\Elliot\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\obj\Release\App.g.cs
+C:\Users\Elliot\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\obj\Release\SerialMonitorTest01_MarkupCompile.cache
+C:\Users\Elliot\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\obj\Release\SerialMonitorTest01.g.resources
+C:\Users\Elliot\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\obj\Release\SerialMonitorTest01.Properties.Resources.resources
+C:\Users\Elliot\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\obj\Release\SerialMonitorTest01.csproj.GenerateResource.Cache
