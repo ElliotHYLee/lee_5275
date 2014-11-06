@@ -1,0 +1,26 @@
+c:\users\hongyun\documents\visual studio 2012\Projects\SerialMonitorTest01\SerialMonitorTest01\bin\Debug\SerialMonitorTest01.exe.config
+c:\users\hongyun\documents\visual studio 2012\Projects\SerialMonitorTest01\SerialMonitorTest01\bin\Debug\SerialMonitorTest01.exe
+c:\users\hongyun\documents\visual studio 2012\Projects\SerialMonitorTest01\SerialMonitorTest01\bin\Debug\SerialMonitorTest01.pdb
+c:\users\hongyun\documents\visual studio 2012\Projects\SerialMonitorTest01\SerialMonitorTest01\obj\Debug\SerialMonitorTest01.csprojResolveAssemblyReference.cache
+c:\users\hongyun\documents\visual studio 2012\Projects\SerialMonitorTest01\SerialMonitorTest01\obj\Debug\MainWindow.baml
+c:\users\hongyun\documents\visual studio 2012\Projects\SerialMonitorTest01\SerialMonitorTest01\obj\Debug\MainWindow.g.cs
+c:\users\hongyun\documents\visual studio 2012\Projects\SerialMonitorTest01\SerialMonitorTest01\obj\Debug\App.g.cs
+c:\users\hongyun\documents\visual studio 2012\Projects\SerialMonitorTest01\SerialMonitorTest01\obj\Debug\SerialMonitorTest01_MarkupCompile.cache
+c:\users\hongyun\documents\visual studio 2012\Projects\SerialMonitorTest01\SerialMonitorTest01\obj\Debug\SerialMonitorTest01.g.resources
+c:\users\hongyun\documents\visual studio 2012\Projects\SerialMonitorTest01\SerialMonitorTest01\obj\Debug\SerialMonitorTest01.Properties.Resources.resources
+c:\users\hongyun\documents\visual studio 2012\Projects\SerialMonitorTest01\SerialMonitorTest01\obj\Debug\SerialMonitorTest01.csproj.GenerateResource.Cache
+c:\users\hongyun\documents\visual studio 2012\Projects\SerialMonitorTest01\SerialMonitorTest01\obj\Debug\SerialMonitorTest01.exe
+c:\users\hongyun\documents\visual studio 2012\Projects\SerialMonitorTest01\SerialMonitorTest01\obj\Debug\SerialMonitorTest01.pdb
+C:\Users\Hongyun\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\bin\Debug\SerialMonitorTest01.exe.config
+C:\Users\Hongyun\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\obj\Debug\SerialMonitorTest01.exe
+C:\Users\Hongyun\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\obj\Debug\SerialMonitorTest01.pdb
+C:\Users\Hongyun\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\bin\Debug\SerialMonitorTest01.exe
+C:\Users\Hongyun\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\bin\Debug\SerialMonitorTest01.pdb
+C:\Users\Hongyun\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\obj\Debug\SerialMonitorTest01.csprojResolveAssemblyReference.cache
+C:\Users\Hongyun\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\obj\Debug\MainWindow.baml
+C:\Users\Hongyun\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\obj\Debug\MainWindow.g.cs
+C:\Users\Hongyun\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\obj\Debug\App.g.cs
+C:\Users\Hongyun\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\obj\Debug\SerialMonitorTest01_MarkupCompile.cache
+C:\Users\Hongyun\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\obj\Debug\SerialMonitorTest01.g.resources
+C:\Users\Hongyun\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\obj\Debug\SerialMonitorTest01.Properties.Resources.resources
+C:\Users\Hongyun\Documents\GitHub\lee_5275\C#\SerialMonitorTest01\SerialMonitorTest01\obj\Debug\SerialMonitorTest01.csproj.GenerateResource.Cache
