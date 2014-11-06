@@ -41,12 +41,13 @@ namespace SerialMonitorTest01
             {
                 this.comboPorts.Items.Insert(i, ports[i]);
             }
-
+            this.txtMonitor.Document.Blocks.Clear();
             this.txtBaudRate.Text = "115200";
             this.txtSend.Text = "";
             this.btnDisconnect.IsEnabled = false;
             this.btnSend.IsEnabled = false;
             this.lblStatus.Content = "No ports online.";
+            
             Console.WriteLine("Number of Ports Available: " + this.numberOfPorts);
         }
 
@@ -88,11 +89,6 @@ namespace SerialMonitorTest01
             
         }
 
-        private void comboPorts_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
         private void txtBaudRate_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -122,20 +118,19 @@ namespace SerialMonitorTest01
             }
         }
 
-        #region Recieving
 
-        private delegate void UpdateUiTextDelegate(string text);
-        private void Recieve(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
+        private static void DataReceivedHandler(
+                        object sender,
+                        SerialDataReceivedEventArgs e)
         {
-            // Collecting the characters received to our 'buffer' (string).
-            recieved_data = serial.ReadExisting();
-            txtMonitor.AppendText(recieved_data);
-            MessageBox.Show("ddd");
+            SerialPort sp = (SerialPort)sender;
+            string indata = sp.ReadExisting();
+            Console.WriteLine("Data Received:");
+            Console.Write(indata);
+        }
+        private void comboPorts_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
         }
-        #endregion
-        
-
-
     }
 }
