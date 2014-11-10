@@ -59,7 +59,7 @@ PUB runMotor | baseTime, i, totalElapse                 {{generating pwm for the
   i:=0
   repeat while i<4
     dira[motorPin[i]] := 1   'set pin direction for this motor 
-    pulse[i] := 1200         'set default pwm
+    pulse[i] := 1250         'set default pwm
     i++
 
   repeat  
