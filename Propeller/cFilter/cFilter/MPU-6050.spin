@@ -35,11 +35,12 @@ VAR
   long x0, y0, z0, t
   long Cog
   long rx, ry, rz, temp, ax, ay, az, arx, ary   'PASM code assumes these to be contiguous
+  
 
 OBJ
   debug : "FullDuplexSerial"  
 
-PUB TestMPU  | MPUcog ,normAcc
+PUB TestMPU  | MPUcog, normAcc 
  '-----------------------------------------------
   ' Start serial i/o cog
   ' Start cog to pull gyro/accel data from chip
@@ -75,8 +76,13 @@ PUB TestMPU  | MPUcog ,normAcc
      debug.str(string(", "))
      debug.dec(GetAZ)
      debug.str(string(", "))
-     normAcc :=  GetAX^2 + GetAY^2 + GetAZ^2
-     debug.dec(^^normAcc)  
+     normAcc :=  ^^(GetAX*GetAX + GetAY*GetAY + GetAZ*GetAZ)      
+     debug.dec(GetAX*1.0/normAcc)
+     debug.str(string(", "))
+     debug.dec(GetAY*1.0/normAcc)
+     debug.str(string(", "))
+     debug.dec(GetAZ*1.0/normAcc)
+     debug.str(string(", "))
      debug.tx(13)
      waitcnt((clkfreq / 10) + cnt)
 
