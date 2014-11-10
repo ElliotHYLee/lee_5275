@@ -7,8 +7,8 @@ VAR
   long value
 OBJ
   pst : "Parallax Serial Terminal"
-    
-PUB main| a,b,c,aa,bb,cc,norm,alpha, beta, gamma
+  f   : "Float32"  
+PUB main| a,b,c,aa,bb,cc,norm,dirVx,alpha, beta, gamma
 
   pst.Start(115200)
   a := 2
@@ -30,6 +30,8 @@ PUB main| a,b,c,aa,bb,cc,norm,alpha, beta, gamma
   bb := b*b
   cc := c*c
 
+
+
   pst.str(string("aa= "))
   pst.dec(aa)
   pst.newline
@@ -43,8 +45,9 @@ PUB main| a,b,c,aa,bb,cc,norm,alpha, beta, gamma
   pst.newline
 
   norm := ^^(aa*aa + bb*bb + cc*cc)
-  pst.str(string("norm= "))
-  pst.dec(norm)
+  pst.str(string("direction vector x= "))
+  dirVx := f.fdiv(aa, norm)
+  pst.dec(dirVx)
   pst.newline
 
  
