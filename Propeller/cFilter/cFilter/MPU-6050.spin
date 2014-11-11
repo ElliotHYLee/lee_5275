@@ -32,22 +32,24 @@ CON                        ' CONs for TestMPU test routine
   SERIAL_RX_PIN  = 31
 
 VAR
-  long x0, y0, z0, t
+  long x0, y0, z0, tx
   long Cog
   long rx, ry, rz, temp, ax, ay, az, arx, ary   'PASM code assumes these to be contiguous
   
 
 OBJ
-  debug : "FullDuplexSerial"  
-
-PUB TestMPU  | MPUcog, normAcc 
+  debug : "FullDuplexSerial"
+  fNum  : "Float32"
+  fString : "FloatString"
+  
+PUB TestMPU  | MPUcog, normAcc, dirVx, dirVy, dirVz, fnormAcc
  '-----------------------------------------------
   ' Start serial i/o cog
   ' Start cog to pull gyro/accel data from chip
   ' Print data to serial out every few seconds
   '------------------------------------------------
   debug.start(SERIAL_RX_PIN, SERIAL_TX_PIN, 0, 115200) 'Start cog to allow IO with serial terminal
-  
+  fNum.start
   repeat 4
      waitcnt(clkfreq + cnt)
      
@@ -76,13 +78,22 @@ PUB TestMPU  | MPUcog, normAcc
      debug.str(string(", "))
      debug.dec(GetAZ)
      debug.str(string(", "))
-     normAcc :=  ^^(GetAX*GetAX + GetAY*GetAY + GetAZ*GetAZ)      
-     debug.dec(GetAX*1.0/normAcc)
-     debug.str(string(", "))
-     debug.dec(GetAY*1.0/normAcc)
-     debug.str(string(", "))
-     debug.dec(GetAZ*1.0/normAcc)
-     debug.str(string(", "))
+     normAcc :=  ^^(GetAX*GetAX + GetAY*GetAY + GetAZ*GetAZ)                                       
+
+     dirVx := fNum.fFloat(GetAx)
+     dirVy := fNum.fFloat(GetAy)
+     dirVz := fNum.fFloat(GetAz)
+     fnormAcc := fNum.fFloat(normAcc)
+
+     dirVx := fNum.fDiv(dirVx, fNormAcc)
+     dirVy := fNum.fDiv(dirVy, fNormAcc)
+     dirVz := fNum.fDiv(dirVz, fNormAcc)          
+
+     debug.str(fstring.FloatToString(dirVx))
+     debug.str(String(", "))
+     debug.str(fstring.FloatToString(dirVy))
+     debug.str(String(", "))
+     debug.str(fstring.FloatToString(dirVz))        
      debug.tx(13)
      waitcnt((clkfreq / 10) + cnt)
 

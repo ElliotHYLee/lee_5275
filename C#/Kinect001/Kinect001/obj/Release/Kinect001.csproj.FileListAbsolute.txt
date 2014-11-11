@@ -11,3 +11,6 @@ c:\users\elliot\documents\visual studio 2012\Projects\Kinect001\Kinect001\obj\Re
 c:\users\elliot\documents\visual studio 2012\Projects\Kinect001\Kinect001\obj\Release\Kinect001.csproj.GenerateResource.Cache
 c:\users\elliot\documents\visual studio 2012\Projects\Kinect001\Kinect001\obj\Release\Kinect001.exe
 c:\users\elliot\documents\visual studio 2012\Projects\Kinect001\Kinect001\obj\Release\Kinect001.pdb
+C:\Users\Elliot\Documents\GitHub\lee_5275\C#\Kinect001\Kinect001\bin\Release\Kinect001.exe.config
+C:\Users\Elliot\Documents\GitHub\lee_5275\C#\Kinect001\Kinect001\obj\Release\Kinect001.exe
+C:\Users\Elliot\Documents\GitHub\lee_5275\C#\Kinect001\Kinect001\obj\Release\Kinect001.pdb

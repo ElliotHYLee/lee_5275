@@ -14,12 +14,10 @@ VAR
   long pin[4]
   long pwm1, pwm2, pwm3, pwm4
   long value
-  
 PUB main | i, motorNumber
 
   pst.Start(115200)
   setPins
-
   motors.newMotor(pin[0], pin[1], pin[2], pin[3]) 'set pin numbers for the four motors
   repeat
     if pst.RxCount > 0  
@@ -32,20 +30,21 @@ PUB main | i, motorNumber
           2: motors.motor2_setPWM(value)
           3: motors.motor3_setPWM(value)
           4: motors.motor4_setPWM(value)
-       
     else
+      pst.str(String("M1"))
       value := motors.motor1_getPWM
       pst.Dec(value)
-      pst.str(string(", "))
+      pst.str(string("M2"))
       value := motors.motor2_getPWM
       pst.Dec(value)
-      pst.str(string(", "))
+      pst.str(string("M3"))
       value := motors.motor3_getPWM
       pst.Dec(value)
-      pst.str(string(", "))
+      pst.str(string("M4"))
       value := motors.motor4_getPWM
       pst.Dec(value)
-      pst.newline
+
+
 
 PUB setPins
   pin[0] := 0

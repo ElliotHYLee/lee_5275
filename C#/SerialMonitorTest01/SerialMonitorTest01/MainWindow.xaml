@@ -7,19 +7,13 @@
         <Label Content="Com Port" HorizontalAlignment="Left" Margin="54,61,0,0" VerticalAlignment="Top" Height="26" Width="71"/>
         <Label Content="BaudRate" HorizontalAlignment="Left" Margin="54,92,0,0" VerticalAlignment="Top" Height="26" Width="71"/>
         <TextBox Name="txtSend" HorizontalAlignment="Left" Height="23" Margin="54,160,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="293" TextChanged="txtSend_TextChanged"/>
-        <RichTextBox Name="txtMonitor" HorizontalAlignment="Left" Height="155" VerticalAlignment="Top" Width="293" Margin="54,188,0,0" TextChanged="txtMonitor_TextChanged">
-            <FlowDocument>
-                <Paragraph>
-                    <Run Text="RichTextBox"/>
-                </Paragraph>
-            </FlowDocument>
-        </RichTextBox>
         <Button Name="btnDisconnect" Content="Disconnect" HorizontalAlignment="Left" Margin="365,95,0,0" VerticalAlignment="Top" Width="76" Click="btnDisconnect_Clicked"/>
         <ComboBox Name="comboPorts" HorizontalAlignment="Left" Margin="130,61,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboPorts_SelectionChanged"/>
         <TextBox Name="txtBaudRate" HorizontalAlignment="Left" Height="23" Margin="130,95,0,0" TextWrapping="Wrap" Text="115200" VerticalAlignment="Top" Width="120" TextChanged="txtBaudRate_TextChanged"/>
         <Button Name="btnRefresh" Content="Refresh" HorizontalAlignment="Left" Margin="271,61,0,0" VerticalAlignment="Top" Width="76" RenderTransformOrigin="-0.291,1.639" Click="btnRefresh_Click"/>
         <Button Name="btnSend" Content="Send" HorizontalAlignment="Left" Margin="366,160,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="btnSend_Click"/>
         <Label Name="lblStatus" Content="Label" HorizontalAlignment="Left" Margin="54,123,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.912,0.093" Width="126"/>
+        <TextBox Name="txtIncoming" HorizontalAlignment="Left" Height="22" Margin="54,200,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="293" TextChanged="txtIncoming_TextChanged"/>
 
     </Grid>
 </Window>

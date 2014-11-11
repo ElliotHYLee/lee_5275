@@ -41,7 +41,7 @@ namespace SerialMonitorTest01
             {
                 this.comboPorts.Items.Insert(i, ports[i]);
             }
-            this.txtMonitor.Document.Blocks.Clear();
+            this.txtIncoming.Text = "";
             this.txtBaudRate.Text = "115200";
             this.txtSend.Text = "";
             this.btnDisconnect.IsEnabled = false;
@@ -58,7 +58,7 @@ namespace SerialMonitorTest01
             this.connectionStatus = false;
 
 
-            this.txtBaudRate.Text = "";
+            this.txtBaudRate.Text = "115200";
             this.btnDisconnect.IsEnabled = false;
             this.btnConnect.IsEnabled = true;
             this.btnSend.IsEnabled = false;
@@ -70,6 +70,9 @@ namespace SerialMonitorTest01
             {
                 this.serial.PortName = comboPorts.Text;
                 this.serial.BaudRate = int.Parse(txtBaudRate.Text);
+                // connecting empty event to the actual method
+                serial.DataReceived += serial_DataReceived;
+
                 this.serial.Open();
                 this.btnDisconnect.IsEnabled = true;
                 this.btnConnect.IsEnabled = false;
@@ -105,11 +108,6 @@ namespace SerialMonitorTest01
             }
         }
 
-        private void txtMonitor_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
             if (this.connectionStatus)
@@ -119,18 +117,20 @@ namespace SerialMonitorTest01
         }
 
 
-        private static void DataReceivedHandler(
-                        object sender,
-                        SerialDataReceivedEventArgs e)
+        private void serial_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            SerialPort sp = (SerialPort)sender;
-            string indata = sp.ReadExisting();
-            Console.WriteLine("Data Received:");
-            Console.Write(indata);
+            SerialPort sp = (SerialPort) sender;
+            string indata = serial.ReadExisting();
+            Console.WriteLine(indata);
         }
         private void comboPorts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void txtIncoming_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
         }
     }
 }
