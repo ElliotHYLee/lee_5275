@@ -22,6 +22,7 @@ PUB main | i, motorNumber
   repeat
     if pst.RxCount > 0  
       value := pst.DecIn
+      
       if value<43000 AND value>11200
         motorNumber := value/10000
         value := value//10000
