@@ -119,9 +119,11 @@ namespace SerialMonitorTest01
 
         private void serial_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
+            this.txtIncoming.Text = "";
             SerialPort sp = (SerialPort) sender;
             string indata = serial.ReadExisting();
             Console.WriteLine(indata);
+            this.txtIncoming.Text = indata;
         }
         private void comboPorts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

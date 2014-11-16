@@ -23,24 +23,38 @@ namespace SerialMonitorTest02
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        // Just Class's variable (global variables within this class)
         Boolean connectionStatus;
         String[] ports, motorPWM;
         String incomingLine;
         SerialPort serial;
         int numberOfPorts, cutLength = 6*4, decrease = 10, increase = 10;
 
+
+        /** 
+         * Constructor for this window
+         **/
         public MainWindow()
         {
+            // initializing build in components 
+            // always same for c# (wpf) project
             InitializeComponent();
             
+            // to connection checker.
             this.connectionStatus = false;
             this.serial = new SerialPort();
 
+           
             this.ClearPWM();
             this.refreshComPorts();
         }
 
         #region ComPortConnectionManaging
+
+        /**
+         * This methods refreshes exiting lists of comports
+         **/
         private void refreshComPorts()
         {
             this.comboPorts.Items.Clear();
@@ -56,6 +70,7 @@ namespace SerialMonitorTest02
             this.btnDisconnect.IsEnabled = false;
             this.lblStatus.Content = "No ports online.";
         }
+
 
         private void btnRefresh_Click(object sender, RoutedEventArgs e)
         {
@@ -81,6 +96,8 @@ namespace SerialMonitorTest02
                 this.serial.PortName = comboPorts.Text;
                 this.serial.BaudRate = int.Parse(txtBaudRate.Text);
                 // connecting empty event to the actual method
+                // LHS is empty event for serial object, which original has this empty even handler(method)
+                // RHS is the actual methods that I have to implement
                 serial.DataReceived += serial_DataReceived;
                 if (!this.connectionStatus)
                 {
@@ -118,6 +135,7 @@ namespace SerialMonitorTest02
 
         private void getLine(String indata)
         {
+            // if there's no charater 'M' in the propeller, this will crash.
             int mLocation = indata.IndexOf('M');
             if ((indata.Length - mLocation) < cutLength)
             {
@@ -132,7 +150,7 @@ namespace SerialMonitorTest02
             this.motorPWM = new String[4];
             for (int i = 0; i < 4; i++)
             {
-                
+
                 motorPWM[i] = this.incomingLine.Substring(1 + i * 6, 5);
                // Console.WriteLine(motorPWM[i]);
                 if (motorPWM[i].Substring(0, 1).Equals("1"))
@@ -166,7 +184,7 @@ namespace SerialMonitorTest02
                 }
                 else
                 {
-
+                    // default
                 }
             }
 
