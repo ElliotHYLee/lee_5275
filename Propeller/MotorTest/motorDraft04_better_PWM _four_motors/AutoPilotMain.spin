@@ -8,22 +8,25 @@ OBJ
   ' motor[2] = pin 2, cw
   ' motor[3] = pin 3, ccw
   motors : "MotorControl"
-  pst : "Parallax Serial Terminal"
+  pst    : "Parallax Serial Terminal"
+  nums   : "Numbers"
 
 VAR
   long pin[4]
   long pwm1, pwm2, pwm3, pwm4
   long value
 PUB main | i, motorNumber
-
+  nums.Init
   pst.Start(115200)
   setPins
   motors.newMotor(pin[0], pin[1], pin[2], pin[3]) 'set pin numbers for the four motors
   repeat
     if pst.RxCount > 0  
-      value := pst.DecIn
+      pst.strIn(value)
+      nums.FromStr(@value, 10)
       
       if value<43000 AND value>11200
+        
         motorNumber := value/10000
         value := value//10000
         case motorNumber
