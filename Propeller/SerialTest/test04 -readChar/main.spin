@@ -16,6 +16,7 @@ VAR
 ' 1      :  49
 ' 9      :  57
 ' M      :  77
+' /      :  47/_______//////////
 
 ' type      :  number
 ' Motor     :  1
@@ -45,19 +46,19 @@ PUB readCharArray   |  varChar , ascii
       varChar := pst.CharIn
       ascii := char2ASCII(@varChar)
       
-      
+                
       pst.newline
       if (ascii =>48 AND ascii=<57) 'btw 0-9
         total := total*10 + ASCII2Dec(ascii)
       elseif(ascii ==77)
         type := 1
-       
-      else   'empty char
+                               
+      elseif(ascii == 47)  'empty char
         if type==1
           pst.str(String("Motor"))
           pst.newline
         pst.str(String("total : "))
-        pst.dec(total)
+        'pst.dec(total)
         pst.newline  
         pst.str(String("reset total: "))
         total:= 0  
