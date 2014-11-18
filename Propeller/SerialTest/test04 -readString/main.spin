@@ -16,10 +16,11 @@ PUB main |  stringVar , a
   pst.Start(115200)
   value := 0
   repeat
-    if pst.RxCount > 0  
-      pst.strIn(stringVar)
+    if pst.RxCount > 0
+      pst.str(String("PRLR sayz: received"))
+      pst.strIn(@stringVar)
       pst.str(String("string is: "))
-      pst.str(stringVar)
+      pst.str(@stringVar)
       pst.newline      
       a := num.FromStr(@stringVar, %000_000_000_0_0_000000_01010)
       pst.str(String("number is: "))

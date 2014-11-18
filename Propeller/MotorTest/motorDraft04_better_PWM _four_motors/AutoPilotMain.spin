@@ -22,9 +22,8 @@ PUB main | i, motorNumber
   motors.newMotor(pin[0], pin[1], pin[2], pin[3]) 'set pin numbers for the four motors
   repeat
     if pst.RxCount > 0  
-      pst.strIn(value)
-      nums.FromStr(@value, 10)
-      
+      pst.strIn(@value)
+      value := nums.FromStr(@value, %000_000_000_0_0_000000_01010)
       if value<43000 AND value>11200
         
         motorNumber := value/10000

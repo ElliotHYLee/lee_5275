@@ -135,15 +135,17 @@ namespace SerialMonitorTest02
 
         private void getLine(String indata)
         {
+            Console.Write(this.incomingLine);
+
             // if there's no charater 'M' in the propeller, this will crash.
-            int mLocation = indata.IndexOf('M');
-            if ((indata.Length - mLocation) < cutLength)
-            {
-                return;
-            }
-            this.incomingLine = indata.Substring(mLocation, this.cutLength);
+      //      int mLocation = indata.IndexOf('M');
+       //     if ((indata.Length - mLocation) < cutLength)
+        //    {
+         //       return;
+          //  }
+          //  this.incomingLine = indata.Substring(mLocation, this.cutLength);
             //Console.WriteLine(this.incomingLine);
-            this.parse();
+        //    this.parse();
         }
         private void parse()
         {
@@ -155,23 +157,22 @@ namespace SerialMonitorTest02
                // Console.WriteLine(motorPWM[i]);
                 if (motorPWM[i].Substring(0, 1).Equals("1"))
                 {
-                    Dispatcher.Invoke(() =>
-                    {
-                        this.txtMotor1.Text = motorPWM[i].Substring(1, 4); ;
-                    });
+                  
+                        this.txtMotor1.Text = motorPWM[i].Substring(1, 4);
+                   
                 }
                 else if(motorPWM[i].Substring(0, 1).Equals("2"))
                 {
                     Dispatcher.Invoke(() =>
                     {
-                        this.txtMotor2.Text = motorPWM[i].Substring(1, 4); ;
+                        this.txtMotor2.Text = motorPWM[i].Substring(1, 4);
                     });
                 }
                 else if(motorPWM[i].Substring(0, 1).Equals("3"))
                 {
                     Dispatcher.Invoke(() =>
                     {
-                        this.txtMotor3.Text = motorPWM[i].Substring(1, 4); ;
+                        this.txtMotor3.Text = motorPWM[i].Substring(1, 4);
                     });
 
                 }
@@ -179,7 +180,7 @@ namespace SerialMonitorTest02
                 {
                     Dispatcher.Invoke(() =>
                     {
-                        this.txtMotor4.Text = motorPWM[i].Substring(1, 4); ;
+                        this.txtMotor4.Text = motorPWM[i].Substring(1, 4);
                     });
                 }
                 else
@@ -196,17 +197,15 @@ namespace SerialMonitorTest02
         #region DataSend
         private void sendPWM(int motor, int PWM)
         {
-            String result, index, content;
+            string result, index, content;
             index = motor.ToString();
             content = PWM.ToString();
             result = index + content;
             
-            this.serial.Write(result);
+            this.serial.WriteLine(result);
+            Console.Write("Now sending: ");
             Console.WriteLine(result);
 
-            this.serial.WriteLine(String.Format("{0}{1}", index, content));
-            Console.WriteLine(String.Format("{0}{1}", index, content));
-            
         }
 
         #endregion
