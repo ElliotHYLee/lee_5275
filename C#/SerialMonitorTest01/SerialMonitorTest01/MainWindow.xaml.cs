@@ -121,6 +121,7 @@ namespace SerialMonitorTest01
                 {
                     xStr = x[i].ToString();
                     serial.Write(xStr);
+                    Console.Write(xStr);
                 }
             }
         }

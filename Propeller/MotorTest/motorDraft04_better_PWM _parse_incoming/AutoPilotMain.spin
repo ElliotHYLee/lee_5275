@@ -61,7 +61,7 @@ PUB setPins
   pin[2] := 2
   pin[3] := 3
 
-PUB char2ASCII(charVar)
+PUB char2ASCII(charVar)  ' currently not used
   result := byte[charVar]
   ' Don't know how, but this returns ascii code of char
 
@@ -70,24 +70,14 @@ PUB ASCII2Dec(ASCII)
   
 PUB readCharArray   |  varChar , ascii, newPWM, motorNumber
    varChar := pst.CharIn
-   ascii := char2ASCII(@varChar)
-   if (ascii =>48 AND ascii=<57) 'btw 0-9
-     newValue := newValue*10 + ASCII2Dec(ascii)
-   elseif(ascii ==77)
-     type := 1
-   elseif(ascii == 67)
+   if (varChar =>48 AND varChar=<57) 'btw 0-9
+     newValue := newValue*10 + ASCII2Dec(varChar)
+   elseif(varChar ==77) ' M -> motor
+     type := 1  'next 5 digits are (motornumber & pwm)
+   elseif(varChar == 67)
      type := 2  'number is not yet determined
 
    if (type==1)
-     pst.str(String("Motor"))
-     pst.newline
-     pst.str(String("newValue : "))
-     pst.dec(newValue)
-     pst.newline  
-     pst.str(String("reset value: "))
-     pst.Dec(newValue)
-     pst.newline
-     
      if newValue<43000 AND newValue>11200
        motorNumber := newValue/10000
        newPWM := newValue//10000
@@ -96,9 +86,9 @@ PUB readCharArray   |  varChar , ascii, newPWM, motorNumber
         2: motors.motor2_setPWM(newPWM)
         3: motors.motor3_setPWM(newPWM)
         4: motors.motor4_setPWM(newPWM)
-     type := 0
-     newValue := 0
-     waitcnt(cnt + clkfreq*3)
+       type := 0
+       newValue := 0
+       'waitcnt(cnt + clkfreq*3)
 
         
 PUB clear

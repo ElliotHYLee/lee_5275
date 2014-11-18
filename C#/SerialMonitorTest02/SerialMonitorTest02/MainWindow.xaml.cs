@@ -29,7 +29,7 @@ namespace SerialMonitorTest02
         String[] ports, motorPWM;
         String incomingLine;
         SerialPort serial;
-        int numberOfPorts, cutLength = 6*4, decrease = 10, increase = 10;
+        int numberOfPorts, cutLength = 6 * 4;
 
 
         /** 
@@ -48,6 +48,7 @@ namespace SerialMonitorTest02
            
             this.ClearPWM();
             this.refreshComPorts();
+            defaultIntervals();
         }
 
         #region ComPortConnectionManaging
@@ -137,15 +138,15 @@ namespace SerialMonitorTest02
         {
             Console.Write(this.incomingLine);
 
-            // if there's no charater 'M' in the propeller, this will crash.
-      //      int mLocation = indata.IndexOf('M');
-       //     if ((indata.Length - mLocation) < cutLength)
-        //    {
-         //       return;
-          //  }
-          //  this.incomingLine = indata.Substring(mLocation, this.cutLength);
-            //Console.WriteLine(this.incomingLine);
-        //    this.parse();
+          // if there's no charater 'M' in the propeller, this will crash.
+             int mLocation = indata.IndexOf('M');
+             if ((indata.Length - mLocation) < cutLength)
+            {
+                return;
+            }
+            this.incomingLine = indata.Substring(mLocation, this.cutLength);
+            Console.WriteLine(this.incomingLine);
+            this.parse();
         }
         private void parse()
         {
@@ -157,8 +158,11 @@ namespace SerialMonitorTest02
                // Console.WriteLine(motorPWM[i]);
                 if (motorPWM[i].Substring(0, 1).Equals("1"))
                 {
-                  
+
+                    Dispatcher.Invoke(() =>
+                    {
                         this.txtMotor1.Text = motorPWM[i].Substring(1, 4);
+                    });
                    
                 }
                 else if(motorPWM[i].Substring(0, 1).Equals("2"))
@@ -197,10 +201,14 @@ namespace SerialMonitorTest02
         #region DataSend
         private void sendPWM(int motor, int PWM)
         {
+            if (PWM < 1250 || PWM>2500)
+            {
+                return;
+            }
             string result, index, content;
             index = motor.ToString();
             content = PWM.ToString();
-            result = index + content;
+            result = "M" + index + content;
             
             this.serial.WriteLine(result);
             Console.Write("Now sending: ");
@@ -216,6 +224,12 @@ namespace SerialMonitorTest02
         private void btnClearPWM_Click(object sender, RoutedEventArgs e)
         {
             this.ClearPWM();
+        }
+
+        private void defaultIntervals()
+        {
+            this.txtIncraseCalInterval.Text = "10";
+            this.txtDecraseCalInterval.Text = "10";
         }
 
         private void ClearPWM()
@@ -268,80 +282,157 @@ namespace SerialMonitorTest02
         #region DecreaseButtons
         private void btnDecreaseMotor1_Click(object sender, RoutedEventArgs e)
         {
+            DecreaseMotor1();
+        }
+        private void DecreaseMotor1()
+        {
             if (!this.txtMotor1.Text.Equals(""))
             {
-                int pwm = Convert.ToInt32(this.txtMotor1.Text) - this.decrease;
+                int pwm = Convert.ToInt32(this.txtMotor1.Text) - Convert.ToInt32(this.txtDecraseCalInterval.Text);
                 this.sendPWM(1, pwm);
             }
-            
         }
 
         private void btnDecreaseMotor2_Click(object sender, RoutedEventArgs e)
         {
+            DecreaseMotor2();
+        }
+
+        private void DecreaseMotor2()
+        {
             if (!this.txtMotor2.Text.Equals(""))
             {
-                int pwm = Convert.ToInt32(this.txtMotor2.Text) - this.decrease;
+                int pwm = Convert.ToInt32(this.txtMotor2.Text) - Convert.ToInt32(this.txtDecraseCalInterval.Text);
                 this.sendPWM(2, pwm);
             }
         }
 
         private void btnDecreaseMotor3_Click(object sender, RoutedEventArgs e)
         {
+            DecreaseMotor3();
+        }
+
+        private void DecreaseMotor3()
+        {
             if (!this.txtMotor3.Text.Equals(""))
             {
-                int pwm = Convert.ToInt32(this.txtMotor3.Text) - this.decrease;
+                int pwm = Convert.ToInt32(this.txtMotor3.Text) - Convert.ToInt32(this.txtDecraseCalInterval.Text);
                 this.sendPWM(3, pwm);
             }
         }
 
         private void btnDecreaseMotor4_Click(object sender, RoutedEventArgs e)
         {
+            DecreaseMotor4();
+        }
+
+        private void DecreaseMotor4()
+        {
             if (!this.txtMotor4.Text.Equals(""))
             {
-                int pwm = Convert.ToInt32(this.txtMotor4.Text) - this.decrease;
+                int pwm = Convert.ToInt32(this.txtMotor4.Text) - Convert.ToInt32(this.txtDecraseCalInterval.Text);
                 this.sendPWM(4, pwm);
             }
         }
+
 
         #endregion
 
         #region IncreaseButtons
         private void btnIncreaseMotor1_Click(object sender, RoutedEventArgs e)
         {
+            // need to separate event method and obj method
+            IncreaseMotor1();
+        }
+        private void IncreaseMotor1()
+        {
             if (!this.txtMotor1.Text.Equals(""))
             {
-                int pwm = Convert.ToInt32(this.txtMotor1.Text) + this.increase;
+                int pwm = Convert.ToInt32(this.txtMotor1.Text) + Convert.ToInt32(this.txtIncraseCalInterval.Text);
                 this.sendPWM(1, pwm);
             }
         }
 
         private void btnIncreaseMotor2_Click(object sender, RoutedEventArgs e)
         {
+            IncreaseMotor2();
+        }
+        private void IncreaseMotor2()
+        {
             if (!this.txtMotor2.Text.Equals(""))
             {
-                int pwm = Convert.ToInt32(this.txtMotor2.Text) + this.increase;
+                int pwm = Convert.ToInt32(this.txtMotor2.Text) + Convert.ToInt32(this.txtIncraseCalInterval.Text);
                 this.sendPWM(2, pwm);
             }
         }
 
+
         private void btnIncreaseMotor3_Click(object sender, RoutedEventArgs e)
+        {
+            IncreaseMotor3();
+        }
+        private void IncreaseMotor3()
         {
             if (!this.txtMotor3.Text.Equals(""))
             {
-                int pwm = Convert.ToInt32(this.txtMotor3.Text) + this.increase;
+                int pwm = Convert.ToInt32(this.txtMotor3.Text) + Convert.ToInt32(this.txtIncraseCalInterval.Text);
                 this.sendPWM(3, pwm);
             }
         }
 
         private void btnIncreaseMotor4_Click(object sender, RoutedEventArgs e)
         {
+            IncreaseMotor4();
+        }
+
+        private void IncreaseMotor4()
+        {
             if (!this.txtMotor4.Text.Equals(""))
             {
-                int pwm = Convert.ToInt32(this.txtMotor4.Text) + this.increase;
+                int pwm = Convert.ToInt32(this.txtMotor4.Text) + Convert.ToInt32(this.txtIncraseCalInterval.Text);
                 this.sendPWM(4, pwm);
             }
         }
+
         #endregion
+
+
+        private void moterSlide1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
+
+        private void moterSlide2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
+
+        private void motorSlide3_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
+
+        private void motorSlide4_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
+
+        private void btnDecreaseAll_Click(object sender, RoutedEventArgs e)
+        {
+            DecreaseMotor1();
+            DecreaseMotor2();
+            DecreaseMotor3();
+            DecreaseMotor4();
+        }
+
+        private void btnIncreaseAll_Click(object sender, RoutedEventArgs e)
+        {
+            
+            IncreaseMotor1();
+            IncreaseMotor2();
+            IncreaseMotor3();
+            IncreaseMotor4();
+        }
 
         #region sliders
 
