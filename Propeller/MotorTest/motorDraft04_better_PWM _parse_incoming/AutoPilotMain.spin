@@ -61,7 +61,7 @@ PUB setPins
   pin[2] := 2
   pin[3] := 3
 
-PUB char2ASCII(charVar)
+PUB char2ASCII(charVar)  ' currently not used
   result := byte[charVar]
   ' Don't know how, but this returns ascii code of char
 
@@ -72,8 +72,8 @@ PUB readCharArray   |  varChar , ascii, newPWM, motorNumber
    varChar := pst.CharIn
    if (varChar =>48 AND varChar=<57) 'btw 0-9
      newValue := newValue*10 + ASCII2Dec(varChar)
-   elseif(varChar ==77)
-     type := 1
+   elseif(varChar ==77) ' M -> motor
+     type := 1  'next 5 digits are (motornumber & pwm)
    elseif(varChar == 67)
      type := 2  'number is not yet determined
 
