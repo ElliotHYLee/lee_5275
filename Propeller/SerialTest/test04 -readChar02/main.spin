@@ -39,29 +39,36 @@ PUB char2ASCII(charVar) | index
 PUB ASCII2Dec(ASCII)
   result := ASCII - 48    
   
-PUB readCharArray   |  varChar , ascii
+PUB readCharArray   |  varChar , ascii, garbage
     if pst.RxCount > 0
       'waitcnt(cnt + clkfreq*2)
       varChar := pst.CharIn
-      ascii := char2ASCII(@varChar)
-
-      
-      if (ascii =>48 AND ascii=<57) 'btw 0-9
-        total := total*10 + ASCII2Dec(ascii)
-      elseif(ascii ==77)
-        type := 1
-       
-      elseif(ascii ==95)   'empty char  
-        if type==1
-          pst.str(String("Motor"))
-          pst.newline
-        pst.str(String("total : "))
-        pst.dec(total)
-        pst.newline  
+      pst.char(varChar)
+      'ascii := char2ASCII(@varChar)
+      if (varChar==77)
+        type :=1
+        repeat 5
+          'pst.str(String("Im here"))
+          varChar :=pst.CharIn
+          pst.char(varChar)
+          ascii := char2ASCII(@varChar)
+          total := total*10 + ASCII2Dec(ascii)
+        repeat while pst.RxCount > 0
+          garbage := pst.DecIn
+        pst.str(String("fulshing"))
+        pst.newline
+        report
         pst.str(String("reset total: "))
         total:= 0  
-        pst.Dec(total)
+        pst.Dec(total) 
         pst.newline
         type := 0
-        pst.RxFlush
- 
+      else
+        'pst.str(String("asdfasfd"))
+PUB report
+  pst.str(String("Motor"))
+  pst.newline
+  pst.str(String("total is: "))
+  pst.Dec(total)
+  pst.newline  
+

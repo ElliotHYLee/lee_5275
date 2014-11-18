@@ -28,7 +28,7 @@
         <Label Content="Motor2" HorizontalAlignment="Left" Margin="54,225,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.407,0.125"/>
         <Label Content="Motor3" HorizontalAlignment="Left" Margin="54,265,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.407,0.125"/>
         <Label Content="Motor4" HorizontalAlignment="Left" Margin="54,304,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.407,0.125"/>
-        <Slider HorizontalAlignment="Left" Margin="362,187,0,0" VerticalAlignment="Top" Height="23" Width="216" RenderTransformOrigin="0.5,0.5">
+        <Slider Name="moterSlide1" HorizontalAlignment="Left" Margin="362,187,0,0" VerticalAlignment="Top" Height="23" Width="216" RenderTransformOrigin="0.5,0.5" ValueChanged="moterSlide1_ValueChanged">
             <Slider.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -38,7 +38,7 @@
                 </TransformGroup>
             </Slider.RenderTransform>
         </Slider>
-        <Slider HorizontalAlignment="Left" Margin="362,232,0,0" VerticalAlignment="Top" Height="23" Width="216" RenderTransformOrigin="0.5,0.5">
+        <Slider Name="motorSlide2" HorizontalAlignment="Left" Margin="362,232,0,0" VerticalAlignment="Top" Height="23" Width="216" RenderTransformOrigin="0.5,0.5" ValueChanged="moterSlide2_ValueChanged">
             <Slider.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -48,7 +48,7 @@
                 </TransformGroup>
             </Slider.RenderTransform>
         </Slider>
-        <Slider HorizontalAlignment="Left" Margin="362,273,0,0" VerticalAlignment="Top" Height="23" Width="216" RenderTransformOrigin="0.5,0.5">
+        <Slider Name="motorSlide3" HorizontalAlignment="Left" Margin="362,273,0,0" VerticalAlignment="Top" Height="23" Width="216" RenderTransformOrigin="0.5,0.5" ValueChanged="motorSlide3_ValueChanged">
             <Slider.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -58,7 +58,7 @@
                 </TransformGroup>
             </Slider.RenderTransform>
         </Slider>
-        <Slider HorizontalAlignment="Left" Margin="362,310,0,0" VerticalAlignment="Top" Height="23" Width="216" RenderTransformOrigin="0.574,5.89">
+        <Slider Name="motorSlide4" HorizontalAlignment="Left" Margin="362,310,0,0" VerticalAlignment="Top" Height="23" Width="216" RenderTransformOrigin="0.574,5.89" ValueChanged="motorSlide4_ValueChanged">
             <Slider.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

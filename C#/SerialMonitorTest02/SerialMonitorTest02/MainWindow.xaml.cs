@@ -137,15 +137,15 @@ namespace SerialMonitorTest02
         {
             Console.Write(this.incomingLine);
 
-            // if there's no charater 'M' in the propeller, this will crash.
-      //      int mLocation = indata.IndexOf('M');
-       //     if ((indata.Length - mLocation) < cutLength)
-        //    {
-         //       return;
-          //  }
-          //  this.incomingLine = indata.Substring(mLocation, this.cutLength);
-            //Console.WriteLine(this.incomingLine);
-        //    this.parse();
+          // if there's no charater 'M' in the propeller, this will crash.
+             int mLocation = indata.IndexOf('M');
+             if ((indata.Length - mLocation) < cutLength)
+            {
+                return;
+            }
+            this.incomingLine = indata.Substring(mLocation, this.cutLength);
+            Console.WriteLine(this.incomingLine);
+            this.parse();
         }
         private void parse()
         {
@@ -157,8 +157,11 @@ namespace SerialMonitorTest02
                // Console.WriteLine(motorPWM[i]);
                 if (motorPWM[i].Substring(0, 1).Equals("1"))
                 {
-                  
+
+                    Dispatcher.Invoke(() =>
+                    {
                         this.txtMotor1.Text = motorPWM[i].Substring(1, 4);
+                    });
                    
                 }
                 else if(motorPWM[i].Substring(0, 1).Equals("2"))
@@ -197,10 +200,14 @@ namespace SerialMonitorTest02
         #region DataSend
         private void sendPWM(int motor, int PWM)
         {
+            if (PWM < 1250 || PWM>2500)
+            {
+                return;
+            }
             string result, index, content;
             index = motor.ToString();
             content = PWM.ToString();
-            result = index + content;
+            result = "M" + index + content;
             
             this.serial.WriteLine(result);
             Console.Write("Now sending: ");
@@ -342,6 +349,27 @@ namespace SerialMonitorTest02
             }
         }
         #endregion
+
+
+        private void moterSlide1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
+
+        private void moterSlide2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
+
+        private void motorSlide3_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
+
+        private void motorSlide4_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
 
         #region sliders
 
