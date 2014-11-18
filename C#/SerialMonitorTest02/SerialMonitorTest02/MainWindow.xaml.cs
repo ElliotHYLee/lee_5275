@@ -200,7 +200,7 @@ namespace SerialMonitorTest02
             string result, index, content;
             index = motor.ToString();
             content = PWM.ToString();
-            result = index + content;
+            result = "M" + index + content;
             
             this.serial.WriteLine(result);
             Console.Write("Now sending: ");
