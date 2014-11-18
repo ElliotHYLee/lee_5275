@@ -120,7 +120,7 @@ namespace SerialMonitorTest01
                 for (int i = 0; i < length; i++)
                 {
                     xStr = x[i].ToString();
-                    serial.WriteLine(xStr);
+                    serial.Write(xStr);
                 }
             }
         }
