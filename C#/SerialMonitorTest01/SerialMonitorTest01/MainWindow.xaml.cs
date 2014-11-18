@@ -112,19 +112,16 @@ namespace SerialMonitorTest01
         {
             if (this.connectionStatus)
             {
-                string dataToSend = this.txtSend.Text + '_';
+                string dataToSend = this.txtSend.Text;
                 int length = dataToSend.Length;
                 char[] x = new char[length];
                 x = dataToSend.ToCharArray();
                 String xStr = null;
-                Console.Write("now sending: ");
                 for (int i = 0; i < length; i++)
                 {
                     xStr = x[i].ToString();
-                    serial.WriteLine(xStr);
-                    Console.Write(xStr);
+                    serial.Write(xStr);
                 }
-                Console.WriteLine();
             }
         }
 
