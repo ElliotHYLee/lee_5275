@@ -201,7 +201,7 @@ namespace SerialMonitorTest02
         #region DataSend
         private void sendPWM(int motor, int PWM)
         {
-            if (PWM < 1250 || PWM>2500)
+            if (PWM < 1210 || PWM>2500)
             {
                 return;
             }
@@ -213,7 +213,6 @@ namespace SerialMonitorTest02
             this.serial.WriteLine(result);
             Console.Write("Now sending: ");
             Console.WriteLine(result);
-
         }
 
         #endregion
@@ -426,12 +425,19 @@ namespace SerialMonitorTest02
         }
 
         private void btnIncreaseAll_Click(object sender, RoutedEventArgs e)
-        {
-            
+        {        
             IncreaseMotor1();
             IncreaseMotor2();
             IncreaseMotor3();
             IncreaseMotor4();
+        }
+
+        private void btnStop_Click(object sender, RoutedEventArgs e)
+        {
+            this.sendPWM(1, 1210);
+            this.sendPWM(2, 1210);
+            this.sendPWM(3, 1210);
+            this.sendPWM(4, 1210);
         }
 
         #region sliders
