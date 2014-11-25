@@ -42,7 +42,7 @@ OBJ
   fNum  : "Float32Full"
   fString : "FloatString"
   
-PUB TestMPU  | MPUcog, normAcc, dirRx, dirRy, dirRz, fnormGyr, a,b,r, radToDeg
+PUB TestMPU  | MPUcog, normAcc, dirVx, dirVy, dirVz, fnormAcc, a,b,r, radToDeg
  '-----------------------------------------------
   ' Start serial i/o cog
   ' Start cog to pull gyro/accel data from chip
@@ -80,25 +80,25 @@ PUB TestMPU  | MPUcog, normAcc, dirRx, dirRy, dirRz, fnormGyr, a,b,r, radToDeg
    '  debug.str(string(", "))
    '  debug.dec(GetAZ)
    '  debug.str(string(" | "))
-    normAcc :=  ^^(GetRX*GetRX + GetRY*GetRY + GetRZ*GetRZ)                                       
+    normAcc :=  ^^(GetAX*GetAX + GetAY*GetAY + GetAZ*GetAZ)                                       
 
-    dirRx := fNum.fFloat(GetRX)
-    dirRy := fNum.fFloat(GetRY)
-    dirRz := fNum.fFloat(GetRZ)
-    fnormGyr := fNum.fFloat(normAcc)
-    dirRx := fNum.fDiv(dirRx, fnormGyr)
-    dirRy := fNum.fDiv(dirRy, fnormGyr)
-    dirRz := fNum.fDiv(dirRz, fnormGyr)          
+    dirVx := fNum.fFloat(GetAx)
+    dirVy := fNum.fFloat(GetAy)
+    dirVz := fNum.fFloat(GetAz)
+    fnormAcc := fNum.fFloat(normAcc)
+    dirVx := fNum.fDiv(dirVx, fNormAcc)
+    dirVy := fNum.fDiv(dirVy, fNormAcc)
+    dirVz := fNum.fDiv(dirVz, fNormAcc)          
 
-    debug.str(fstring.FloatToString(dirRx))
+    debug.str(fstring.FloatToString(dirVx))
     debug.str(String(", "))
-    debug.str(fstring.FloatToString(dirRy))
+    debug.str(fstring.FloatToString(dirVy))
     debug.str(String(", "))
-    debug.str(fstring.FloatToString(dirRz))
+    debug.str(fstring.FloatToString(dirVz))
     debug.str(String(" | "))
-    a := fNum.acos(dirRx)
-    b := fNum.acos(dirRy)
-    r := fNum.acos(dirRz)
+    a := fNum.acos(dirVx)
+    b := fNum.acos(dirVy)
+    r := fNum.acos(dirVz)
     a := fNum.fMul(a, radToDeg)
     b := fNum.fMul(b, radToDeg)
     r := fNum.fMul(r, radToDeg)          
