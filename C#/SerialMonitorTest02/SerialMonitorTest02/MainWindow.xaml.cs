@@ -92,7 +92,7 @@ namespace SerialMonitorTest02
 
         private void btnConnect_Clicked(object sender, RoutedEventArgs e)
         {
-            if (comboPorts.Text.Length > 0 && (txtBaudRate.Text.Equals("115200") || txtBaudRate.Text.Equals("9600")))
+            if (comboPorts.Text.Length > 0 && (txtBaudRate.Text.Equals("115200") || txtBaudRate.Text.Equals("9600") || txtBaudRate.Text.Equals("230400")))
             {
                 this.serial.PortName = comboPorts.Text;
                 this.serial.BaudRate = int.Parse(txtBaudRate.Text);
