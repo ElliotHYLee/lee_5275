@@ -52,9 +52,7 @@ PUB main
       pst.str(string("M4"))
       value := motors.motor4_getPWM
       pst.Dec(value)
-
-
-
+            
 PUB setPins
   pin[0] := 0
   pin[1] := 1
