@@ -31,8 +31,8 @@ VAR
 ' descend   :  3
 ' advance   :  4
 ' ....... 
-PUB main 
-  nums.Init
+PUB main                                             
+  nums.Init                                          
   pst.Start(115200)
   setPins
   motors.newMotor(pin[0], pin[1], pin[2], pin[3]) 'set pin numbers for the four motors
@@ -51,8 +51,13 @@ PUB main
       pst.Dec(value)
       pst.str(string("M4"))
       value := motors.motor4_getPWM
+<<<<<<< HEAD
       pst.Dec(value)
             
+=======
+      pst.Dec(value)     
+
+>>>>>>> origin/master
 PUB setPins
   pin[0] := 0
   pin[1] := 1
