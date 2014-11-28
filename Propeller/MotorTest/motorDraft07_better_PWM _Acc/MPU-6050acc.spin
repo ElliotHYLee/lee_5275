@@ -62,7 +62,7 @@ PUB TestMPU  | MPUcog, normAcc, dirVx, dirVy, dirVz, fnormAcc, a,b,r, radToDeg
   debug.str(string("-------------------------"))
   debug.tx(13)
   
-  MPUcog := Start( SCL_PIN, SDA_PIN)
+  MPUcog := Start(SCL_PIN, SDA_PIN)
 
   'Output gyro data, then accel data, once per second
   repeat
