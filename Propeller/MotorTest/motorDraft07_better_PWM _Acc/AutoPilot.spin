@@ -6,8 +6,6 @@ OBJ
   usb            : "Parallax Serial Terminal"
   fNum           : "FloatMath.spin"
   fString        : "FloatString"
-  fNumPid        : "FloatMath.spin"
-  fStringPid     : "FloatString"
   mpu6050        : "MPU-6050acc.spin"
 VAR
   'common variables
@@ -25,22 +23,20 @@ VAR
   byte varChar, motorNumber 
 
   'pid variables
-  long targetDirCos[0], error[3], pidStack[128],pidCogId
+  long currentDirCos_10E6[3], error[3], pidStack[128],pidCogId
 
-
+Con
+  targetDirCos_10E6X = 1        ' directionCosX = 0.0000001
+  targetDirCos_10E6Y = 1        ' directionCosY = 0.0000001 
+  targetDirCos_10E6Z = 1000000  ' directionCosZ = 1 
 PRI getReady
-
+  
+  
 
 PUB startAutoPilot
 
   'usb start
   newUSB
-
-  usb.str(String("dirCos :"))
-  usb.str(fstring.floattostring(dirCos[0]))
-  usb.str(String("and target is :"))
-  usb.str(fstring.floattostring(targetDirCos[0]))
-  usb.newline
   
   getReady
   
@@ -133,9 +129,39 @@ PRI startPID
   stopPID
   pidCogId := cognew(runPID, @pidStack) + 1  'start running pid controller
 
-PUB runPID | difference
+PRI runPID | difference[3], targetAttitude[3]
+  repeat
+    targetAttitude[0] := getTargetAttitude(0)
+    difference[0] := targetAttitude[0] - currentDirCos_10E6[0] 
+'    usb.dec(targetDirCos_10E6X)
+'    usb.str(String(" - "))
+'    usb.dec(currentDirCos_10E6[0])
+'    usb.str(String(" = "))
+'    usb.dec(difference[0])
+'    usb.newline
+    if difference < 0
+      if (pulse[0] + 1)  < 1700
+        pulse[0] := pulse[0] + 1
+        if (pulse[2] - 1) >1250
+          pulse[2] := pulse[2] - 1
+    else
+      if (pulse[0] - 1) > 1250
+        pulse[0] := pulse[0] - 1
+        if (pulse[2] - 1) < 1700
+          pulse[2] := pulse[2] + 1 
+        
+PRI getTargetAttitude(axisNumber) | toReturn
+  if (axisNumber == 0)
+    if (2>1)
+      toReturn := targetDirCos_10E6X
+  elseif (axisNumber == 1)
+    if (2>1)
+      toReturn := targetDirCos_10E6Y
+  elseif (axisNumber == 2)
+    if(2>1)
+      toReturn := targetDirCos_10E6X
 
-   
+  return toReturn    
 
 '===================================================================================================
 '===================== COMMUNICATION PART ==================================================================
@@ -143,14 +169,14 @@ PUB runPID | difference
 PRI newUSB
   pstCodId:=usb.start(115200)
   startUSB
-PRI startUSB
-  stopUSB
-  usbCogId := cognew(communicate, @usbStack) + 1  'start running motor
   
 PRI stopUSB
   if usbCogId
     cogstop(usbCogId ~ - 1)
-
+  
+PRI startUSB
+  stopUSB
+  usbCogId := cognew(communicate, @usbStack) + 1  'start running motor
 
 PRI communicate | i
   repeat
@@ -174,7 +200,7 @@ PRI communicate | i
           2: usb.str(String("z"))
         usb.str(fstring.FloatToString(dirCos[i]))
         i++
-      usb.str(String("/"))  
+      usb.str(String("/"))
       i:=0 
 
       
@@ -239,4 +265,5 @@ PRI readAttitude | total, i
     i :=0
     repeat while i<3
       dirCos[i] := fNum.fDiv(acc[i], accNorm)
+      currentDirCos_10E6[i] := fNum.Fround(fNum.Fmul(dirCos[i], fNum.Ffloat(1000000)))
       i++
