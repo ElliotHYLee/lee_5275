@@ -135,22 +135,7 @@ PRI startPID
 
 PUB runPID | difference
 
-  ' x-axis
-  'targetDirCos[0] := fNum.Ffloat()
-  repeat
-    targetDirCos[0] := fNumPid.Fdiv(1,10000000)
-    usb.str(fStringPid.floattostring(dirCos[0]))
-    usb.str(String("and target is "))
-    usb.str(fStringPid.floattostring(targetDirCos[0]))
-    usb.str(String(" difference"))
-    difference :=  fNumPid.Fsub(targetDirCos[0], dirCos[0])
-    usb.str(fStringPid.FloatToString(difference))
-    usb.str(String(" error[0]"))
-    error[0] :=  fNumPid.Fdiv(difference, dirCos[0])
-    usb.str(fStringPid.FloatToString(error[0]))
-    usb.newline
-    'pulse[0] := pulse[0] + fNum.FTrunc(fNum.FMul(error[0], fNum.Ffloat(pulse[0])))
-  
+   
 
 '===================================================================================================
 '===================== COMMUNICATION PART ==================================================================
@@ -174,6 +159,23 @@ PRI communicate | i
       readCharArray
     else
       i:=0  
+      repeat while i=<3
+        usb.str(String("M"))
+        usb.Dec(i+1)
+        usb.Dec(pulse[i])
+        i++
+      usb.str(String("/"))   
+      i:=0
+      repeat while i<3
+        usb.str(String("C"))
+        case i
+          0: usb.str(String("x"))
+          1: usb.str(String("y"))
+          2: usb.str(String("z"))
+        usb.str(fstring.FloatToString(dirCos[i]))
+        i++
+      usb.str(String("/"))  
+      i:=0 
 
       
 PRI char2ASCII(charVar)  ' currently not used
