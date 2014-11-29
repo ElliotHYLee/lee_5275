@@ -84,6 +84,7 @@ namespace SerialMonitorTest03.ControllerFolder
             int dividerLocation = indata.IndexOf('/');
             targetLine = indata.Substring(dividerLocation+1, indata.Length - dividerLocation-1);
             //Console.WriteLine("traget line="+targetLine);
+
             if (targetLine.Substring(0, 1).Equals("M"))
             {
                 //Console.WriteLine("M");
