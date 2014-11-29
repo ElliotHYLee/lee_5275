@@ -4,7 +4,7 @@ CON
 
 OBJ
   usb : "Parallax Serial Terminal.spin"
-  fNum : "Float32Full.spin"
+  fNum : "FloatMath.spin"
   fString : "FloatString.spin"
 VAR
  long pwm[4]
@@ -12,11 +12,11 @@ VAR
 
 PUB main     | a,b,c
   usb.start(115200)
-  fNum.start
+  
 
 
-  a := fNum.Ffloat(3)
-  b := fNum.pow(a,fNum.Ffloat(2))
+  a := fNum.Ffloat(0)
+  b := fNum.Fmul(a,a)
   c := fNum.Fsqr(b)
   usb.dec(c)
   usb.newline

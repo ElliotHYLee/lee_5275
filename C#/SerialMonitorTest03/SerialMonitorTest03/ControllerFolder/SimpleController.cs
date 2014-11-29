@@ -24,7 +24,9 @@ namespace SerialMonitorTest03.ControllerFolder
             this._usb = new USB(this._mainWindow, this._data);
             this._mainWindow.txtIncraseCalInterval.Text = "10";
             this._mainWindow.txtDecraseCalInterval.Text = "10";
+            //this._mainWindow.imgAttitude.Source =  "GraphicsFolder\img.jpg";
             this.refreshComports();
+            
             checkConvention();
         }
                 
@@ -36,7 +38,7 @@ namespace SerialMonitorTest03.ControllerFolder
                 this._mainWindow.lblStatus.Content = this._usb.getPortName() + " online";
                 this._mainWindow.btnRefresh.IsEnabled = false;
                 this._mainWindow.btnConnect.Content = "Disconnect";
-                this._mainWindow.btnClearPWM.IsEnabled = true;
+                this._mainWindow.btnStartPWM.IsEnabled = true;
                 this._mainWindow.btnStop.IsEnabled = true;
                 this._mainWindow.btnDecreaseAll.IsEnabled = true;
                 this._mainWindow.btnDecreaseMotor1.IsEnabled = true;
@@ -55,7 +57,7 @@ namespace SerialMonitorTest03.ControllerFolder
                 this._mainWindow.lblStatus.Content = "No ports online";
                 this._mainWindow.btnRefresh.IsEnabled = true;
                 this._mainWindow.btnConnect.Content = "Connect";
-                this._mainWindow.btnClearPWM.IsEnabled = false;
+                this._mainWindow.btnStartPWM.IsEnabled = false;
                 this._mainWindow.btnStop.IsEnabled = false;
                 this._mainWindow.btnDecreaseAll.IsEnabled = false;
                 this._mainWindow.btnDecreaseMotor1.IsEnabled = false;
@@ -156,13 +158,21 @@ namespace SerialMonitorTest03.ControllerFolder
             this._mainWindow.txtMotor3.Text = "";
             this._mainWindow.txtMotor4.Text = "";
         }
-        
+
+        public void start()
+        {
+            this._usb.sendData("M11200");
+            this._usb.sendData("M21200");
+            this._usb.sendData("M31200");
+            this._usb.sendData("M41200");
+        }
+
         public void stop()
         {
-            this._usb.sendData("M11210");
-            this._usb.sendData("M21210");
-            this._usb.sendData("M31210");
-            this._usb.sendData("M41210");
+            this._usb.sendData("M11160");
+            this._usb.sendData("M21160");
+            this._usb.sendData("M31160");
+            this._usb.sendData("M41160");
         }
     }
 }

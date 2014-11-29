@@ -51,12 +51,6 @@ namespace SerialMonitorTest03
 
         }
 
-        private void btnClearPWM_Click(object sender, RoutedEventArgs e)
-        {
-           _controller.clearPwm();
-        }
-
-
         private void comboPorts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -182,6 +176,11 @@ namespace SerialMonitorTest03
         private void btnIncreaseAll_Click(object sender, RoutedEventArgs e)
         {
             _controller.increaseAll();
+        }
+
+        private void btnStartPWM_Click(object sender, RoutedEventArgs e)
+        {
+            _controller.start();
         }
 
         #region sliders

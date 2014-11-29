@@ -87,6 +87,10 @@ namespace SerialMonitorTest03.ControllerFolder
             if (targetLine.Substring(0, 1).Equals("M"))
             {
                 //Console.WriteLine("M");
+                if (targetLine.Length < 24)
+                {
+                    return;
+                }
                 motorLine = targetLine.Substring(0, 24);
                 temp = targetLine.Substring(25, targetLine.Length - motorLine.Length -1);
                 //Console.WriteLine("TEMP " + temp);

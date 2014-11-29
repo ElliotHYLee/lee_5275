@@ -22,7 +22,7 @@
         <TextBox Name="txtMotor4" HorizontalAlignment="Left" Height="23" Margin="111,470,0,0" TextWrapping="Wrap" Text="motor4" VerticalAlignment="Top" Width="86" TextChanged="txtMotor4_TextChanged"/>
         <Button Name="btnDecreaseMotor4" Content="4-Decrease" HorizontalAlignment="Left" Margin="205,472,0,0" VerticalAlignment="Top" Width="70" Height="20" Click="btnDecreaseMotor4_Click"/>
         <Button Name="btnIncreaseMotor4" Content="4-Increase" HorizontalAlignment="Left" Margin="539,472,0,0" VerticalAlignment="Top" Width="70" Height="20" Click="btnIncreaseMotor4_Click"/>
-        <Button Name="btnClearPWM" Content="ClearPWM" HorizontalAlignment="Left" Margin="318,296,0,0" VerticalAlignment="Top" Width="78" Click="btnClearPWM_Click" Height="27"/>
+        <Button Name="btnStartPWM" Content="StartPWM" HorizontalAlignment="Left" Margin="318,296,0,0" VerticalAlignment="Top" Width="78" Click="btnStartPWM_Click" Height="27"/>
         <Label Content="Motor1" HorizontalAlignment="Left" Margin="54,349,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.407,0.125" Width="52"/>
         <Label Content="Motor2" HorizontalAlignment="Left" Margin="54,388,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.407,0.125" Width="52"/>
         <Label Content="Motor3" HorizontalAlignment="Left" Margin="54,428,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.407,0.125" Width="52"/>
@@ -94,7 +94,7 @@
         <Label Content="Z-axis" HorizontalAlignment="Left" Margin="54,239,0,0" VerticalAlignment="Top" Height="24" Width="63"/>
         <Label Content="Direction Cosine" HorizontalAlignment="Left" Margin="122,152,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.421,-0.173" Width="106" Height="28"/>
         <Label Content="Angle (Deg)" HorizontalAlignment="Left" Margin="243,152,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.421,-0.173" Width="96" Height="28"/>
-        <Image HorizontalAlignment="Left" Height="202" Margin="379,61,0,0" VerticalAlignment="Top" Width="230" Source="C:\Users\Elliot\Documents\GitHub\lee_5275\C#\SerialMonitorTest03\SerialMonitorTest03\img.jpg"/>
+        <Image Name="imgAttitude" HorizontalAlignment="Left" Height="202" Margin="379,61,0,0" VerticalAlignment="Top" Width="230" Source="C:\Users\Hongyun\Documents\GitHub\lee_5275\C#\SerialMonitorTest03\SerialMonitorTest03\GraphicsFolder\img.jpg"/>
 
 
 

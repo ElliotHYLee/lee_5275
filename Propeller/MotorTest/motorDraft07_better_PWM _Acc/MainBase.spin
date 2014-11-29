@@ -6,6 +6,6 @@ OBJ
   myAutoPilot : "AutoPilot.spin"
 
 PUB main
-  myAutoPilot.getReady
+ 
   myAutoPilot.startAutoPilot
     
