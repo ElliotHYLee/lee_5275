@@ -1,0 +1,1 @@
+one axis VS motor[0] test code
