@@ -9,7 +9,7 @@
         <ComboBox Name="comboPorts" HorizontalAlignment="Left" Margin="130,61,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboPorts_SelectionChanged"/>
         <TextBox Name="txtBaudRate" HorizontalAlignment="Left" Height="23" Margin="130,95,0,0" TextWrapping="Wrap" Text="115200" VerticalAlignment="Top" Width="120" TextChanged="txtBaudRate_TextChanged"/>
         <Button Name="btnRefresh" Content="Refresh" HorizontalAlignment="Left" Margin="265,61,0,0" VerticalAlignment="Top" Width="76" RenderTransformOrigin="-0.291,1.639" Click="btnRefresh_Click"/>
-        <Label Name="lblStatus" Content="Label" HorizontalAlignment="Left" Margin="54,300,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.912,0.093" Width="143"/>
+        <Label Name="lblStatus" Content="Label" HorizontalAlignment="Left" Margin="54,118,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.912,0.093" Width="143"/>
         <TextBox Name="txtMotor1" HorizontalAlignment="Left" Height="23" Margin="111,352,0,0" TextWrapping="Wrap" Text="motor1" VerticalAlignment="Top" Width="86" TextChanged="txtMotor1_TextChanged"/>
         <Button Name="btnDecreaseMotor1" Content="1-Decrease" HorizontalAlignment="Left" Margin="205,350,0,0" VerticalAlignment="Top" Width="70" Height="20" Click="btnDecreaseMotor1_Click"/>
         <Button Name="btnIncreaseMotor1" Content="1-Increase" HorizontalAlignment="Left" Margin="539,350,0,0" VerticalAlignment="Top" Width="70" Height="20" Click="btnIncreaseMotor1_Click"/>

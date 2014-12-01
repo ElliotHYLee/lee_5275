@@ -95,7 +95,7 @@ PRI runMotor | baseTime, totalElapse                 {{generating pwm for the mo
   motorIteration := 0
   repeat while motorIteration<4
     dira[motorPin[motorIteration]] := 1   'set pin direction for this motor 
-    pulse[motorIteration] := 1160         'set default pwm
+    pulse[motorIteration] := 1200         'set default pwm
     motorIteration++
   
   repeat
@@ -136,22 +136,30 @@ PRI runPID | difference[3], targetAttitude[3]
   repeat
     targetAttitude[0] := getTargetAttitude(0)
     difference[0] := targetAttitude[0] - currentDirCos_10E6[0] 
-    usb.dec(targetAttitude)
-    usb.str(String(" - "))
-    usb.dec(currentDirCos_10E6[0])
-    usb.str(String(" = "))
-    usb.dec(difference[0])
-    usb.newline                   
-    if difference < -100_000
-      if (pulse[0] + 1)  < 1700
-        pulse[0] := pulse[0] + 1
-        if (pulse[2] - 1) >1250
-          pulse[2] := pulse[2] - 1
-    elseif difference > 100_000
-      if (pulse[0] - 1) > 1250
-        pulse[0] := pulse[0] - 1 
-        if (pulse[2] - 1) < 1700
-          pulse[2] := pulse[2] + 1 
+'    usb.dec(targetAttitude)
+'    usb.str(String(" - "))
+'    usb.dec(currentDirCos_10E6[0])
+'    usb.str(String(" = "))
+'    usb.dec(difference[0])
+'    usb.newline                   
+    if difference < 0
+      'usb.dec(pulse[0]) 
+      if pulse[1] + 1  < 1500
+'        usb.str(String("im here"))
+'        usb.dec(pulse[0]) 
+        pulse[1] := pulse[1] + 1
+        if (pulse[3] - 1) >1200
+          pulse[3] := pulse[3] - 1
+          
+    elseif difference > 0
+      'usb.dec(pulse[0])
+      if pulse[1] - 1 > 1200
+'        usb.str(String("im here"))
+'        usb.dec(pulse[2]) 
+        pulse[1] := pulse[1] - 1 
+        if (pulse[3] - 1) < 1500
+          pulse[3] := pulse[3] + 1
+                    
         
 PRI getTargetAttitude(axisNumber) | toReturn
   if (axisNumber == 0)
@@ -179,7 +187,7 @@ PRI stopUSB
   
 PRI startUSB
   stopUSB
-  'usbCogId := cognew(communicate, @usbStack) + 1  'start running motor
+  usbCogId := cognew(communicate, @usbStack) + 1  'start running motor
 
 PRI communicate | i
   repeat
