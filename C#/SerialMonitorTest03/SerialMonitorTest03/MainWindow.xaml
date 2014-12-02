@@ -94,12 +94,7 @@
         <Label Content="Z-axis" HorizontalAlignment="Left" Margin="54,239,0,0" VerticalAlignment="Top" Height="24" Width="63"/>
         <Label Content="Direction Cosine" HorizontalAlignment="Left" Margin="122,152,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.421,-0.173" Width="106" Height="28"/>
         <Label Content="Angle (Deg)" HorizontalAlignment="Left" Margin="243,152,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.421,-0.173" Width="96" Height="28"/>
-        <Image Name="imgAttitude" HorizontalAlignment="Left" Height="202" Margin="379,61,0,0" VerticalAlignment="Top" Width="230" Source="C:\Users\Hongyun\Documents\GitHub\lee_5275\C#\SerialMonitorTest03\SerialMonitorTest03\GraphicsFolder\img.jpg"/>
-
-
-
-
-
+        <Image Name="imgAttitude" HorizontalAlignment="Left" Height="202" Margin="379,61,0,0" VerticalAlignment="Top" Width="230" Source="/GraphicsFolder/img.jpg"/>
 
     </Grid>
 </Window>
