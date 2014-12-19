@@ -33,8 +33,6 @@ PRI getReady
   targetDirCos_10E6X := 1        ' directionCosX = 0.0000001
   targetDirCos_10E6Y := 1        ' directionCosY = 0.0000001 
   targetDirCos_10E6Z := 1000000  ' directionCosZ = 1 
-  
-  
 
 PUB startAutoPilot
 
@@ -253,7 +251,7 @@ PRI readCharArray   | newPWM
 PRI newAttitude
   startAttitude
 PRI startAttitude 
-  sensorCodId:=mpu6050.Start(15,14)   
+  sensorCodId:=mpu6050.Start(17,18)   
   stopAttitude
   attitudeCogId := cognew(readAttitude, @attitudeStack) + 1  'start updating current attitude
 

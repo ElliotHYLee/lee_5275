@@ -26,8 +26,8 @@ CON
   _xinfreq = 5_000_000
 
 CON                        ' CONs for TestMPU test routine   
-  SDA_PIN        = 14
-  SCL_PIN        = 15
+  SDA_PIN        = 18
+  SCL_PIN        = 17
   SERIAL_TX_PIN  = 30
   SERIAL_RX_PIN  = 31
 
