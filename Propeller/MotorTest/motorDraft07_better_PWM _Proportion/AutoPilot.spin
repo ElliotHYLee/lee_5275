@@ -33,8 +33,6 @@ PRI getReady
   targetDirCos_10E6X := 1        ' directionCosX = 0.0000001
   targetDirCos_10E6Y := 1        ' directionCosY = 0.0000001 
   targetDirCos_10E6Z := 1000000  ' directionCosZ = 1 
-  
-  
 
 PUB startAutoPilot
 
