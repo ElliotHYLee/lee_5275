@@ -169,10 +169,10 @@ namespace SerialMonitorTest03.ControllerFolder
 
         public void stop()
         {
-            this._usb.sendData("M11160");
-            this._usb.sendData("M21160");
-            this._usb.sendData("M31160");
-            this._usb.sendData("M41160");
+            this._usb.sendData("M11100");
+            this._usb.sendData("M21100");
+            this._usb.sendData("M31100");
+            this._usb.sendData("M41100");
         }
     }
 }

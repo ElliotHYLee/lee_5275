@@ -47,7 +47,7 @@ PUB startAutoPilot
   newAttitude
 
   'motor start
-  newMotor(0,1,2,3)
+  newMotor(0,16,2,15)
 
   'pid start
   startPID
@@ -121,58 +121,6 @@ PRI runMotor | baseTime, totalElapse                 {{generating pwm for the mo
     totalElapse := pulse[0] + pulse[1] + pulse[2] + pulse[3]
     waitcnt(baseTime + (clkfreq/1000*20 - clkfreq/1000000*totalElapse))
 
-'===================================================================================================
-'===================== PID PART ==================================================================
-'===================================================================================================
-PRI stopPID
-  if pidCogId
-    cogstop(pidCogId ~ - 1)
-
-PRI startPID
-  stopPID
-  pidCogId := cognew(runPID, @pidStack) + 1  'start running pid controller
-
-PRI runPID | difference[3], targetAttitude[3]
-  repeat
-    targetAttitude[0] := getTargetAttitude(0)
-    difference[0] := targetAttitude[0] - currentDirCos_10E6[0] 
-'    usb.dec(targetAttitude)
-'    usb.str(String(" - "))
-'    usb.dec(currentDirCos_10E6[0])
-'    usb.str(String(" = "))
-'    usb.dec(difference[0])
-'    usb.newline                   
-    if difference < 0
-      'usb.dec(pulse[0]) 
-      if pulse[1] + 1  < 1500
-'        usb.str(String("im here"))
-'        usb.dec(pulse[0]) 
-        pulse[1] := pulse[1] + 1
-        if (pulse[3] - 1) >1200
-          pulse[3] := pulse[3] - 1
-          
-    elseif difference > 0
-      'usb.dec(pulse[0])
-      if pulse[1] - 1 > 1200
-'        usb.str(String("im here"))
-'        usb.dec(pulse[2]) 
-        pulse[1] := pulse[1] - 1 
-        if (pulse[3] - 1) < 1500
-          pulse[3] := pulse[3] + 1
-                    
-        
-PRI getTargetAttitude(axisNumber) | toReturn
-  if (axisNumber == 0)
-    if (2>1)
-      toReturn := targetDirCos_10E6X
-  elseif (axisNumber == 1)
-    if (2>1)
-      toReturn := targetDirCos_10E6Y
-  elseif (axisNumber == 2)
-    if(2>1)
-      toReturn := targetDirCos_10E6X
-
-  return toReturn    
 
 '===================================================================================================
 '===================== COMMUNICATION PART ==================================================================
@@ -232,7 +180,7 @@ PRI readCharArray   | newPWM
      type := 2  'number is not yet determined
 
    if (type==1)
-     if 11159 < newValue AND newValue < 43000
+     if 11099 < newValue AND newValue < 43000
        motorNumber := newValue/10000
        newPWM := newValue//10000
        case motorNumber
@@ -248,12 +196,64 @@ PRI readCharArray   | newPWM
        newValue := 0    
 
 '===================================================================================================
+'===================== PID PART ==================================================================
+'===================================================================================================
+PRI stopPID
+  if pidCogId
+    cogstop(pidCogId ~ - 1)
+
+PRI startPID
+  stopPID
+  pidCogId := cognew(runPID, @pidStack) + 1  'start running pid controller
+
+PRI runPID | difference[3], targetAttitude[3]
+  repeat
+    targetAttitude[0] := getTargetAttitude(0)
+    difference[0] := targetAttitude[0] - currentDirCos_10E6[0] 
+'    usb.dec(targetAttitude)
+'    usb.str(String(" - "))
+'    usb.dec(currentDirCos_10E6[0])
+'    usb.str(String(" = "))
+'    usb.dec(difference[0])
+'    usb.newline                  
+    if difference > 0
+      'usb.dec(pulse[0]) 
+      if pulse[1] + 1  =< 1300
+'        usb.str(String("im here"))
+'        usb.dec(pulse[0]) 
+        pulse[1] := pulse[1] + 1
+        if (pulse[3] - 1) =>1200
+          pulse[3] := pulse[3] - 1
+           
+    elseif difference < 0
+      'usb.dec(pulse[0])
+      if pulse[1] - 1 => 1200
+'        usb.str(String("im here"))
+'        usb.dec(pulse[2]) 
+        pulse[1] := pulse[1] - 1 
+        if (pulse[3] - 1) =< 1300
+          pulse[3] := pulse[3] + 1
+                    
+        
+PRI getTargetAttitude(axisNumber) | toReturn
+  if (axisNumber == 0)
+    if (2>1)
+      toReturn := targetDirCos_10E6X
+  elseif (axisNumber == 1)
+    if (2>1)
+      toReturn := targetDirCos_10E6Y
+  elseif (axisNumber == 2)
+    if(2>1)
+      toReturn := targetDirCos_10E6X
+
+  return toReturn    
+'===================================================================================================
 '===================== ATTITUDE PART ==================================================================
 '===================================================================================================
 PRI newAttitude
   startAttitude
 PRI startAttitude 
-  sensorCodId:=mpu6050.Start(15,14)   
+  sensorCodId:=mpu6050.Start(17,18)   
   stopAttitude
   attitudeCogId := cognew(readAttitude, @attitudeStack) + 1  'start updating current attitude
 
