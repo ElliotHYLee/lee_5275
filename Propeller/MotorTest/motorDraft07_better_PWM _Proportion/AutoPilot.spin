@@ -251,7 +251,7 @@ PRI getTargetAttitude(axisNumber) | toReturn
 PRI newAttitude
   startAttitude
 PRI startAttitude 
-  sensorCodId:=mpu6050.Start(17,18)   
+  sensorCodId:=mpu6050.Start(15,14)   
   stopAttitude
   attitudeCogId := cognew(readAttitude, @attitudeStack) + 1  'start updating current attitude
 

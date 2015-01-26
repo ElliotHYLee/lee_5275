@@ -8,7 +8,7 @@ VAR
 OBJ
   pst           : "Parallax Serial Terminal"
   f             : "Float32"
-  fstring        : "FloatString"
+  fstring       : "FloatString"
 PUB main| a,b
 
   pst.Start(115200)
