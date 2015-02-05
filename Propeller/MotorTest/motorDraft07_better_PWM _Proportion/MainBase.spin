@@ -11,8 +11,7 @@ Var
 PUB main
  
   myAutoPilot.startAutoPilot
-
-
+                                            
 
 PUB start
   stopMotor

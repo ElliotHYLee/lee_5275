@@ -36,30 +36,7 @@ PUB stop {{kind of destructor}}
     cogstop(cogIndex ~ - 1)
 
     
-<<<<<<< HEAD
-PUB getDirection {{ return direction of this motor}}
-  return isCW
-         
-PUB setPWM(newPulse) {{update the pulse of this so "runMotor" method can use the new value}}
-  pulse := newPulse
 
-PUB getPWM
-  return pulse
-  
-PRI initMotor {{initializing the motor connected to this pin}}    
-  dira[motorPin] := 1   'set pin direction for this motor   
-  pulse :=45
-  repeat while pulse < 150
-    pulse++
-    outa[motorPin]:=1
-    waitcnt(cnt + (clkfreq / 1000 ) )
-    outa[motorPin]:=0
-    waitcnt(cnt + clkfreq / 1000*20)    
-    'pst.Dec(pulse)
-    'pst.Str(String(" ", pst#NL))
-
-PRI runMotor | baseTime {{generating pwm for the motor connected to this pin}}              
-=======
 PUB motor1_setPWM(newPulse)                                    {{update the pulse of this so "runMotor" method can use the new value}}
   pulse[0] := newPulse
 
@@ -105,7 +82,7 @@ PUB initMotor | i                                             {{initializing the
        
 
 PUB runMotor | baseTime, i, totalElapse                 {{generating pwm for the motor connected to this pin}}              
->>>>>>> origin/master
+
   initMotor  'physical initialization for this motor 
   i:=0
   repeat while i<4
@@ -115,12 +92,7 @@ PUB runMotor | baseTime, i, totalElapse                 {{generating pwm for the
   
   repeat
     baseTime := cnt
-<<<<<<< HEAD
-    outa[motorPin]:= 1
-    waitcnt(baseTime + clkfreq/1000000*pulse)
-    outa[motorPin]:= 0
-    waitcnt(baseTime + (clkfreq/1000*20 - clkfreq/1000000*pulse))
-=======
+
     i:=0
     totalElapse:=0
     repeat while i<4
@@ -130,4 +102,3 @@ PUB runMotor | baseTime, i, totalElapse                 {{generating pwm for the
       totalElapse := totalElapse + pulse[i]
       i++
     waitcnt(baseTime + (clkfreq/1000*20 - clkfreq/1000000*totalElapse))
->>>>>>> origin/master
