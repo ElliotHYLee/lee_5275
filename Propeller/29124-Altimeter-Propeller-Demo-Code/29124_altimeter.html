@@ -1,0 +1,1939 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="shortcut icon" href="data:image/ico;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAACgoqMAtLa6AFhRRABrZ2EAfXx7AEEpBABCKwEASkEwAF5WSgC9vsAAmJiYAEQxEwCFhYQAYV1WAK6wsgBENR8Ad3h5AFhQQgA/KAIASEAuAD4qCAA/KggAPS4UAEIuCwCqq60AUEY3AEE0HQB2eHoAioyRAHx4cQA8JQMAPiQAAFhQQwCOjo4AWVBDAD8nAABBJwAAQicAAD0rDABKQC8APysMAJKUlwC8vb8APS8YAKmrrgB0b2kAYFxVAHZzbABCNiQAWE9BAD4nAQBKPScAQCcBAD8oBAA/KQcAkpGPAJKSkgA9Kw0AbWpkAD8rDQBuamQAQTATAE5GOQBycXAAra+yAGVfVgBGNx8As7S4AD4nAgA/KAUAkZOWAEMrBQBNRjoAgoSFAJqbnAB3cmsAmpyfAEU3IACfoKIARTopAD4mAAA/JgAAPicDAEAmAABBJgAAPygGAEIpAAA+KQkAPSoMAEMpAACSkZEAPioMAEtFOABAMhsAQTMeAFFKPgBFNh4ARTchAEU5JwCNjIwAPicEADwpCgB+fXsAQikBAEMpAQBCKgQAQiwBAEErBwBDLAEARC0EAExENgC+v8AATEU5AE1FOQCKiYQARDYfAHp2cACLi4oAendzAGtnXwA9KAgAuru+AEQsAgBDLQUARC0FAHBtaABMRDcAvsDEANPW2ABAMh0AhYaFAEQ2IAA4HwAAjIuLALO2uQA/JQAAQCUAAEEoAABCKAAAQSkDAEMoAABBKwAAubq8AEIrAABDKwAATEEvAF1WSQBDLAMApqirAEQsAwBwbGYAPzAYAHRxbADDw8UArrCxAEM3JAB4dW8Anp6gAMbIywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZ2dFi2dnZ2dnZ2dnZ2gFUooLDRlpZ2dnZ2dnZ4prZ2ckgyyYRYpnZ2dnZ2eKUmdnJWBOfTWKZ2dnZ2dnZ2cWZyRCnTo1ioqKioqKVmdWZ2ckYZqWFSZYW1s5eESKVlk9VEIqLWKCCjhaIQwDTzaMR1RCCUswZjdjhXU4GA4uFIlUTW90VVcoKDsoZStyhicjJV6OHWSKjIyMjFkfkX93MopdAJxkimdnZ2dniDOedhJoGkk8HohTUVFRh4QIgEFQaA8QP18xIgIgEZIvmUqXiiRzG0YcKUyUQAF5QwSbNGePFwdIPm5+XHBxE4FXVgYGao9senqVbXx7k5CPjWpqagAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=">
+	<title>29124_altimeter</title>
+	<style type="text/css">
+	body {
+		background: #4f4f4f;
+		color: #000000;
+		font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+		margin: 5px 10px 10px 10px;
+		padding: 0px;
+		overflow: hidden;
+	}
+	h1 {
+		color: #1a425d;
+		font :bold 16pt verdana,geneva,lucida,'lucida grande',arial,helvetica,sans-serif;
+		margin-top: 0
+	}
+	.title {
+		text-align: center;
+	}
+	h2 {
+		color:#1a425d;
+		font:bold 14pt verdana,geneva,lucida,'lucida grande',arial,helvetica,sans-serif
+	}
+	h3 {
+		color:#1a425d;
+		font:bold 12pt verdana,geneva,lucida,'lucida grande',arial,helvetica,sans-serif
+	}
+	h4 {
+		color:#e97e01;
+		font:bold 10pt verdana,geneva,lucida,'lucida grande',arial,helvetica,sans-serif
+	}
+	pre {
+		font: 10pt parallax,courier,monospaced;
+		line-height: 97%;
+	}	
+	.source {
+		margin-left: 20px;
+		border: 1px solid #ccc;
+		overflow: auto;
+		display: none;
+		background: #f8f8f8;
+		margin-top: 12pt;
+		width: 95%;
+		padding-top: 5px;
+		padding-left: 10px;
+		max-height: 600px;
+		letter-spacing: 0px;
+	}
+	var {
+		color: #1a425d;
+		font-style: normal;
+		font-weight: bold;
+		letter-spacing: -1px;
+	}
+	a {
+		font-weight: bold;
+		font-size: 6pt;
+		text-decoration: none;
+		color: #1a425d;
+	}
+	.url {
+		font-weight: normal;
+		font-size: 10pt;
+		text-decoration: underline;
+	}
+	.toc1 {
+		font-size: 12pt;
+		font-weight: bold;
+		vertical-align: baseline;
+		text-align: center;
+		color: #8e99a0;
+	}		
+	.toc2 {
+		font-size: 95%;
+		font-weight: bold;
+		vertical-align: baseline;
+		color: white;
+		text-decoration: none;
+	}		
+	.toc3 {
+		font-size: 90%;
+		font-weight: normal;
+		vertical-align: baseline;
+		margin-left: 10px;
+		color: white;
+		text-decoration: none;
+	}		
+	.toc4 {
+		font-size: 85%;
+		font-weight: normal;
+		font-style: italic;
+		vertical-align: baseline;
+		margin-left: 20px;
+		color: #ff9901;
+		text-decoration: none;
+	}
+	.tocgrp {
+		display: none
+	}
+  hr {
+  	border: 0;
+    color: #ff9901;
+    background-color: #96692b;
+    height: 1px;
+  }
+  .d0 {margin-left:1em;margin-bottom:4px;text-indent:-1em}
+  .d2 {margin-left:2em;margin-bottom:4px;text-indent:-1em}
+  .d3 {margin-left:2.5em;margin-bottom:4px;text-indent:-1em}
+  .d4 {margin-left:3em;margin-bottom:4px;text-indent:-1em}
+	</style>
+	<script language="JavaScript">
+		window.onload = resize;
+		window.onresize = resize;
+		var show=0;
+		function ShowHide(divId) {
+			if (document.getElementById(divId).style.display!='block') {
+				document.getElementById(divId).style.display='block';
+				if (divId.substring(0, 3) == 'toc') {
+					window.location = '#lbl' + divId.substring(3);
+				}
+			} else {
+				document.getElementById(divId).style.display='none';
+			}
+		};
+    function resize() {
+      var myWidth = 0, myHeight = 0;
+      if(typeof(window.innerWidth) == 'number') {
+        //Non-IE
+        myWidth = window.innerWidth;
+        myHeight = window.innerHeight;
+      } else if(document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+        //IE 6+ in 'standards compliant mode'
+        myWidth = document.documentElement.clientWidth;
+        myHeight = document.documentElement.clientHeight;
+      } else if(document.body && (document.body.clientWidth || document.body.clientHeight)) {
+        //IE 4 compatible
+        myWidth = document.body.clientWidth;
+        myHeight = document.body.clientHeight;
+      }
+      document.getElementById("text").style.height = (myHeight - 10) + "px";
+      document.getElementById("text").style.width = (Math.min(myWidth - 250, 800)) + "px";
+      document.getElementById("toc").style.height = (myHeight - 10) + "px";
+     }	
+    function selectall(source) { 
+	    var selection, range, doc, win; 
+	    if ( (doc = source.ownerDocument)
+	    	&& (win = doc.defaultView)
+	    	&& typeof win.getSelection != 'undefined'
+	    	&& typeof doc.createRange != 'undefined' 
+	    	&& (selection = window.getSelection())
+	    	&& typeof selection.removeAllRanges != 'undefined'
+	    ) { 
+	       range = doc.createRange(); 
+	       range.selectNode(source); 
+	       selection.removeAllRanges(); 
+	       selection.addRange(range); 
+	    } else if (document.body && typeof document.body.createTextRange != 'undefined' && (range = document.body.createTextRange())) { 
+	       range.moveToElementText(source); 
+	       range.select(); 
+	    } 
+		}
+  </script>
+</head>
+<body style="margin: 0pt;">
+<div align="center">
+<table border="0" cellpadding="0" cols="2">
+	<tbody><tr><td valign="top">
+	<div id="toc" style="width: 200px; height: 861px; overflow: auto; background-color: rgb(1, 44, 66); border-left: medium solid rgb(242, 248, 252);">
+		<div style="background-color:#012c42; width: 100%; text-align: center">
+		<img src="data:image/gif;base64,%0AR0lGODlhtABIAPcAAAEmPgUmOwYpPgoqPg0qPQ4tPwwrPAwnOBYpNhwsNhEqOhItPhUuPRQrOhot%0AOh4uORovPA0wPhIxPRUyPBk0Ox42OhowPh4xPRwxOxYkLyIuNSAvOS06NSk5NyExOiIyPSY1PiM1%0AOyk2Piw1OyI4OSo2OTQ9MzE3OzM6PTo8PTY4MyUqLTxAMXxWH0RDL0tFLVRJKltKKFZIKkFBMGNO%0AJm1RI2hPJXRTIXhUIAAnQQEnQQAnQgAmRgAjRwAoQQEoQQAqQQAoQgApQgEpQgApQwEoQwIpQgEr%0AQgArQwAqQgMqQwIoQQUqQgAsQgEsQgAsQwIsQgUtQQApRAAqRAMrRAEpRgQrRAMsRgUsRQYtRQkt%0AQg4uQgkuRQ0vRQkrQQAjSQUuSActRhEvQhIvQg0wRgoyRwwzSQYwRxYxQhIxRRUyRRQyRBkyQh40%0AQhk1Rh00QxI0SRs2SB45SSI1QSU3QiE2RCU5RiY4Qyw6QyQ7Sio9Sig3QDY9QjI+RjQ/RjE8Qjo+%0AQTVARzRARzZARjpBRj5DRj5CRDZCSTJASDlDSTxFSz5ITjVFUEJERUFGSURHSURJTUpMTEpIR0ZN%0AUURNU0tOUUxRVElUWlNUVFNWWVVaXF5eXVtbW1hXVlFPT2FfXlldYV5hY2FhYWVlZWNjZGtpZ2pq%0Aam5ubm1sa2VnaHFvbXNxbnJycnZ1dXRzc3t5d3l5eX59fX18end3d25wcoRZHIpcG39YHpNfGJti%0AFpZgF7RqDrxtDaNkFKlmEqxnEa5oELFpEMFvC8VwCstzCM50B9N2Btt5BNV3BuJ7A4F+fYB8eoOB%0Af3+BgoKCgYWCgoaFhYWEg4mHhYuIh4yLioiFg5GPjZKRkZWSkZaUk5aVlZmWlJqYl5qZmZ+dnZ2b%0AmpeYmJKQj6CenaGdmqKgn6ako6elpaSioainpqmop6upqayrqa6trLWzs727uri3trGvrcG/vsTD%0Aw83My8nHxtTT0t3c29nY19DPzuHf3uTj4+3s6+jn5vT08/39/fDv7ywAAAAAtABIAAAI/gCHCBxI%0AsKDBgwgTKlzIsKHDhxAjSkzopKLFixgzatzIsaPHjyBDihxJsqTJkyhTqlzJsqXLlzBjypxZ8giQ%0Amzhz3jwCEudHmzp1Nhnp0+PNoSJvqgSKVGOToyBt8hR55EkZM1ixwtkKx0yZM0+UbjxyBk4Zj03O%0A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%0AgQ38oIAAADs=%0A%09%09">
+		</div>
+		<div style="font: bold 11pt verdana,geneva,lucida,'lucida grande',arial,helvetica,sans-serif;color:white; text-align: center; margin-bottom: 10px; margin-top: 10px">29124_altimeter</div>
+		<p class="toc1">Table of Contents</p>
+		<div style="text-align: left; margin-left: 10px;">
+			<a href="#lbl1" class="toc2">Preface</a><br>
+<a href="#lbl2" class="toc2">Introduction </a><br>
+<a href="#lbl3" class="toc2">External Connections </a><br>
+<a onclick="javascript:ShowHide('toc4')" href="javascript:;" class="toc2">Constants... </a><br>
+<div id="toc4" class="tocgrp">
+<a href="#lbl5" class="toc3">Chip Selection </a><br>
+<a href="#lbl7" class="toc3">Background vs. Foreground </a><br>
+<a href="#lbl9" class="toc3">Default Module Settings </a><br>
+<a href="#lbl11" class="toc3">I²C Commands </a><br>
+<a href="#lbl13" class="toc3">Standard Pressure </a><br>
+<a href="#lbl15" class="toc3">Array sizes </a><br>
+<a href="#lbl17" class="toc3">Results Array Indices </a><br>
+<a href="#lbl19" class="toc3">String Constants </a><br>
+</div>
+<a href="#lbl21" class="toc2">Instance Variables </a><br>
+<a onclick="javascript:ShowHide('toc23')" href="javascript:;" class="toc2">Public Spin Methods... </a><br>
+<div id="toc23" class="tocgrp">
+<a onclick="javascript:ShowHide('toc24')" href="javascript:;" class="toc3">Start, Stop, Pause... </a><br>
+<div id="toc24" class="tocgrp">
+<a href="#lbl25" class="toc4">start</a><br>
+<a href="#lbl27" class="toc4">start_explicit</a><br>
+<a href="#lbl29" class="toc4">stop</a><br>
+<a href="#lbl31" class="toc4">pause</a><br>
+<a href="#lbl33" class="toc4">resume</a><br>
+</div>
+<a onclick="javascript:ShowHide('toc35')" href="javascript:;" class="toc3">Calibration... </a><br>
+<div id="toc35" class="tocgrp">
+<a href="#lbl36" class="toc4">set_resolution</a><br>
+<a href="#lbl38" class="toc4">set_altitude</a><br>
+<a href="#lbl40" class="toc4">set_sealevel_press</a><br>
+</div>
+<a onclick="javascript:ShowHide('toc42')" href="javascript:;" class="toc3">Result Accessors... </a><br>
+<div id="toc42" class="tocgrp">
+<a href="#lbl43" class="toc4">results_addr</a><br>
+<a href="#lbl45" class="toc4">results</a><br>
+<a href="#lbl47" class="toc4">sealevel_press</a><br>
+<a href="#lbl49" class="toc4">altitude</a><br>
+<a href="#lbl51" class="toc4">current_temp</a><br>
+<a href="#lbl53" class="toc4">current_press</a><br>
+<a href="#lbl55" class="toc4">median_temp</a><br>
+<a href="#lbl57" class="toc4">median_press</a><br>
+<a href="#lbl59" class="toc4">average_temp</a><br>
+<a href="#lbl61" class="toc4">average_press</a><br>
+<a href="#lbl63" class="toc4">sample</a><br>
+<a href="#lbl65" class="toc4">samples</a><br>
+</div>
+<a onclick="javascript:ShowHide('toc67')" href="javascript:;" class="toc3">Output Formatting... </a><br>
+<div id="toc67" class="tocgrp">
+<a href="#lbl68" class="toc4">formatn</a><br>
+<a href="#lbl70" class="toc4">format</a><br>
+</div>
+<a onclick="javascript:ShowHide('toc72')" href="javascript:;" class="toc3">Unit Conversions... </a><br>
+<div id="toc72" class="tocgrp">
+<a href="#lbl73" class="toc4">convert</a><br>
+<a href="#lbl75" class="toc4">mb_from_in</a><br>
+<a href="#lbl77" class="toc4">in_from_mb</a><br>
+<a href="#lbl79" class="toc4">ft_from_m</a><br>
+<a href="#lbl81" class="toc4">m_from_ft</a><br>
+<a href="#lbl83" class="toc4">c_from_f</a><br>
+<a href="#lbl85" class="toc4">f_from_c</a><br>
+</div>
+</div>
+<a onclick="javascript:ShowHide('toc87')" href="javascript:;" class="toc2">Private Spin Methods... </a><br>
+<div id="toc87" class="tocgrp">
+<a onclick="javascript:ShowHide('toc88')" href="javascript:;" class="toc3">Data Acquisition... </a><br>
+<div id="toc88" class="tocgrp">
+<a href="#lbl89" class="toc4">_do_background</a><br>
+<a href="#lbl91" class="toc4">_sample</a><br>
+<a href="#lbl93" class="toc4">_cur_temp_press_5607</a><br>
+<a href="#lbl95" class="toc4">_cur_temp_press_5611</a><br>
+<a href="#lbl97" class="toc4">_get_temp</a><br>
+<a href="#lbl99" class="toc4">_get_press</a><br>
+<a href="#lbl101" class="toc4">_read_prom</a><br>
+<a href="#lbl103" class="toc4">_read_adc</a><br>
+</div>
+<a onclick="javascript:ShowHide('toc105')" href="javascript:;" class="toc3">I2C Methods... </a><br>
+<div id="toc105" class="tocgrp">
+<a href="#lbl106" class="toc4">_i2c_init</a><br>
+<a href="#lbl108" class="toc4">_i2c_receive_data</a><br>
+<a href="#lbl110" class="toc4">_i2c_send_cmd</a><br>
+<a href="#lbl112" class="toc4">_i2c_send</a><br>
+<a href="#lbl114" class="toc4">_i2c_receive</a><br>
+<a href="#lbl116" class="toc4">_i2c_start</a><br>
+<a href="#lbl118" class="toc4">_i2c_stop</a><br>
+</div>
+<a onclick="javascript:ShowHide('toc120')" href="javascript:;" class="toc3">Double Long Math... </a><br>
+<div id="toc120" class="tocgrp">
+<a href="#lbl121" class="toc4">_umultdiv</a><br>
+<a href="#lbl123" class="toc4">_umult</a><br>
+<a href="#lbl125" class="toc4">_udiv</a><br>
+<a href="#lbl127" class="toc4">_dsub</a><br>
+<a href="#lbl129" class="toc4">_dadd</a><br>
+<a href="#lbl131" class="toc4">_ult</a><br>
+<a href="#lbl133" class="toc4">this_string</a><br>
+<a href="#lbl135" class="toc4">enqueue</a><br>
+</div>
+</div>
+<a href="#lbl137" class="toc2">Altitude Table </a><br>
+<a onclick="javascript:ShowHide('toc139')" href="javascript:;" class="toc2">Sample Programs... </a><br>
+<div id="toc139" class="tocgrp">
+<a href="#lbl140" class="toc3">Simple Barometer </a><br>
+<a href="#lbl142" class="toc3">Simple Altimeter </a><br>
+</div>
+<a href="#lbl144" class="toc2">License </a><br>
+
+		</div>
+	</div>
+	</td>
+	<td>
+		<div id="text" style="text-align: left; padding-left: 20px; padding-right: 20px; width: 800px; height: 861px; background-color: rgb(242, 248, 252); overflow: auto;">
+			<h1 id="lbl1" class="title">29124 Altimeter Module Driver </h1>
+<p>
+</p><pre>┌───────────────────────────────────────┐
+│     29124 Altimeter Module Driver     │
+│   (c) Copyright 2011 Parallax, Inc.   │
+│   See end of file for terms of use.   │
+└───────────────────────────────────────┘
+</pre><p>
+This object provides the drivers necessary to read data from the Parallax #29124
+Altimeter Module, along with the computation necessary to convert the readings
+to temperature, pressure, and altitude. In addition to a foreground aqcuisitionmode,
+it provides a selectable background mode in which data are acquired, converted, and
+averaged continuously. Also provided are units conversion and string formatting to
+ease the recording and/or display of the acquired data.
+</p><p>
+<b>SPECIAL</b> <b>DISCLAIMER</b>
+</p><p>
+This object is provided to demonstrate the capabilities of the Parallax 29124 Altimeter
+module and the Measurement Specialities sensor. NO CLAIMS ARE MADE FOR ACCURACY, AND IT
+MUST NOT BE RELIED UPON FOR AVIATION OR NAVIGATION APPLICATIONS OR TO PROVIDE ACCURATE
+WEATHER FORECASTING, AND IT MUST NOT BE USED IN MEDICAL APPLICATIONS. Consult the appropriate
+Measurement Specialties datasheets and appnotes for the details necessary to provide your
+own firmware for any applications of their sensors that might entail risk to life, limb,
+or property as a result of inaccurate readings or malfunction. This Special Disclaimer
+supplements the "AS-IS" provision of the MIT License at the end of this file and and does
+not replace it.
+</p><p>
+<b>Note</b> <b>Regarding</b> <b>Sensor</b> <b>Chips</b>
+</p><p>
+This object defaults to computations for the MS5607 sensor. If the MS5211 sensor is used
+instead, see the <b>start</b> or <b>start_explicit</b> method for how to specify this alternative.
+</p><p>
+<b>Revision</b> <b>History</b>
+</p><p>
+</p><div class="d0">2011.09.20: v1.0 &nbsp;Initial release.</div>
+<div class="d0">2011,09.21: v1.01</div>
+<div class="d2">Added CECR to formatting (clear-to-end+CR for PST), and some constants.</div>
+<div class="d2">Added <b>set_altitude</b> macro method.</div>
+<div class="d2">Added wait in <b>set_resolution</b> to make sure new resolution percolated through samples.</div>
+<div class="d0">2011.09.27: v1.01 still</div>
+<div class="d2">Corrected some autodoc comments.</div>
+<div class="d2">Added example programs.</div>
+<div class="d0">2011.10.11: v1.01 still</div>
+<div class="d2">Added some additional comments from the Parallax forum instroduction.</div>
+<p>
+<b>Contact</b> <b>Information</b>
+</p><p>
+   Parallax Tech Support: support@parallax.com (916-624-8333)
+<br>
+</p><h2 id="lbl2">Introduction </h2>
+ The Parallax #29124 Altimeter Module uses the Measurement Specialties MS5607 or
+   MS5611 digital thermometer/pressure sensor, which is capable of both SPI and I²C
+   communication. This module provides the necessary I²C drivers, along with the
+   following:
+<p>
+</p><div class="d2">• The math necessary to compute temperature in degrees C and temperature-
+compensated pressure from the sensor's readings and internal calibration
+constants.</div>
+<div class="d2">• Integer-based methods for converting pressure to altitude and altitude and
+pressure to an equivalent sea-level pressure.</div>
+<div class="d2">• Built-in computation of average and median temperature and pressure.</div>
+<div class="d2">• Choice of foreground or background data acquisition. Background acquisition
+requires its own cog and does running average and median computations for</div>
+<div class="d4">quicker access to results.</div>
+<div class="d2">• Methods to convert between Inches of Hg and Millibars, Feet and Meters, and
+Celsius and Fahrenheit.</div>
+<div class="d2">• String formatting methods to make presentation of the results easier.</div>
+<p>
+   All measurement units used in this object are in integer hundredths; so, for
+   example a temperature measurement of 2543 would represent 25.43 degrees.
+</p><p>
+   To use this module, it must first be started using one of the start methods.
+   After that the various other acquisition, conversion, and formatting methods can
+   be employed to obtain and, optionally, to massage the results for presentation
+   or recording.
+</p><p>
+   <b>Basic</b> <b>Theory</b>
+</p><p>
+   The sensor in this module measures temperature and absolute pressure, and outputs
+   data in digital form from its built-in 24-bit ADC. Due to process variations, the
+   gain and offset of these readings will vary from part to part. These variances are
+   measured at the factory, and correction factors are programmed into each sensor's PROM,
+   which the user must apply to obtain correct readings. Also, because pressure increases
+   with temperature, the temperature reading has to be used to adjust the pressure reading
+   to obtain a temperature-compensated pressure value. These calculations can all be
+   accomplished using multiplies and shifts in 64-bit integer math -- something that,
+   with some effort, can be accommodated by Spin.
+</p><p>
+   The pressure measured by the sensor in free air is atmospheric pressure, which varies
+   with changes in the weather and with changes in altitude. Pressure decreases with altitude,
+   so a pressure sensor at sea level will indicate a higher value than the same sensor at,
+   say, 1000 feet. When you hear a weather report that includes a barometer reading in
+   millibars or inches of mercury, the reading is always corrected to sea level. In other
+   words, the local pressure in Denver, say, at a one-mile elevation, will be adjusted to
+   reflect what the pressure would be if measured at the bottom of a one-mile-deep hole.
+</p><p>
+   So how does pressure vary with altitude? Or, more usefully, if you know the local air
+   pressure, how do you compute your altitude from that? The following formula yields altitude
+   in terms of pressure for the troposphere (i.e. from below sea level to 11 km):
+</p><p>
+</p><pre>                          ┌             0.190264 ┐
+   Altitude = 44330.76923 │ 1 - (P / P0)         │
+                          └                      ┘
+</pre><p>
+   where Altitude is in meters. P is the local air pressure, and P0 is the pressure at sea level,
+   both expressed in the same units, whether millibars, Pascals, or inches of mercury. When P0
+   is set equal to the standard sea level pressure of 1013.25 mb, the altitude yielded by the
+   formula is called the "pressure altitude." The actual altitude may be computed by substituting
+   the local air pressure, corrected to sea level, for P0.
+</p><p>
+   <b>Implementation</b>
+</p><p>
+   Clearly, the above is an unfriendly formula for the Propeller's native integer math. Although
+   it would be possible to use the <b>Float32</b> object to pull this off, that comes at a cost of one
+   more cog and additional heft, memory-wise. The other option used here is to pre-compute the
+   function at equally-spaced points to produce a table and use interpolation to get the intervening
+   values. Unfortunately, for any table of a reasonable size, linear interpolation does not produce
+   adequately-accurate results. So, instead, cubic interpolation is used to improve the accuracy.
+</p><p>
+   Whereas linear interpolation involves just the two tabular values on either side of the independent
+   variable and the straight line between them, cubic interpolation takes advantage of four tabular
+   values (two to the left and two to the right) and the third-order polynomial that intersects all
+   of them. In this way the actual curve's convexities and concavities can be approximated more closely.
+   The basic formula is this:
+</p><p>
+</p><pre>   y(x) = y[i-1](-a³/2 + a² - a/2) + y[i](3a³/2 - 5a²/ 2 + 1)
+        + y[i+1](-3a³/2 + 2a² + a/2) + y[i+2](a³/2 - a²/ 2)
+</pre><p>
+   where y(x) is the interpolated value at a = (x - x[i]) / (x[i+1] - x[i]), assuming the y[i]'s
+   in the table are all calculated at equally-spaced x values; and i is chosen such that x is between
+   x[i] and x[i+1].
+</p><p>
+   This formula can be computed with integer math. By spacing the x values in the table at power-of-two
+   multiples of the real x values, i can be computed by shifting x to the right. a, then, is just the
+   least-significant bits that got shifted out.
+</p><p>
+   The table at the end of this object was computed in Perl using standard pressure in hundredths of a
+   millibar (i.e. 101325) for PØ to produce altitude values in whole centimeters (i.e. hundredths of a
+   meter). This was done using 65 equally-spaced values for P (also in hundredths of a millibar),
+   yielding an altitude range of -2086 meters to +23230 meters.
+</p><p>
+   In order to use the table with PØ values other than standard 
+sea-level pressure, the P value must first be corrected, as follows:
+</p><p>
+</p><pre>    P := P * P0(standard) / P0(actual)
+</pre><p>
+   Then the interpolation can proceed as described above.
+</p><p>
+   <b>Use</b> <b>as</b> <b>a</b> <b>Barometer</b>
+</p><p>
+   To use the module as a barometer to obtain the local air pressure, one need only read the data and
+   apply the calibration and temperature corrections to obtain a value in hundredths of a millibar.
+   However, to get the air pressure corrected to sea level (as a real weather station would do), you
+   have to know your altitude (i.e. elevation if on land). The question then becomes, "Given the local
+   pressure reading, at what sea-level pressure does the altitude formula produce my current altitude?"
+   Rather than producing yet another table that inverts the altitude formula, this object uses a binary
+   search, with the presumptive sea-level pressure being the independent variable whose value we want
+   to zero in on. This method yields an accurate result very quickly.
+</p><p>
+   <b>Use</b> <b>as</b> <b>an</b> <b>Altimeter</b>
+</p><p>
+   To use the module as an altimeter, you have to know both the local pressure (which the sensor gives
+   you) and the corrected sea-level pressure for your location. The latter can be a bit tricky to obtain.
+   For one thing, there may not be a weather station at your x,y coordinates to provide this information.
+   For another, the sea-level pressure can change, due to changing weather conditions. One solution is to
+   start from a known altitude and compute the sea-level pressure as described above for a barometer, then
+   use this value with the changing local pressure to compute your current altitude. Of course, if the
+   weather changes during your travel, the altitude readings become inaccurate again. This is why pilots,
+   when approaching an airport, will radio ahead for its sea-level-corrected barometric reading, so they
+   can adjust their altimeters accordingly, using an adjustment knob to set the dial in the little window
+   that shows atmospheric pressure.
+</p><p>
+   This object provides the same facilities: you can adjust the sea-level pressure either directly by
+   providing the correct value, or indirectly by providing your current altitude and local air pressure.
+</p><p>
+   <b>Foreground</b> <b>and</b> <b>Background</b> <b>Operation</b>
+</p><p>
+   The MS5607 datasheet suggests averaging multiple temperature and pressure readings to get a stable value
+   for each. Depending on the chosen resolution -- and there are five to choose from -- acquiring and
+   averaging a bunch (33 in this case) of readings can take a bit of time. For this reason, the object
+   includes an optional background mode, wherein a separate cog is started that continuously reads the sensor,
+   performs the temperature and pressure corrections, and averages the last 33 readings. It also keeps a
+   running tab of the median value of the last 33 readings, in case it's preferred over the mean (average).
+   The median can be handy for eliminating spurious readings when, for example, the device is in your car
+   and you slam the door, causing an instantaneous increment in air pressure. With the median, that errant
+   value is simply shunted to one end or the other of the range of values and ignored. With the mean, the
+   errant value would be averaged into the result, skewing it a bit.
+</p><p>
+   In order to ensure that all values requested at a certain time come from the same batch of 33 readings,
+   this object includes pause and resume methods for the background process. These can also be used when
+   the sensor shares its I2C port with other devices, in order to avoid conflicts when those devices are
+   accessed.
+    </p><p>
+
+</p><h2 id="lbl3">External Connections </h2>
+ The chip drivers in this object use I²C exclusively, which means that only four
+   of the module's available seven pins need to be connected:
+<p>
+</p><pre>   ┌────────────────┐
+   │  #29124    CS •│ N/C
+   │           SDO •│ N/C
+   │   ┌─┐     SDA •│ I²C serial data (SDA)
+   │   │ │     SCL •│ I²C serial clock (SCL)
+   │   └─┘      PS •│ N/C
+   │ Altimeter VIN •│ 3.3 - 5.0VDC (Module is regulated to 3.0VDC.)
+   │  Module   GND •│ Logic ground (Vss)
+   └────────────────┘
+</pre><p>
+   The voltage going to the VIN pin should equal Vdd for the chip connected to
+   the module, since all outputs are pulled up internally to that voltage.
+   Both SCL and SDA are pulled up internally, so external pull-ups are optional.
+</p><p>
+   Two start methods are provided: a convenience method for several of Parallax's
+   Propeller development boards, and one to which explicit pinout information can be
+   provided. The default setups for the supported Propeller development boards are
+   shown below.
+</p><p>
+<b>Propeller</b> <b>Demo</b> <b>Board</b>:
+</p><p>
+   The module is assumed to be plugged directly into the header connector strip
+   as shown below, overhanding the solderless breadboard. It is powered through the
+   P7 pin.
+</p><p>
+</p><pre>                  │=│ 5V
+   Solderless     │=│ Vdd
+   Breadboard     │=│ Vdd
+                  │=│ P0
+   ┌──────────────┴─┤ P1
+   │  #29124    CS •│ P2
+   │           SDO •│ P3
+   │   ┌─┐     SDA •│ P4
+   │   │ │     SCL •│ P5
+   │   └─┘      PS •│ P6
+   │ Altimeter VIN •│ P7
+   │  Module   GND •│ Vss
+   └──────────────┬─┤ Vss
+</pre><p>
+<b>P8X32A</b> <b>QuickStart</b> <b>Board</b>:
+</p><p>
+   The module is assumed to be plugged directly into the inside row of the header
+   connector strip at the very left-hand end (top in the illustration below). The
+   P10 pin provides power; P12, a ground return.
+</p><p>
+</p><pre> ┌───┐
+ ┤   ├──────────────────┐
+ │   │ ← USB Connector  │
+ └───┘                  │
+                        │
+   ┌────────────────┬─┐ │
+   │  #29124    CS •│=│ │  P0:P1
+   │           SDO •│=│ │  P2:P3
+   │   ┌─┐     SDA •│=│ │  P4:P5
+   │   │ │     SCL •│=│ │  P6:P7
+   │   └─┘      PS •│=│ │  P8:P9
+   │ Altimeter VIN •│=│ │ P10:P11
+   │  Module   GND •│=│ │ P12:P13
+   └──────────────┬─┘=│ │
+                  │= =│ │
+                  │= =│ │
+                  │= =│ │
+                  │= =│ │
+</pre><p>
+<b>Spinneret</b>, <b>Propeller</b> <b>Backpack</b>, <b>and</b> <b>MoBoProp</b>
+</p><p>
+   The Spinneret, Propeller Backpack, and MoBoProp have daughterboard connectors into
+   which a Parallax Proto-DB can be plugged. The easiest way to connect the altimeter
+   module to the Proto-DB is as follows:
+</p><p>
+</p><pre>                Top View
+  ┌──────────────────────────────────┐
+  │             Proto-DB             │
+  │                                  │
+  │                                  │
+  │ ••                               │
+  │ •• ← Motherboard Connector       │
+  │ ••   on bottom                   │
+  │ ••                               │
+  │ ••       ┌────────────────┐      │
+  │ ••       │  #29124    CS •│      │
+  │          │           SDO •│      │
+  │    E•→SCL│   ┌─┐     SDA •│      │
+  │    F•→SDA│   │ │     SCL •│      │
+  │  Vdd•┐   │   └─┘      PS •│      │
+  │      ┻───│ Altimeter VIN •│-Vdd  │
+  │  Gnd ────│  Module   GND •│-Gnd  │
+  └──────────┴────────────────┴──────┘
+</pre><p>
+   Be sure to make the connection between the Vdd pad and its corresponding bus. Also note that
+   the SCL and SDA wires cross over each other to make their connections to the E and F pads.
+</p><p>
+   For the Propeller Backpack, SCL and SDA will correspond to P4 and P5, respectively.
+</p><p>
+   For the MoBoProp "A" socket, SCL and SDA will correspond to P12 and P13, respectively.
+   For the "B" socket, the pins are P4 and P5, the same as for the Backpack.
+</p><p>
+   For the Spinneret board, SCL is P28, and SDA is P29, the same as they are assigned to the EEPROM
+   and the real-time clock. Since the altimeter chip uses a different device address from that of
+   the EEPROM and RTC, there is no address conflict. However, care must be taken not to address both
+   at the same time from two different cogs. If a running Spinneret program must address the EEPROM
+   or RTC, it will be necessary either to run this object in foreground mode only or to call <b>pause</b>
+   and <b>resume</b> surrounding calls to other methods that cause the I2C bus to be accessed. If this is
+   a problem, the wires can be shifted to a different pair of motherboard pins.
+<br>
+</p><h2 id="lbl4">Constants</h2>
+<h3 id="lbl5">Chip Selection </h3>
+ These constants are use to select between the two Measurement Systems sensor chips.
+     Either can be bitwise ORed with the module parameter for <b>start</b> or either pin
+     assignment for <b>start_explicit</b>.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl6')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl6">  MS5607           = $00
+  MS5611           = $80
+
+</pre>
+<hr><h3 id="lbl7">Background vs. Foreground </h3>
+ These constants are used with the start methods to choose between background (separate
+     cog taking and averaging samples) or foreground (samples taken and averaged on request)
+     modes of operation.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl8')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl8">  BACKGROUND       = <var>true</var>
+  FOREGROUND       = <var>false</var>
+
+</pre>
+<hr><h3 id="lbl9">Default Module Settings </h3>
+ These constants can be used with the <b>start</b> method to predefine default power
+     and control pin setups for various Propeller modules. They are defined as follows:
+<p>
+</p><pre>   Byte3 Byte2 Byte1 Byte0
+  ┌─────┬─────┬─────┬─────┐
+  │ Vdd │ Vss │ SCL │ SDA │
+  └─────┴─────┴─────┴─────┘
+</pre><p>
+     Each byte contains a pin number for its associated signal. If either of Vdd or Vss
+     are not provided by a Propeller pin, $ff is given as the pin number. The module
+     constant can also be bitwise ORed with the constant <b>MS5611</b> to select that alternate
+     sensor chip.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl10')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl10">  DEMO_BOARD       = $07ff_0504
+  QUICKSTART       = $0a0c_0604
+  SPINNERET        = $ffff_1c1d
+  BACKPACK         = $ffff_0405
+  MOBO_A           = $ffff_0c0d
+  MOBO_B           = $ffff_0405
+
+</pre>
+<hr><h3 id="lbl11">I²C Commands </h3>
+ These constants provide address and command byte values for the sensor.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl12')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl12">  DEVICE_ADDR      = $ec
+  DEVICE_READ      = $01             
+
+  CMD_READ_ADC     = $00
+  CMD_RESET        = $1e             
+  CMD_CONV_ADC     = $40
+  CMD_READ_PROM    = $a0
+
+  RSLT_D1          = $00
+  RSLT_D2          = $10
+
+  RES_256          = $00
+  RES_512          = $02
+  RES_1024         = $04
+  RES_2048         = $06
+  RES_4096         = $08
+
+  LOWEST           = RES_256
+  LOW              = RES_512
+  MEDIUM           = RES_1024
+  HIGH             = RES_2048
+  HIGHEST          = RES_4096
+
+  ACK              = <var>true</var>
+  NAK              = <var>false</var>
+
+</pre>
+<hr><h3 id="lbl13">Standard Pressure </h3>
+ This is the standard pressure at sea-level in hundredths of a millibar.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl14')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl14">  SEA_PRESS_STA    = 101325
+
+</pre>
+<hr><h3 id="lbl15">Array sizes </h3>
+ These determine how many samples to average and how much space to use
+     for the string buffer.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl16')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl16">  N_SAMP           = 33         'Number of samples for average and median calulations (must be odd).
+  MAX_LEN          = 64         'Size of string constructor array in bytes.
+
+</pre>
+<hr><h3 id="lbl17">Results Array Indices </h3>
+ These provide general acces to the results array in the hub when the array
+     address is known.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl18')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl18">  #0, SEA_P, CUR_T, CUR_P, AVG_T, AVG_P, MED_T, MED_P, SUM_T, SUM_P, SAM_T
+  SAM_P            = SAM_T + N_SAMP
+
+</pre>
+<hr><h3 id="lbl19">String Constants </h3>
+ These can be provided to the general conversion routine and to the string
+     formatting routines.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl20')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl20">  ' Bitwise OR one of the following to determine a conversion and/or add the
+  ' corresponding units designator to a formatted string.
+
+  #0, NONE, MILLIBARS, INCHES, METERS, FEET, DEGC, DEGF
+
+  CONV             = $10  ' Bitwise OR to force a conversion before formatting.
+
+  TO_INCHES        = CONV | INCHES
+  TO_METERS        = CONV | METERS
+  TO_FEET          = CONV | FEET
+  TO_MILLIBARS     = CONV | MILLIBARS
+  TO_DEGF          = CONV | DEGF
+  TO_DEGC          = CONV | DEGC
+  
+  ' Bitwise OR one of the following to add the indicated
+  ' character at the end of the formatted string.
+  
+  CR               = $20  
+  LF               = $40
+  CRLF             = $60               
+  COMMA            = $80
+  SPACE            = $a0
+  TAB              = $c0
+  CECR             = $e0               
+
+</pre>
+<hr><h2 id="lbl21">Instance Variables </h2>
+ These variables are replicated for each instance of the object.
+<br>
+<br><a onclick="javascript:ShowHide('lbl22')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl22">
+  <var>long</var> sea_press, cur_temp, cur_press, avg_temp, avg_press, med_temp, med_press, sum_temp, sum_press
+  <var>long</var> temp_samples[N_SAMP], press_samples[N_SAMP]
+  <var>long</var> stack[50], adc_delay, sample_count
+  <var>word</var> c1, c2, c3, c4, c5, c6, ptr, str_index, buf_index 
+  <var>byte</var> sda, scl, resolution, started, lock, locked, samp_temp, samp_press, dev5611
+  <var>byte</var> buffer[MAX_LEN]
+
+</pre>
+<hr><h2 id="lbl23">Public Spin Methods</h2>
+<h3 id="lbl24">Start, Stop, Pause</h3>
+ This group of methods starts and stops the object and allows one to pause and resume
+   the background data acquisition if it's running.
+<br>
+<hr><h4 id="lbl25">start(module, bkgnd)
+</h4>
+ Start the object using one of the default pinouts given in the CONstants section.
+<br><br><div class="d0"><b>Parameters</b>:</div>
+<p></p><div class="d4"><b>module</b>: One of the constants given in the "Default Module Settings" section.
+Can be bitwise ORed with the constant <b>MS5611</b> to use that chip.</div>
+<div class="d4"><b>bkgnd</b>: <b>true</b> to start a background acquisition, <b>false</b> not to.</div>
+<p></p><div class="d0"><b>Return</b>: 255 or the cogid + 1 of the background process on success, 0 on failure. </div>
+<p></p><div class="d0"><b>Example</b>: success := alt.start(alt#DEMO_BOARD, true)</div>
+<p></p><div class="d4">Start the object using the default Propeller Demo Board pinout, and start a
+background process. (The background process uses one additional cog and one lock.)
+Assign the return value to the variable <b>success</b>.</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl26')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl26"><var>PUB</var> start(module, bkgnd) | port
+
+  <var>if</var> ((port := <var>byte</var>[@module][2]) =&lt; $1f)
+    <var>dira</var>[port]~~
+  <var>if</var> ((port := <var>byte</var>[@module][3]) =&lt; $1f)
+    <var>outa</var>[port]~~
+    <var>dira</var>[port]~~
+  <var>return</var> start_explicit(<var>byte</var>[@module][1], <var>byte</var>[@module], bkgnd)
+
+</pre>
+<hr><h4 id="lbl27">start_explicit(sc, sd, bkgnd)
+</h4>
+ Start the object using a prescribed pinout for SCL and SDA.
+<br><br><div class="d0"><b>Parameters</b>:</div>
+<p></p><div class="d4"><b>sc</b>: Pin number for SCL. Can be bitwise ORed with the constant <b>MS5611</b> to use that chip.</div>
+<div class="d4"><b>sd</b>: Pin number for SDA. Can be bitwise ORed with the constant <b>MS5611</b> to use that chip.</div>
+<div class="d4"><b>bkgnd</b>: <b>true</b> to start background acquisitions, <b>false</b> not to.</div>
+<p></p><div class="d0"><b>Return</b>: 255 or the cogid + 1 of the background process on success, 0 on failure.</div>
+<p></p><div class="d0"><b>Example</b>: alt.start_explicit(7, 8 | alt#MS5611, false)</div>
+<p></p><div class="d4">Start the object using P7 for SCL and P8 for SDA, but do not start a &nbsp;background
+process. Use the MS5611 chip, rather than the default MS5607</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl28')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl28"><var>PUB</var> start_explicit(sc, sd, bkgnd) | i
+
+  stop
+  sea_press := SEA_PRESS_STA
+  set_resolution(RES_1024)
+  scl := sc &amp; $1f
+  sda := sd &amp; $1f
+  dev5611 := (sc | sd) &amp; $80
+  ptr~
+  _i2c_init
+  _i2c_send_cmd(CMD_Reset)
+  <var>waitcnt</var>((clkfreq &gt;&gt; 3 #&gt; 400) + <var>cnt</var>)
+  <var>repeat</var> i <var>from</var> 0 <var>to</var> 5
+    c1[i] := _read_prom(i + 1)
+  started~~
+  samples
+  <var>if</var> (bkgnd)
+    <var>if</var> (lock := <var>locknew</var> + 1)
+      <var>ifnot</var> (started := <var>cognew</var>(_do_background, @stack) + 1)
+        <var>lockret</var>(lock - 1)
+  <var>return</var> started
+
+</pre>
+<hr><h4 id="lbl29">stop
+</h4>
+ Stop the object and any background process that was started, and return its lock
+     to the lock pool.
+<br><br><div class="d0"><b>Return</b>: none</div>
+<p></p><div class="d0"><b>Example</b>: alt.stop</div>
+<p></p><div class="d4">Stop the object.</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl30')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl30"><var>PUB</var> stop
+
+  <var>if</var> (started)
+    <var>if</var> (lock)
+      <var>cogstop</var>(started - 1)
+      <var>lockret</var>(lock - 1)
+    started~
+
+</pre>
+<hr><h4 id="lbl31">pause
+</h4>
+ If a background process is running, wait for it to complete its current sample
+     then pause it until <b>resume</b> is called. Doing so before taking readings guarantees
+     that all readings come from the same set of samples. It will also prevent I2C bus
+     conflicts when called before invoking other methods and objects (e.g. RTC driver
+     via the SD file driver on the Spinneret) that access the shared I2C port.
+<br><br><div class="d0"><b>Return</b>: none</div>
+<p></p><div class="d0"><b>Example</b>: alt.pause</div>
+<p></p><div class="d4">Pause the background process so coherent readings can be acquired or so another
+method can access the shared I2C port.</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl32')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl32"><var>PUB</var> pause
+
+  <var>if</var> (lock <var>and</var> <var>not</var> locked)
+    <var>repeat</var> <var>while</var> <var>lockset</var>(lock - 1)
+    locked~~
+
+</pre>
+<hr><h4 id="lbl33">resume
+</h4>
+ Resume the background process after a <b>pause</b>.
+<br><br><div class="d0"><b>Return</b>: What gets returned, or 'none'.</div>
+<p></p><div class="d0"><b>Example</b>: alt.resume</div>
+<p></p><div class="d4">Resume the background process.</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl34')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl34"><var>PUB</var> resume
+
+  <var>if</var>(lock <var>and</var> locked)
+    <var>lockclr</var>(lock - 1)
+    locked~
+
+</pre>
+<hr><h3 id="lbl35">Calibration</h3>
+ These methods set the resolution of the sensor readings and calibrate the
+   altitude readings against a known sea-level-equivalent pressure, or altitude
+   and pressure against a known starting altitude.
+<br>
+<hr><h4 id="lbl36">set_resolution(resol)
+</h4>
+ Set the sensor resolution. The higher the resolution, the more precise the
+     readings will be, but the longer it will take to acquire them, particularly
+     in foreground mode. The default resolution on start-up is RES_1024. This
+     method can be called on the fly at any time to change from the default.
+<br><br><div class="d0"><b>Parameters</b>:</div>
+<p></p><div class="d4"><b>resol</b>: One of RES_256, RES_512, RES_1024, RES_2048, or RES_4096
+or LOWEST, LOW, MEDIUM, HIGH, or HIGHEST</div>
+<p></p><div class="d0"><b>Return</b>: none</div>
+<p></p><div class="d0"><b>Example</b>: alt.set_resolution(alt#RES_4096)</div>
+<p></p><div class="d4">Set the sensor to its highest resolution.</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl37')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl37"><var>PUB</var> set_resolution(resol) | i
+
+  <var>if</var> (i := <var>lookdown</var>(resol: RES_256, RES_512, RES_1024, RES_2048, RES_4096))
+    resolution := resol
+    adc_delay := clkfreq / <var>lookup</var>(i: 1000, 333, 250, 166, 100) #&gt; 400
+    <var>if</var> (lock)
+      sample_count~
+      <var>repeat</var> <var>until</var> sample_count =&gt; N_SAMP
+    <var>else</var>
+      samples
+
+</pre>
+<hr><h4 id="lbl38">set_altitude(cm)
+</h4>
+ Set the current altitude, based on the argument given, and the average
+     local pressure. This macro function changes the set sea-level pressure.
+<br><br><div class="d0"><b>Parameters</b>:</div>
+<p></p><div class="d4"><b>cm</b>: Current altitude in wole centimeters (hundredths of a meter).</div>
+<p></p><div class="d0"><b>Return</b>: Computed sea_level pressure in hundredths of a millibar.</div>
+<p></p><div class="d0"><b>Example</b>: alt.set_altitude(alt.m_from_ft(43200))</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl39')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl39"><var>PUB</var> set_altitude(cm) : sp
+
+  set_sealevel_press(sp := sealevel_press(average_press, cm))      
+
+</pre>
+<hr><h4 id="lbl40">set_sealevel_press(mb)
+</h4>
+ Set the equivalent sea-level pressure at the current location in order to
+     provide altitude corrections.
+<br><br><div class="d0"><b>Parameters</b>:</div>
+<p></p><div class="d4"><b>mb</b>: Equivalent sea-level pressure in hundredths of a millibar.</div>
+<p></p><div class="d0"><b>Return</b>: none</div>
+<p></p><div class="d0"><b>Example</b>: alt.set_sealevel_press(alt.mb_from_in(3004))</div>
+<p></p><div class="d4">Set the equivalent sea-level pressure to 30.04 inches of Hg.</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl41')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl41"><var>PUB</var> set_sealevel_press(mb)
+
+  sea_press := mb
+
+</pre>
+<hr><h3 id="lbl42">Result Accessors</h3>
+ These methods provide the main data interface to the sensor and are used to
+   obtain temperature and pressure data and to perform computations involving
+   altitude and equivalent sea-level pressure.
+<br>
+<hr><h4 id="lbl43">results_addr(index)
+</h4>
+ Return the address of a particular item in the results array, using one of
+     the indexing constants given in the CONstants section. (If index is zero,
+     the base address of the array is returned.)
+<br><br><div class="d0"><b>Parameters</b>:</div>
+<p></p><div class="d4"><b>index</b>: An index into the array (or zero).</div>
+<p></p><div class="d0"><b>Return</b>: The address of the selected result.</div>
+<p></p><div class="d0"><b>Example</b>: res_addr := alt.results_addr(0)</div>
+<p></p><div class="d4">Assign the hub address of the results array to the word variable <b>res_addr</b>.</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl44')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl44"><var>PUB</var> results_addr(index)
+
+  <var>return</var> @sea_press[index]
+
+</pre>
+<hr><h4 id="lbl45">results(index)
+</h4>
+ Obtain a particular value from the results array by indexing.
+<br><br><div class="d0"><b>Parameters</b>:</div>
+<p></p><div class="d4"><b>index</b>: An index into the array given in the CONstants section above.</div>
+<p></p><div class="d0"><b>Return</b>: The result value at that index.</div>
+<p></p><div class="d0"><b>Example</b>: avg_pressure := alt.results(alt#AVG_P)</div>
+<p></p><div class="d4">Obtain the latest reading for the average pressure in hundredths of a millibar.</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl46')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl46"><var>PUB</var> results(index)
+
+  <var>return</var> sea_press[index]
+
+</pre>
+<hr><h4 id="lbl47">sealevel_press(mb, cm)
+</h4>
+ Given a pressure reading and a known altitude, return the equivalent
+     pressure reading at sea-level. (The sea-level pressure is obtained by performing
+     a binary search on the altitudes at various sea-level pressure settings.)
+<br><br><div class="d0"><b>Parameters</b>:</div>
+<p></p><div class="d4"><b>mb</b>: Pressure reading in hundredths of a millibar.</div>
+<div class="d4"><b>cm</b>: Altitude in centimeters (hundredths of a meter).</div>
+<p></p><div class="d0"><b>Return</b>: The equivalent sea-level air pressure for this location.</div>
+<p></p><div class="d0"><b>Example</b>: sealevel_pressure := alt.sealevel_press(102013, alt.m_from_ft(502000))</div>
+<p></p><div class="d4">Using a pressure reading of 1020.13 mb, and an altitude of 5020.00 feet,
+return the equivalent pressure at sea-level and assign it to the long variable
+<b>sealevel_pressure</b>.</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl48')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl48"><var>PUB</var> sealevel_press(mb, cm) | sp_save, dmb, alt
+
+  sp_save := sea_press
+  sea_press := 1 &lt;&lt; 16
+  dmb := 1 &lt;&lt; 15
+  <var>repeat</var>
+    <var>if</var> ((alt := altitude(mb)) == cm)
+      <var>quit</var>
+    <var>elseif</var> (alt &lt; cm)
+      sea_press += dmb
+    <var>else</var>
+      sea_press -= dmb
+  <var>while</var> dmb &gt;&gt;= 1
+  mb := sea_press
+  sea_press := sp_save
+  <var>return</var> mb
+
+</pre>
+<hr><h4 id="lbl49">altitude(mb)
+</h4>
+ Given the local pressure in hundredths of a millibar and the predetermined air pressure
+     at sealevel, return the current altitude in centimeters (hundredths of a meter).
+<br><br><div class="d0"><b>Parameters</b>:</div>
+<p></p><div class="d4"><b>mb</b>: Pressure reading in hundredths of a millibar.</div>
+<p></p><div class="d0"><b>Return</b>: What gets returned, or 'none'.</div>
+<p></p><div class="d0"><b>Example</b>: Sample method call.</div>
+<p></p><div class="d4">Explain what the sample call does.
+Next lines, if needed...</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl50')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl50"><var>PUB</var> altitude(mb) : alt | i, p, p2, x, qm, q0, q1, q2
+
+  'Correct the local pressure for the pressure at sea-level:
+  
+  mb := ((_umultdiv(mb, constant(SEA_PRESS_STA &lt;&lt; 2), sea_press) &gt;&gt; 1 + 1) &gt;&gt; 1) &lt;# $1_f7ff #&gt; $800
+
+  'Compute an index into the table, plus fractional values for interpolation:
+  
+  i := mb &gt;&gt; 11
+  p := mb &amp; $7ff
+  p2 := p * p
+
+  'Copy the four table values surrounding the pressure into the local variables:
+  
+  <var>longmove</var>(@qm, @alt_table[i - 1], 4)
+
+  'Compute the altitude using cubic interpolation:
+  
+  alt := (qm &lt;&lt; 1) - 5 * q0 + (q1 &lt;&lt; 2) - q2
+  alt := (p2 ** alt) &lt;&lt; 9 + (p2 * alt) &gt;&gt; 23 + (p2 ** (p * (3 * (q0 - q1) + q2 - qm))) ~&gt; 2 +  (p * (q1 - qm)) ~&gt; 12 + q0
+
+</pre>
+<hr><h4 id="lbl51">current_temp
+</h4>
+ Return the current instantaneous temperature value in hundredths of a degree Celsius. If operating in
+     foreground mode and if there was a previous call to obtain a temperature, an entire new set of readings
+     will be taken before this method returns.
+<br><br><div class="d0"><b>Return</b>: Current instantaneous temperature reading in hundredths of a degree Celsius.</div>
+<p></p><div class="d0"><b>Example</b>: deg_f := alt.f_from_c(current_temp) / 100</div>
+<p></p><div class="d4">Assign the current instantaneous temperature reading in whole degrees Fahrenheit to the
+variable <b>deg_f</b>.</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl52')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl52"><var>PUB</var> current_temp
+
+  _get_temp
+  <var>return</var> cur_temp
+
+</pre>
+<hr><h4 id="lbl53">current_press
+</h4>
+ Return the current instantaneous pressure value in hundredths of a millibar. If operating in
+     foreground mode and if there was a previous call to obtain a pressure, an entire new set of readings
+     will be taken before this method returns.
+<br><br><div class="d0"><b>Return</b>: current instantaneous pressure reading in hundredths of a millibar.</div>
+<p></p><div class="d0"><b>Example</b>: mb := alt.current_press / 100</div>
+<p></p><div class="d4">Assign the current instantaneous pressure readin in shole millibars to the variable <b>mb</b>.</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl54')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl54"><var>PUB</var> current_press
+
+  _get_press
+  <var>return</var> cur_press
+
+</pre>
+<hr><h4 id="lbl55">median_temp
+</h4>
+ Return the median temperature value in hundredths of a degree Celsius. The median temperature is the
+     middle reading of the group of N_SAMP samples. If operating in foreground mode and if there was a
+     previous call to obtain a temperature, an entire new set of readings will be taken before this method
+     returns; otherwise, the value already saved will be returned instead. If operating in background mode,
+     the value returned will be a running median based on the most recent N_SAMP samples, which may include
+     samples used from a previous call to this method.
+<br><br><div class="d0"><b>Return</b>: Median temperature value in hundredths of a degree Celsius.</div>
+<p></p><div class="d0"><b>Example</b>: deci_c := alt.median_temp / 10</div>
+<p></p><div class="d4">Assign the median temperature in tenths of a degree Celsius to the variable <b>deci_c</b>.</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl56')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl56"><var>PUB</var> median_temp
+
+  _get_temp
+  <var>return</var> med_temp
+
+</pre>
+<hr><h4 id="lbl57">median_press
+</h4>
+ Return the median pressure value in hundredths of a millibar. The median pressure is the
+     middle reading of the group of N_SAMP samples. If operating in foreground mode and if there was a
+     previous call to obtain a pressure, an entire new set of readings will be taken before this method
+     returns; otherwise, the value already saved will be returned instead. If operating in background
+     mode, the value returned will be a running median based on the most recent N_SAMP samples, which may
+     include samples used from a previous call to this method.
+<br><br><div class="d0"><b>Return</b>: Median pressure value in hundredths of a millibar.</div>
+<p></p><div class="d0"><b>Example</b>: pressure := alt.convert(alt.median_press, alt#INCHES)</div>
+<p></p><div class="d4">Read the median pressure, convert it to hundredths of an inch, and assign to the variable <b>pressure</b>.</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl58')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl58"><var>PUB</var> median_press
+
+  _get_press
+  <var>return</var> med_press
+
+</pre>
+<hr><h4 id="lbl59">average_temp
+</h4>
+ Return the average temperature value in hundredths of a degree Celsius. The average temperature is the
+     sum of the group of N_SAMP samples, divided by N_SAMP. If operating in foreground mode and if there was a
+     previous call to obtain a temperature, an entire new set of readings will be taken before this method
+     returns; otherwise, the value already saved will be returned instead. If operating in background mode,
+     the value returned will be a running average based on the most recent N_SAMP samples, which may include
+     samples used from a previous call to this method.
+<br><br><div class="d0"><b>Return</b>: Average temperature value in hundredths of a degree Celsius</div>
+<p></p><div class="d0"><b>Example</b>: temp := alt.convert(alt.average_temp, alt#DEGF) / 100</div>
+<p></p><div class="d4">Assign the average temperature, in whole degress Fahrenheit, to the variable <b>temp</b>.</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl60')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl60"><var>PUB</var> average_temp
+
+  _get_temp
+  <var>return</var> avg_temp
+
+</pre>
+<hr><h4 id="lbl61">average_press
+</h4>
+ Return the average pressure value in hundredths of a millibar. The average pressure is the
+     sum of the group of N_SAMP samples, divided by N_SAMP. If operating in foreground mode and if there was a
+     previous call to obtain a pressure, an entire new set of readings will be taken before this method
+     returns; otherwise, the value already saved will be returned instead. If operating in background mode,
+     the value returned will be a running average based on the most recent N_SAMP samples, which may include
+     samples used from a previous call to this method.
+<br><br><div class="d0"><b>Return</b>: Average pressure value in hundredths of a millibar.</div>
+<p></p><div class="d0"><b>Example</b>: mb := alt.average_press</div>
+<p></p><div class="d4">Assign the average pressure in hundredths of a millibar to the variable <b>mb</b>.</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl62')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl62"><var>PUB</var> average_press
+
+  _get_press
+  <var>return</var> avg_press
+
+</pre>
+<hr><h4 id="lbl63">sample
+</h4>
+ Take a single sample reading of temperature and pressure and merge it into the running
+     average and median computation. This method is valid only in foreground mode. In
+     background mode, samples are being taken continuously, and this method does nothing.
+<br><br><div class="d0"><b>Return</b>: none</div>
+<p></p><div class="d0"><b>Example</b>: alt.sample</div>
+<p></p><div class="d4">Take one instantaneous sample reading</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl64')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl64"><var>PUB</var> sample
+
+  <var>ifnot</var> (lock)
+    _sample
+    samp_temp~~
+    samp_press~~
+
+</pre>
+<hr><h4 id="lbl65">samples
+</h4>
+ Obtain N_SAMP consecutive samples, separated by more than 10 ms. between samples. One call
+     to samples will flush and recompute from scratch the average and median values of
+     temperature and pressure. This method is valid only in foreground mode. In background mode,
+     samples are being taken continuously, and this method does nothing.
+<br><br><div class="d0"><b>Return</b>: none</div>
+<p></p><div class="d0"><b>Example</b>: alt.samples</div>
+<p></p><div class="d4">Obtain N_SAMP new data samples and compute their average and median values.</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl66')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl66"><var>PUB</var> samples
+
+  <var>ifnot</var>(lock)
+    <var>repeat</var> N_SAMP
+      _sample
+      <var>waitcnt</var>(((clkfreq / 100 #&gt; 400)+ <var>cnt</var>))
+    samp_temp~~
+    samp_press~~
+
+</pre>
+<hr><h3 id="lbl67">Output Formatting</h3>
+ These methods are provided as a convenience for those wanting to convert readings to strings
+   for display or for saving in an ASCII text data file.
+<br>
+<hr><h4 id="lbl68">formatn(value, units, width)
+</h4>
+ Format a number given in hundredths as a signed-decimal string, optionally converted to
+     other units, and optionally followed by a units designator and delimiter. Return a pointer
+     to a TEMPORARY string. The lifetime of the returned string is finite, so it must either be used
+     right away or be copied to another byte array using <b>bytemove</b>. See the CONstants section for
+     values that can be used in the <b>units</b> parameter. 
+<br><br><div class="d0"><b>Parameters</b>:</div>
+<p></p><div class="d4"><b>value</b>: The value, in hundredths to convert to a string.</div>
+<div class="d4"><b>units</b>: A byte that determines the units to print and possibly convert to, along with a delimiter.</div>
+<div class="d4"><b>width</b>: The minimum field width (including the sign, digits, and decimal point only).</div>
+<p></p><div class="d0"><b>Return</b>: A pointer to the formatted string.</div>
+<p></p><div class="d0"><b>Example</b>: temp_str := alt.formatn(101325, alt#TO_INCHES|alt#CRLF, 7)</div>
+<p></p><div class="d4">Convert 1013.25 mb to inches, format it as " &nbsp;29.92 in", followed by a carriage return/linefeed pair.</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl69')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl69"><var>PUB</var> formatn(value, units, width) | t_val, field
+
+  width := width &lt;# constant(MAX_LEN - 1) #&gt; 1
+
+  <var>if</var> (units &amp; CONV)
+    value := convert(value, units)
+    units -= CONV          
+
+  t_val := ||value                                      
+  field := 1                                                
+
+  <var>repeat</var> <var>while</var> t_val                              
+    field++
+    t_val /= 10
+
+  field #&gt;= 4
+  
+  <var>if</var> ((width -= field + (value =&gt; 0)) &gt; 0)                                      
+    <var>repeat</var> width                              
+      enqueue(" ")                                      
+
+  <var>return</var> format(value, units)
+
+</pre>
+<hr><h4 id="lbl70">format(value, units)
+</h4>
+ Format a number given in hundredths as a minimal-length, signed-decimal string, optionally converted to
+     other units, and optionally followed by a units designator and delimiter. Return a pointer
+     to a TEMPORARY string. The lifetime of the returned string is finite, so it must either be used
+     right away or be copied to another byte array using <b>bytemove</b>. See the CONstants section for
+     values that can be used in the <b>units</b> parameter. 
+<br><br><div class="d0"><b>Parameters</b>:</div>
+<p></p><div class="d4"><b>value</b>: The value, in hundredths to convert to a string.</div>
+<div class="d4"><b>units</b>: A byte that determines the units to print and possibly convert to, along with a delimiter.</div>
+<p></p><div class="d0"><b>Return</b>: A pointer to the formatted string.</div>
+<p></p><div class="d0"><b>Example</b>: temp_str := alt.formatn(101325, alt#COMMA)</div>
+<p></p><div class="d4">Format 101325 as "1013.25,".</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl71')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl71"><var>PUB</var> format(value, units) | div, z_pad, str, ch   
+
+  <var>if</var> (units &amp; CONV)
+    value := convert(value, units)
+
+  <var>if</var> (value &lt; 0)                                         
+    -value                                              
+    enqueue("-")
+
+  div := 1_000_000_000                                  
+  z_pad~                                                
+
+  <var>repeat</var> 10
+    <var>if</var> (value =&gt; div)                                   
+      enqueue(value / div + "0")                        
+      value //= div                                     
+      z_pad~~                                           
+    <var>elseif</var> z_pad <var>or</var> (div =&lt; 100)                         
+      enqueue("0")
+    <var>if</var> (div == 100)
+      enqueue(".")                                      
+    div /= 10
+  str := @empty
+  <var>case</var> units &amp; $0f
+    MILLIBARS: str := string(" mb")
+    INCHES:    str := string(" in")
+    DEGC:      str := string("°C")
+    DEGF:      str := string("°F")
+    METERS:    str := string(" m")
+    FEET:      str := string(" ft")
+  <var>repeat</var> <var>while</var> ch := <var>byte</var>[str++]
+    enqueue(ch)
+  <var>case</var> units &amp; $e0
+    CR:    enqueue(13)
+    LF:    enqueue(10)
+    CRLF:  enqueue(13)
+           enqueue(10)
+    COMMA: enqueue(",")
+    SPACE: enqueue(" ")
+    TAB:   enqueue(9)
+    CECR:  enqueue(11)
+           enqueue(13)    
+     
+  <var>return</var> this_string  
+
+</pre>
+<hr><h3 id="lbl72">Unit Conversions</h3>
+ These methods convert back and forth between:
+<br><br><div class="d3">• Celsius and Fahrenheit</div>
+<div class="d3">• Meters and Feet</div>
+<div class="d3">• Millibars and Inches of Hg</div>
+<p>
+</p><hr><h4 id="lbl73">convert(value, units)
+</h4>
+ This method is a generalized conversion routine that accepts a value and a pre-defined
+     constant to indicate the type of conversion to perform. (See the CONstants section
+     or this method's source code for the available conversions.)
+<br><br><div class="d0"><b>Parameters</b>:</div>
+<p></p><div class="d4"><b>value</b>: The value to be converted to other units.</div>
+<div class="d4"><b>units</b>: One of INCHES, MILLIBARS, DEGF, DEGC, FEET, or METERS that determines the
+type of conversion to perform.</div>
+<p></p><div class="d0"><b>Return</b>: The result of the conversion.</div>
+<p></p><div class="d0"><b>Example</b>: feet := alt.convert(meters, alt#FEET)</div>
+<p></p><div class="d4">Convert meters to feet or centimeters to hundredths of a foot.</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl74')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl74"><var>PUB</var> convert(value, units)
+
+  <var>case</var> units &amp; $0f
+    INCHES:    value := in_from_mb(value)
+    MILLIBARS: value := mb_from_in(value)
+    DEGF:      value := f_from_c(value)
+    DEGC:      value := c_from_f(value)
+    FEET:      value := ft_from_m(value)
+    METERS:    value := m_from_ft(value)
+  <var>return</var> value  
+
+</pre>
+<hr><h4 id="lbl75">mb_from_in(in)
+</h4>
+ Convert pressure in inches of Hg to millibars (or from hundredths of an inch to
+     hundredths of millibars).
+<br><br><div class="d0"><b>Parameters</b>:</div>
+<p></p><div class="d4"><b>in</b>: Value in inches to be converted.</div>
+<p></p><div class="d0"><b>Return</b>: The equivalent value in millibars.</div>
+<p></p><div class="d0"><b>Example</b>: mb := alt.mb_from_in(2995) / 100</div>
+<p></p><div class="d4">Convert 29.95 inches of mercury to whole millibars.</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl76')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl76"><var>PUB</var> mb_from_in(in) 
+
+  <var>return</var> (_umultdiv(in, constant(338637526 * 2), 10000000) + 1) &gt;&gt; 1
+
+</pre>
+<hr><h4 id="lbl77">in_from_mb(mb)
+</h4>
+ Convert pressure in millibars to inches of Hg (or from hundredths of millibars
+     to hundredths of inches).
+<br><br><div class="d0"><b>Parameters</b>:</div>
+<p></p><div class="d4"><b>mb</b>: Value in millibars to be converted.</div>
+<p></p><div class="d0"><b>Return</b>: The equivalent value in inches of Hg.</div>
+<p></p><div class="d0"><b>Example</b>: inches := alt.in_from_mb(101345)</div>
+<p></p><div class="d4">Convert 1013.45 millibars to hundredths of inches.</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl78')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl78"><var>PUB</var> in_from_mb(mb)
+
+  <var>return</var> (_umultdiv(mb, constant(10000000 * 2), 338637526) + 1) &gt;&gt; 1
+
+</pre>
+<hr><h4 id="lbl79">ft_from_m(m)
+</h4>
+ Convert altitude in meters to altitude in feet (or from centimeters to
+     hundredths of feet).
+<br><br><div class="d0"><b>Parameters</b>:</div>
+<p></p><div class="d4"><b>m</b>: Altitude in meters or centimeters</div>
+<p></p><div class="d0"><b>Return</b>: Equivalent altitude in feet or hundredths of a foot.</div>
+<p></p><div class="d0"><b>Example</b>: feet := alt.ft_from_m(alt.altitude(alt.avg_press)) / 100</div>
+<p></p><div class="d4">Compute the altitude in cm, and convert to whole feet.</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl80')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl80"><var>PUB</var> ft_from_m(m) : ft
+
+  ft := (_umultdiv(||m, constant(10000 * 2), 3048) + 1) &gt;&gt; 1
+  <var>if</var> (m &lt; 0)
+    -ft
+
+</pre>
+<hr><h4 id="lbl81">m_from_ft(ft)
+</h4>
+ Convert altitude in feet to meters (or from hundredths of a foot to
+     centimeters).
+<br><br><div class="d0"><b>Parameters</b>:</div>
+<p></p><div class="d4"><b>ft</b>: Altitude in feet or hundredths of feet.</div>
+<p></p><div class="d0"><b>Return</b>: Equivalent altitude in meters or centimeters.</div>
+<p></p><div class="d0"><b>Example</b>: meters := alt.altitude(5280) </div>
+<p></p><div class="d4">Convert one mile high (5280 feet) to whole meters. </div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl82')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl82"><var>PUB</var> m_from_ft(ft) : m
+
+  m := (_umultdiv(||ft, constant(3048 * 2), 10000) + 1) &gt;&gt; 1
+  <var>if</var> (ft &lt; 0)
+    -m
+
+</pre>
+<hr><h4 id="lbl83">c_from_f(deg_f)
+</h4>
+ Convert temperature in hundredths of a degress Celsius to hundredths of
+     degrees Fahrenheit. NOTE: This does NOT work with whole degrees -- only
+     hundredths.
+<br><br><div class="d0"><b>Parameters</b>:</div>
+<p></p><div class="d4"><b>deg_f</b>: Temperature in hundredths of degrees Fahrenheit.</div>
+<p></p><div class="d0"><b>Return</b>: Equivalent temperature in hundredths of degrees Celsius.</div>
+<p></p><div class="d0"><b>Example</b>: celsius := alt.c_from_f(deg_f * 100) / 100</div>
+<p></p><div class="d4">Convert whole degrees Fahrenheit to whole degrees Celsius.</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl84')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl84"><var>PUB</var> c_from_f(deg_f)
+
+  <var>return</var> (deg_f - 3200) * 5 / 9
+
+</pre>
+<hr><h4 id="lbl85">f_from_c(deg_c)
+</h4>
+ Convert temperature in hundredths of a degress Fahrenheit to hundredths of
+     degrees Celsius. NOTE: This does NOT work with whole degrees -- only
+     hundredths.
+<br><br><div class="d0"><b>Parameters</b>:</div>
+<p></p><div class="d4"><b>deg_c</b>: Temeprature in hundredths of degrees Celsius.</div>
+<p></p><div class="d0"><b>Return</b>: Equivalent temperature in hundredths of degrees Fahrenheit.</div>
+<p></p><div class="d0"><b>Example</b>: deg_f := alt.f_from_c(2567)</div>
+<p></p><div class="d4">Convert 25.67°C to hundredths of degrees Fahrenehit.</div>
+  <p>
+<br><a onclick="javascript:ShowHide('lbl86')" href="javascript:;">SOURCE CODE...</a>
+</p><pre class="source" id="lbl86"><var>PUB</var> f_from_c(deg_c)
+
+  <var>return</var> deg_c * 9 / 5 + 3200
+
+</pre>
+<hr><h2 id="lbl87">Private Spin Methods</h2>
+<h3 id="lbl88">Data Acquisition</h3>
+ This group of methods acquires data from the sensor and performs corrective computations
+   according to the calibration data stored in the sensor's PROM.
+<br>
+<hr><h4 id="lbl89">_do_background
+</h4>
+ This is the background process that get started in a separate cog when background mode
+     is selected.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl90')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl90"><var>PRI</var> _do_background
+
+  <var>repeat</var>
+    <var>repeat</var> <var>while</var> <var>lockset</var>(lock - 1)
+    _sample
+    <var>lockclr</var>(lock - 1)
+    <var>waitcnt</var>((clkfreq / 100 #&gt; 400) + <var>cnt</var>)        
+
+</pre>
+<hr><h4 id="lbl91">_sample
+</h4>
+ Obtain one corrected sample of temperature and pressure and update the
+     average and median computation.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl92')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl92"><var>PRI</var> _sample | i, addr, new_val, cur_val, new_median, nsame, j, median
+
+  <var>if</var> (dev5611)
+    _cur_temp_press_5611
+  <var>else</var>
+    _cur_temp_press_5607 
+  <var>repeat</var> i <var>from</var> 0 <var>to</var> 1
+    addr := @temp_samples * (1 - i ) + @press_samples * i
+    new_val := cur_temp[i]
+    cur_val := <var>long</var>[addr][ptr]
+    sum_temp[i] += new_val - cur_val
+    avg_temp[i] := sum_temp[i] / N_SAMP
+    median := med_temp[i]
+    <var>if</var> (new_val &lt;&gt; cur_val)
+      <var>long</var>[addr][ptr] := new_val
+      nsame~
+      <var>if</var> (new_val =&lt; median <var>and</var> cur_val =&gt; median)
+        new_median := -$7fff_ffff
+        <var>repeat</var> j <var>from</var> 0 <var>to</var> constant(N_SAMP - 1)
+          cur_val := <var>long</var>[addr][j]
+          <var>if</var> (cur_val &lt; median)
+            nsame++
+            <var>if</var> (cur_val &gt; new_median)
+              new_median := cur_val
+      <var>elseif</var> (new_val =&gt; median <var>and</var> cur_val =&lt; median)
+        new_median := $7fff_ffff
+        <var>repeat</var> j <var>from</var> 0 <var>to</var> constant(N_SAMP - 1)
+          cur_val := <var>long</var>[addr][j]
+          <var>if</var> (cur_val &gt; median)
+            nsame++
+            <var>if</var> (cur_val &lt; new_median)
+              new_median := cur_val
+      <var>if</var> (nsame &gt; constant(N_SAMP / 2))
+        med_temp[i] := new_median 
+  ptr := ++ptr // N_SAMP
+  sample_count++
+
+</pre>
+<hr><h4 id="lbl93">_cur_temp_press_5607
+</h4>
+ Obtain current temperature and pressure readings from the MS5607 sensor and
+     correct them based on calibration data stored in the sensor's PROM.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl94')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl94"><var>PRI</var> _cur_temp_press_5607 | d1, d2, dt, offh, offl, sensh, sensl, ph, pl
+
+  d1 := _read_adc(RSLT_D1)
+  d2 := _read_adc(RSLT_D2)
+  
+  dt := d2 - c5 &lt;&lt; 8
+  cur_temp := 2000 + ((dt ** c6) &lt;&lt; 9 + (dt * c6) &gt;&gt; 23)
+
+  offh := c4 ** dt
+  offl := (c4 * dt) &gt;&gt; 6 | offh &lt;&lt; 26
+  offh ~&gt;= 6
+  _dadd(@offh, c2 &gt;&gt; 15, c2 &lt;&lt; 17)
+
+  sensh := c3 ** dt
+  sensl := (c3 * dt) &gt;&gt; 7 | sensh &lt;&lt; 25
+  sensh ~&gt;= 7
+  _dadd(@sensh, c1 &gt;&gt; 16, c1 &lt;&lt; 16)
+
+  _umult(@ph, d1, sensl)
+  ph += d1 * sensh
+  pl := pl &gt;&gt; 21 | ph &lt;&lt; 11
+  ph ~&gt;= 21
+  _dsub(@ph, offh, offl)
+  cur_press := ph &lt;&lt; 17 | pl &gt;&gt; 15
+
+</pre>
+<hr><h4 id="lbl95">_cur_temp_press_5611
+</h4>
+ Obtain current temperature and pressure readings from the MS5611 sensor and
+     correct them based on calibration data stored in the sensor's PROM.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl96')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl96"><var>PRI</var> _cur_temp_press_5611 | d1, d2, dt, offh, offl, sensh, sensl, ph, pl
+
+  d1 := _read_adc(RSLT_D1)
+  d2 := _read_adc(RSLT_D2)
+  
+  dt := d2 - c5 &lt;&lt; 8
+  cur_temp := 2000 + ((dt ** c6) &lt;&lt; 9 + (dt * c6) &gt;&gt; 23)
+
+  offh := c4 ** dt
+  offl := (c4 * dt) &gt;&gt; 7 | offh &lt;&lt; 25
+  offh ~&gt;= 7
+  _dadd(@offh, c2 &gt;&gt; 16, c2 &lt;&lt; 16)
+
+  sensh := c3 ** dt
+  sensl := (c3 * dt) &gt;&gt; 8 | sensh &lt;&lt; 24
+  sensh ~&gt;= 8
+  _dadd(@sensh, c1 &gt;&gt; 17, c1 &lt;&lt; 15)
+
+  _umult(@ph, d1, sensl)
+  ph += d1 * sensh
+  pl := pl &gt;&gt; 21 | ph &lt;&lt; 11
+  ph ~&gt;= 21
+  _dsub(@ph, offh, offl)
+  cur_press := ph &lt;&lt; 17 | pl &gt;&gt; 15
+
+</pre>
+<hr><h4 id="lbl97">_get_temp
+</h4>
+ Obtain a new temperature reading in foreground mode if this method has been called since the
+     last data acquisition. This permits temperature and pressure to be obtained separately from the
+     same sample by alternating between _get_temp and _get_press. Does nothing in background mode.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl98')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl98"><var>PRI</var> _get_temp
+
+  <var>ifnot</var> (samp_temp)
+    samples
+  samp_temp~
+
+</pre>
+<hr><h4 id="lbl99">_get_press
+</h4>
+ Obtain a new pressure reading in foreground mode if this method has been called since the
+     last data acquisition. This permits temperature and pressure to be obtained separately from the
+     same sample by alternating between _get_temp and _get_press. Does nothing in background mode.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl100')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl100"><var>PRI</var> _get_press
+
+  <var>ifnot</var>(samp_press)
+    samples
+  samp_press~
+
+</pre>
+<hr><h4 id="lbl101">_read_prom(addr)
+</h4>
+ Read one word of data from the sensor's PROM at the address specified.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl102')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl102"><var>PRI</var> _read_prom(addr)
+
+  <var>return</var> _i2c_receive_data(CMD_READ_PROM | addr &lt;&lt; 1, 2)
+
+</pre>
+<hr><h4 id="lbl103">_read_adc(which)
+</h4>
+ Start a temperature or pressure conversion, then read the 24-bit value after
+     a resolution-dependent delay.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl104')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl104"><var>PRI</var> _read_adc(which) | d
+
+  _i2c_send_cmd(CMD_CONV_ADC | which | resolution)
+  <var>waitcnt</var>(adc_delay + <var>cnt</var>)
+  <var>return</var> _i2c_receive_data(CMD_READ_ADC, 3)
+
+</pre>
+<hr><h3 id="lbl105">I2C Methods</h3>
+<hr><h4 id="lbl106">_i2c_init
+</h4>
+ Resynchronize the I2C interface after power up or a reset.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl107')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl107"><var>PRI</var> _i2c_init
+
+  <var>repeat</var> 8
+    <var>dira</var>[scl]~
+    <var>dira</var>[scl]~~ 
+    <var>dira</var>[scl]~
+
+</pre>
+<hr><h4 id="lbl108">_i2c_receive_data(cmd, nbytes)
+</h4>
+ Send a read command and read <b>nbytes</b> (1 - 4) bytes of data into the return long.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl109')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl109"><var>PRI</var> _i2c_receive_data(cmd, nbytes) : value | i
+
+  _i2c_send_cmd(cmd)
+  _i2c_start
+  _i2c_send(DEVICE_ADDR | DEVICE_READ)
+  <var>repeat</var> i <var>from</var> 1 <var>to</var> nbytes
+    value := value &lt;&lt; 8 | _i2c_receive(ACK &amp; (i &lt;&gt; nbytes))
+  _i2c_stop
+
+</pre>
+<hr><h4 id="lbl110">_i2c_send_cmd(cmd)
+</h4>
+ Send a command to the sensor.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl111')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl111"><var>PRI</var> _i2c_send_cmd(cmd)
+
+  _i2c_start
+  _i2c_send(DEVICE_ADDR)
+  _i2c_send(cmd)
+  _i2c_stop
+
+</pre>
+<hr><h4 id="lbl112">_i2c_send(value)
+</h4>
+ Send a byte to the sensor.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl113')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl113"><var>PRI</var> _i2c_send(value)
+
+  value := ((!value) &gt;&lt; 8)
+
+  <var>repeat</var> 8
+    <var>dira</var>[sda] := value
+    <var>dira</var>[scl] := <var>false</var>
+    <var>dira</var>[scl] := <var>true</var>
+    value &gt;&gt;= 1
+
+  <var>dira</var>[sda] := <var>false</var>
+  <var>dira</var>[scl] := <var>false</var>
+  <var>result</var> := <var>not</var>(<var>ina</var>[sda])
+  <var>dira</var>[scl] := <var>true</var>
+  <var>dira</var>[sda] := <var>true</var>
+
+</pre>
+<hr><h4 id="lbl114">_i2c_receive(aknowledge)
+</h4>
+ Receive a byte from the sensor.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl115')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl115"><var>PRI</var> _i2c_receive(aknowledge)
+
+  <var>dira</var>[sda] := <var>false</var>
+
+  <var>repeat</var> 8
+    <var>result</var> &lt;&lt;= 1
+    <var>dira</var>[scl] := <var>false</var>
+    <var>result</var> |= <var>ina</var>[sda]
+    <var>dira</var>[scl] := <var>true</var>
+
+  <var>dira</var>[sda] := (aknowledge)
+  <var>dira</var>[scl] := <var>false</var>
+  <var>dira</var>[scl] := <var>true</var>
+  <var>dira</var>[sda] := <var>true</var>
+
+</pre>
+<hr><h4 id="lbl116">_i2c_start
+</h4>
+ Send an I2C start condition.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl117')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl117"><var>PRI</var> _i2c_start
+
+  <var>outa</var>[sda] := <var>false</var>
+  <var>outa</var>[scl] := <var>false</var>
+  <var>dira</var>[sda] := <var>true</var>
+  <var>dira</var>[scl] := <var>true</var>
+
+</pre>
+<hr><h4 id="lbl118">_i2c_stop
+</h4>
+ Send an I2C stop condition.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl119')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl119"><var>PRI</var> _i2c_stop
+
+  <var>dira</var>[scl] := <var>false</var>
+  <var>dira</var>[sda] := <var>false</var>
+
+</pre>
+<hr><h3 id="lbl120">Double Long Math</h3>
+ These methods perform 64-bit, unsigned interger math operations.
+<br>
+<hr><h4 id="lbl121">_umultdiv(x, num, denom)
+</h4>
+ Multiply <b>x</b> and <b>num</b>, then divide the resulting unsigned, 64-bit product by
+     <b>denom</b> to yield a 32-bit unsigned result. <b>x</b> ** <b>num</b> must be less than (unsigned) <b>denom</b>.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl122')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl122"><var>PRI</var> _umultdiv(x, num, denom) | producth, productl
+
+  _umult(@producth, x, num)
+  <var>return</var> _udiv(producth, productl, denom)   
+
+</pre>
+<hr><h4 id="lbl123">_umult(productaddr, mplr, mpld)
+</h4>
+ Multiply <b>mplr</b> by <b>mpld</b> and store the unsigned 64-bit product at <b>productaddr</b>.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl124')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl124"><var>PRI</var> _umult(productaddr, mplr, mpld) | producth, productl
+
+  producth := (mplr &amp; $7fff_ffff) ** (mpld &amp; $7fff_ffff)
+  productl := (mplr &amp; $7fff_ffff) * (mpld &amp; $7fff_ffff)
+  <var>if</var> (mplr &lt; 0)
+    _dadd(@producth, mpld &gt;&gt; 1, mpld &lt;&lt; 31)
+  <var>if</var> (mpld &lt; 0)
+    _dadd(@producth, mplr &lt;&lt; 1 &gt;&gt; 2, mplr &lt;&lt; 31)
+  <var>longmove</var>(productaddr, @producth, 2)
+
+</pre>
+<hr><h4 id="lbl125">_udiv(dvndh, dvndl, dvsr)
+</h4>
+ Divide the unsigned 64-bit number <b>dvndh</b>:<b>dvndl</b> by <b>dvsr</b>, returning an unsigned 32-bit quotient.
+     Saturate result to $ffff_ffff if it's too big to fit 32 bits.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl126')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl126"><var>PRI</var> _udiv(dvndh, dvndl, dvsr) | carry, quotient
+
+  quotient~
+  <var>ifnot</var> (_ult(dvndh, dvsr))
+    <var>return</var> $ffff_ffff
+  <var>repeat</var> 32
+    carry := dvndh &lt; 0
+    dvndh := (dvndh &lt;&lt; 1) + (dvndl &gt;&gt; 31)
+    dvndl &lt;&lt;= 1
+    quotient &lt;&lt;= 1
+    <var>if</var> (<var>not</var> _ult(dvndh, dvsr) <var>or</var> carry)
+      quotient++
+      dvndh -= dvsr
+  <var>return</var> quotient
+
+</pre>
+<hr><h4 id="lbl127">_dsub(difaddr, subh, subl)
+</h4>
+ Subtract the 64-bit value <b>subh</b>:<b>subl</b> from the 64-bit value stored at <b>difaddr</b>.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl128')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl128"><var>PRI</var> _dsub(difaddr, subh, subl)
+
+  _dadd(difaddr, -subh - 1, -subl)
+
+</pre>
+<hr><h4 id="lbl129">_dadd(sumaddr, addh, addl)
+</h4>
+ Add the 64-bit value <b>addh</b>:<b>addl</b> to the 64-bit value stored at <b>sumaddr</b>.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl130')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl130"><var>PRI</var> _dadd(sumaddr, addh, addl) | sumh, suml
+
+  <var>longmove</var>(@sumh, sumaddr, 2)
+  sumh += addh
+  suml += addl
+  <var>if</var> (_ult(suml, addl))
+    sumh++
+  <var>longmove</var>(sumaddr, @sumh, 2)
+
+</pre>
+<hr><h4 id="lbl131">_ult(x, y)
+</h4>
+ Test for unsigned <b>x</b> &lt; unsigned <b>y</b>. Return <b>true</b> if less than; <b>false</b>, otherwise. 
+  <br>
+<br><a onclick="javascript:ShowHide('lbl132')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl132"><var>PRI</var> _ult(x, y)
+
+  <var>return</var> x ^ $8000_0000 &lt; y ^ $8000_0000
+
+'-------[String-building... ]-----------------------------------------------------
+
+</pre>
+<hr><h4 id="lbl133">this_string
+</h4>
+ Zero-terminate the string being built in the buffer and return its address. Advance the buffer pointer.
+     Return the buffer address of the most recent string built.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl134')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl134"><var>PRI</var> this_string
+
+  enqueue(0)
+  <var>result</var> := @buffer + str_index
+  str_index := buf_index
+
+</pre>
+<hr><h4 id="lbl135">enqueue(char)
+</h4>
+ Add the byte <b>char</b> to the current buffer string. If beyond the end, copy the string to beginning of the buffer.
+  <br>
+<br><a onclick="javascript:ShowHide('lbl136')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl136"><var>PRI</var> enqueue(char)
+
+  <var>if</var> (buf_index =&gt; MAX_LEN)
+    <var>if</var> (str_index)
+      <var>bytemove</var>(@buffer, @buffer[str_index], buf_index - str_index)
+      buf_index -= str_index
+      str_index~
+    <var>else</var>
+      buf_index--                        ' String has gotten too long for buffer: overwrite previous character.
+  buffer[buf_index++] := char  
+
+</pre>
+<hr><h2 id="lbl137">Altitude Table </h2>
+ The DAT section contains a table of altitudes indexed by hundredths of millibars / 2048
+   and used by the <b>altitude</b> method to compute altitude from pressure by means of
+   cubic interpolation. 
+<br>
+<br><a onclick="javascript:ShowHide('lbl138')" href="javascript:;">SOURCE CODE...</a>
+<pre class="source" id="lbl138">
+alt_table     <var>long</var>      4433077,2323037,2025546,1832444,1686113,1566963,1465785,1377458
+              <var>long</var>      1298823,1227784,1162875,1103025,1047431, 995470, 946651, 900579
+              <var>long</var>       856930, 815437, 775876, 738056, 701815, 667012, 633527, 601252
+              <var>long</var>       570095, 539971, 510808, 482539, 455106, 428455, 402538, 377311
+              <var>long</var>       352735, 328773, 305392, 282561, 260253, 238441, 217101, 196211
+              <var>long</var>       175750, 155700, 136041, 116758,  97835,  79257,  61010,  43082
+              <var>long</var>        25459,   8132,  -8910, -25680, -42185, -58436, -74439, -90205
+              <var>long</var>      -105740,-121053,-136149,-151036,-165720,-180207,-194503,-208614
+              <var>long</var>      -222544
+
+empty         <var>long</var>      0             'An empty string used by the formatting routines.
+
+</pre>
+<hr><h2 id="lbl139">Sample Programs</h2>
+ These sample programs can be copied and pasted into the Propeller Tool in order
+   to try out the altimeter object. To copy a sample program to try, click its <b>SOURCE</b> <b>CODE</b>...
+   tag, then click anywhere within the source to select it, followed by Ctrl-C to copy
+   it to the clipboard. It can then be pasted into the Propeller Tool.
+<br>
+<h3 id="lbl140">Simple Barometer </h3>
+ Given a fixed altitude, this program operates as a simple barometer. It requires the
+   Parallax serial terminal object in addition to this one.
+<br>
+<br><a onclick="javascript:ShowHide('lbl141')" href="javascript:;">SOURCE CODE...</a>
+<pre onclick="selectall(this)" class="source" id="lbl141"><var>CON</var>
+
+  <var>_clkmode</var>      = xtal1 + pll16x  ' Change to xtal1 + pll8x for Propeller Backpack.
+  <var>_xinfreq</var>      = 5_000_000       ' Change to 10_000_000    for Propeller Backpack.
+
+  ALTITUDE      = 200             ' Your altitude in feet.
+
+<var>OBJ</var>
+
+  bar   : "29124_altimeter"
+  pst   : "parallax serial terminal"
+
+<var>PUB</var> start | p, sp, cm
+
+  pst.start(38400)                                          ' Start Parallax serial terminal.
+  bar.start(bar#QUICKSTART, bar#BACKGROUND)                 ' Start altimeter for QuickStart with background processing.
+  bar.set_resolution(bar#HIGHEST)                           ' Set to highest resolution.
+  cm := bar.m_from_ft(ALTITUDE * 100)                       ' Convert altitude in feet to cm.
+  <var>repeat</var>
+    p := bar.average_press                                  ' Get the average pressure.
+    sp := bar.sealevel_press(p, cm)                         ' Convert to equivalent sea-level pressure, given altitude.
+    pst.str(string(pst#HM, "    Local pressure:"))          ' Print local pressure heading.
+    pst.str(bar.formatn(p, bar#MILLIBARS | bar#CECR, 8))    ' Print local pressure in millibars, clear-to-end, and CR.
+    pst.str(bar.formatn(p, bar#TO_INCHES | bar#CECR, 27))   ' Print local pressure in inches Hg, clear-to-end, and CR.
+    pst.str(string(pst#NL, "Sea-level pressure:"))          ' Print sea-level pressure heading.
+    pst.str(bar.formatn(sp, bar#MILLIBARS | bar#CECR, 8))   ' Print sea-level pressure in millibars, clear-to-end, and CR.
+    pst.str(bar.formatn(sp, bar#TO_INCHES | bar#CECR, 27))  ' Print sea-level pressure in inches Hg, clear-to-end, and CR.
+    <var>if</var> (pst.rxcount)                                        ' Respond to any key by clearing screen.
+      pst.rxflush
+      pst.char(pst#CS)
+
+</pre>
+<h3 id="lbl142">Simple Altimeter </h3>
+ Given a starting altitude, this program operates as a simple altimeter. It requires the
+   Parallax serial terminal object in addition to this one.
+<br>
+<br><a onclick="javascript:ShowHide('lbl143')" href="javascript:;">SOURCE CODE...</a>
+<pre onclick="selectall(this)" class="source" id="lbl143"><var>CON</var>
+
+  <var>_clkmode</var>      = xtal1 + pll16x  ' Change to xtal1 + pll8x for Propeller Backpack.
+  <var>_xinfreq</var>      = 5_000_000       ' Change to 10_000_000    for Propeller Backpack.
+
+  START_ALT     = 200             ' Your starting altitude in feet.
+
+<var>OBJ</var>
+
+  alt   : "29124_altimeter"
+  pst   : "parallax serial terminal"
+
+<var>PUB</var> start | a
+
+  pst.start(38400)                                       ' Start Parallax serial terminal.
+  alt.start(alt#QUICKSTART, alt#BACKGROUND)              ' Start altimeter for QuickStart with background processing.
+  alt.set_resolution(alt#HIGHEST)                        ' Set to highest resolution.
+  alt.set_altitude(alt.m_from_ft(START_ALT * 100))       ' Set the starting altitude, based on average local pressure.                  
+  <var>repeat</var>
+    a := alt.altitude(alt.average_press)                 ' Get the current altitude in cm, from new average local pressure.
+    pst.str(string(pst#HM, "Altitude:"))                 ' Print header.
+    pst.str(alt.formatn(a, alt#METERS | alt#CECR, 8))    ' Print altitude in meters, clear-to-end, and CR.
+    pst.str(alt.formatn(a, alt#TO_FEET | alt#CECR, 17))  ' Print altitude in feet, clear-to-end, and CR.
+    <var>if</var> (pst.rxcount)                                     ' Respond to any key by clearing screen.
+      pst.rxflush
+      pst.char(pst#CS)
+
+</pre>
+<h2 id="lbl144">License </h2>
+<pre>┌──────────────────────────────────────────────────────────────────────────────────────┐
+│                            TERMS OF USE: MIT License                                 │                                                            
+├──────────────────────────────────────────────────────────────────────────────────────┤
+│Permission is hereby granted, free of charge, to any person obtaining a copy of this  │
+│software and associated documentation files (the "Software"), to deal in the Software │
+│without restriction, including without limitation the rights to use, copy, modify,    │
+│merge, publish, distribute, sublicense, and/or sell copies of the Software, and to    │
+│permit persons to whom the Software is furnished to do so, subject to the following   │
+│conditions:                                                                           │
+│                                                                                      │
+│The above copyright notice and this permission notice shall be included in all copies │
+│or substantial portions of the Software.                                              │
+│                                                                                      │
+│THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,   │
+│INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A         │
+│PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT    │
+│HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF  │
+│CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE  │
+│OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                                         │
+└──────────────────────────────────────────────────────────────────────────────────────┘
+</pre>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		</div>
+	</td></tr>
+</tbody></table>
+</div>
+
+	
+</body></html>
