@@ -19,7 +19,7 @@ VAR
 
 PUB  start | data, reading, unit, s
 
-  pst.start(38400)
+  pst.start(115200)
   alt.start(alt#QUICKSTART | alt#MS5611, alt#BACKGROUND)
   alt.set_resolution(alt#RES_4096)
   pst.str(@grid)

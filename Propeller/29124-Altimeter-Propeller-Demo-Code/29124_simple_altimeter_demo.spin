@@ -12,7 +12,7 @@ OBJ
 
 PUB start | a
 
-  pst.start(38400)                                       ' Start Parallax serial terminal.
+  pst.start(115200)                                       ' Start Parallax serial terminal.
   alt.start(alt#QUICKSTART, alt#BACKGROUND)              ' Start altimeter for QuickStart with background processing.
   alt.set_resolution(alt#HIGHEST)                        ' Set to highest resolution.
   alt.set_altitude(alt.m_from_ft(START_ALT * 100))       ' Set the starting altitude, based on average local pressure.                  

@@ -12,7 +12,7 @@ OBJ
 
 PUB start | p, sp, cm
 
-  pst.start(38400)                                          ' Start Parallax serial terminal.
+  pst.start(115200)                                          ' Start Parallax serial terminal.
   bar.start(bar#QUICKSTART, bar#BACKGROUND)                 ' Start altimeter for QuickStart with background processing.
   bar.set_resolution(bar#HIGHEST)                           ' Set to highest resolution.
   cm := bar.m_from_ft(ALTITUDE * 100)                       ' Convert altitude in feet to cm.
